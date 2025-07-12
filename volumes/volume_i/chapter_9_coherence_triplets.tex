@@ -1,0 +1,104 @@
+\chapter{Coherence Triplets}
+
+Once partial identities stabilize, and reuse structures lock under
+coherence, a new class of configurations appears: triplet-convergent
+identities. These are not isolated; they cohere through mutual reuse of
+a shared structural anchor. When the reuse configuration is symmetric
+and stabilized under RuleEvolution, we call the result a coherence
+triplet.
+
+This chapter formalizes how such structures form, what conditions enable
+them, and why they mark the symbolic threshold between generic identity
+and structure.
+
+\section{$\chi$-Convergent Identity Families} \label{chi-convergent-identity-families}
+
+Let $\{ [A_1], [A_2], [A_3] \}$ be three resolved identities in $\Omega_3$.
+
+We say they form a \textit{$\chi$-convergent family} if:
+
+\begin{itemize}
+  \item There exists a structure $[T]$ such that:
+  \begin{itemize}
+    \item Each $[A_i]$ reuses $[T]$ (i.e., $T \in \text{support}([A_i])$)
+    \item The coherence signatures $\chi([A_i])$ lie within a shared $\chi$-neighborhood
+    \item The signatures are symmetric:
+    \[
+      \sum_{i=1}^3 \chi([A_i]) = 3 \chi([T])
+    \]
+  \end{itemize}
+\end{itemize}
+
+The structure $[T]$ serves as a reuse anchor for the triplet.  
+If $[T]$ is saturated (i.e., $\partial \chi([T]) = 0$),  
+the configuration forms a stable reuse-locked system.
+
+\section{Minimal Reuse Lock and Return Stabilization} \label{minimal-reuse-lock-and-return-stabilization}
+
+Define $[T]$ as a \textit{minimal reuse-locked anchor} if:
+
+\begin{itemize}
+  \item $[T]$ is not independently return-closed: $\mathcal{L}([T]) = \emptyset$ or is unstable
+  \item $[T]$ appears in $\mathcal{L}([A_i])$ for exactly three distinct $[A_i]$
+  \item The composite structure $\{ [A_i], [T] \}$ resolves return closure when combined
+\end{itemize}
+
+This is the symbolic skeleton of reuse entanglement.  
+Return is no longer isolated—it is structurally distributed.
+
+\section{Symmetry-Stabilized Triplets} \label{symmetry-stabilized-triplets}
+
+Let a triplet $\{ [A_1], [A_2], [A_3] \}$ satisfy:
+
+\begin{itemize}
+  \item Coherence signatures $\chi([A_i])$ have symmetric latency: $\Lambda([A_i]) = \Lambda_0 \pm \varepsilon$
+  \item Return symmetry is balanced: $\sum X_\pi([A_i]) = 0$
+  \item External reuse load is minimal: $X_\varepsilon([T]) = 0$
+  \item The roles of $X_\pi$ are distributed such that:
+    \begin{itemize}
+      \item One identity acts as a coherence source ($X_\pi > 0$)
+      \item One acts as a sink ($X_\pi < 0$)
+      \item One is a mediator ($X_\pi \approx 0$)
+    \end{itemize}
+  \item Anchor $[T]$ has $\partial \chi = 0$ and $X_\pi \approx 0$
+\end{itemize}
+
+Then the system is \textit{symmetry-stabilized}.  
+It forms a coherence triplet lock—the smallest resolved unit of symmetry-based identity.
+
+\medskip
+
+Inversion pairs ($[S], [-S]$) cannot form triplets.  
+They resolve to $[0]$ via structural annihilation and do not stabilize reuse.
+
+\section{Identity Clustering} \label{identity-clustering}
+
+These triplet structures exhibit:
+\begin{itemize}
+  \item Mutual drift suppression
+  \item Shared reuse pathways: $G_{[A_i]} \cap G_{[T]} \ne \emptyset$
+  \item Invariant coherence under RuleEvolution
+  \item Return cycle invariance: loop-saturated, with fixed latency $\Lambda$
+\end{itemize}
+
+Such configurations form \textit{reuse-resolved units}.  
+In $\chi$-space, they appear as compact clusters orbiting a coherence anchor.
+
+\section{Summary and Threshold of Physical Identity} \label{summary-and-threshold-of-physical-identity}
+
+Coherence triplets mark a turning point in the SCM hierarchy.  
+They are:
+
+\begin{itemize}
+  \item Return-closed
+  \item Drift-suppressed
+  \item Symmetry-locked
+  \item Coherence-anchored
+\end{itemize}
+
+These are no longer arbitrary structures.  
+They are symbolically stable configurations.
+
+\medskip
+
+This closes Volume~I.
