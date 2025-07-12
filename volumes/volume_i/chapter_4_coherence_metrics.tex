@@ -55,50 +55,10 @@ X_\phi([A]) := \frac{1}{\rho([A])}
 As $[A]$ approaches the $\Omega_3 \rightarrow \Omega_2$ or $\Omega_1$ boundary, $X_\phi([A])$ diverges.  
 This metric forms the first axis of the coherence signature $\chi([A])$.
 
-\section{4.3 \textbar{} Latency Λ and Symbolic
-Effort}\label{latency-ux3bb-and-symbolic-effort}
-
-Each transformation T ∈ R carries an assigned symbolic effort:
-
-effort(T) ∈ ℝ⁺
-
-We define the latency of a resolved identity {[}A{]} as the minimal
-total effort required to complete a valid return loop:
-
-Λ({[}A{]}) := min\_\{𝒫 ∈ 𝓛({[}A{]})\} ∑\_\{Tᵢ ∈ 𝒫\} effort(Tᵢ)
-
-If effort is uniform (i.e., effort(T) = 1 for all T), then:
-
-Λ({[}A{]}) = Xₕ({[}A{]})
-
-\subsection{Effort Function}\label{effort-function}
-
-Symbolic effort is defined structurally. Possible definitions include:
-
-- effort(T) := length(T) --- the number of primitive symbols in T
-
-- effort(T) := entropy(T) --- the number of distinct symbols in T
-
-These definitions allow Λ({[}A{]}) to be computed purely from symbolic
-structure.
-
-\subsection{Inverse Transformation}\label{inverse-transformation}
-
-Let T: S → S′ be a permitted transformation. We say that an inverse T⁻¹
-exists if there is T′ ∈ Σ* such that:
-
-T′(S′) = S
-
-Then we write T′ = T⁻¹.
-
-Note: not all transformations have inverses. Return symmetry X\_π is
-computed using only known forward and reverse steps. When no inverse is
-present in R, that segment is treated as directionally asymmetric.
-
-
 \section{Latency $\Lambda$ and Symbolic Effort} \label{latency-lambda-and-symbolic-effort}
 
-We define symbolic effort as a function:
+Each transformation $T \in R$ carries an assigned symbolic effort.  
+We define this as a function:
 \begin{equation} \label{eq:effort-function}
 \text{effort} : \Sigma^* \rightarrow \mathbb{R}^+
 \end{equation}
@@ -110,7 +70,7 @@ The latency of a resolved identity $[A]$ is the minimal total effort required to
 \end{equation}
 \end{definition}
 
-If symbolic effort is uniform across all transformations (i.e., $\text{effort}(T) = 1$ for all $T$), then latency reduces to return depth:
+If symbolic effort is uniform across all transformations (i.e., $\text{effort}(T) \equiv 1$ for all $T$), then latency reduces to return depth:
 \begin{equation} \label{eq:latency-depth-equivalence}
 \Lambda([A]) = X_h([A])
 \end{equation}
@@ -137,7 +97,6 @@ Then we write: $T' = T^{-1}$.
 \textit{Note:} Not all transformations have inverses.  
 Return symmetry $X_\pi$ is computed using only known forward and reverse steps.  
 When no inverse is present in $R$, that segment is treated as directionally asymmetric.
-
 \section{Return Symmetry $X_\pi$}
 
 Return symmetry quantifies the structural asymmetry of a permitted return loop.  
@@ -159,17 +118,17 @@ X_\pi([A]) := \frac{F - R}{F + R}
 This ratio measures the net directional bias of the return loop. It ranges from $-1$ to $+1$.
 \end{definition}
 
-\subsection{Interpretation of $X_\pi$} \label{interpretation-of-xpi}
+\subsection*{Interpretation of $X_\pi$} \label{interpretation-of-xpi}
 
 \begin{center}
-\begin{tabular}{>{\raggedright}p{2.5cm} >{\raggedright}p{4cm} >{\raggedright\arraybackslash}p{7cm}}
-\toprule
+\begin{tabular}{|c|l|l|}
+\hline
 \textbf{$X_\pi$ Value} & \textbf{Meaning} & \textbf{Interpretation} \\
-\midrule
+\hline
 $-1$ & Full inversion & Maximal asymmetry: $S \rightarrow -S$ (e.g., Euler pair) \\
-$0$ & Symmetric & Perfectly balanced return loop \\
-$+1$ & Forward-only return & Source-directed coherence structure \\
-\bottomrule
+$0$  & Symmetric      & Perfectly balanced return loop \\
+$+1$ & Forward-only   & Source-directed coherence structure \\
+\hline
 \end{tabular}
 \end{center}
 
@@ -204,14 +163,14 @@ These coherence metrics apply only to identities in $\Omega_3$.
 Each plays a role in defining the coherence structure of $[A]$ and its behavior under reuse, drift, or collapse.
 
 \begin{center}
-\begin{tabular}{>{\raggedright}p{4cm} >{\raggedright}p{6cm} >{\raggedright\arraybackslash}p{4cm}}
-\toprule
+\begin{tabular}{|l|l|l|}
+\hline
 \textbf{Metric} & \textbf{Meaning} & \textbf{Symbol} \\
-\midrule
+\hline
 Collapse robustness & Minimum deformation before failure & $\rho([A])$ \\
-Fragility & Inverse robustness & $X_\phi([A])$ \\
-Latency & Total symbolic effort to return & $\Lambda([A])$ \\
-Return symmetry & Directional asymmetry in return loop & $X_\pi([A])$ \\
-\bottomrule
+Fragility            & Inverse robustness                 & $X_\phi([A])$ \\
+Latency              & Total symbolic effort to return    & $\Lambda([A])$ \\
+Return symmetry      & Directional asymmetry in return loop & $X_\pi([A])$ \\
+\hline
 \end{tabular}
 \end{center}
