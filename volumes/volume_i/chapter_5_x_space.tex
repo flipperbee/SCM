@@ -1,0 +1,254 @@
+\chapter{$\chi$-Space}
+
+Coherence metrics allow us to evaluate how stable an identity is under reuse, deformation, and collapse.  
+But to compare identities structurally, we require a unified representation:  
+a signature that encodes all relevant coherence properties in a single form.
+
+This chapter introduces the \textit{coherence signature} $\chi([A])$,  
+a five-component vector that structurally fingerprints any return-closed identity.  
+We then define the space of all such signatures — $\chi$-space — as a topological product space over symbolic metrics.
+
+Trajectories through this space represent structural evolution.  
+Stability, collapse, and emergence are now modeled as topological transitions.
+
+\section{Definition of the Coherence Signature $\chi$}
+
+\begin{definition}[Coherence Signature] \label{def:chi-signature}
+Let $[A] \in \Omega_3$ be a return-closed, collapse-robust identity.  
+We define its coherence signature as the 5-tuple:
+\begin{equation} \label{eq:chi-signature}
+\chi([A]) := (X_h, X_c, X_\pi, X_\phi, X_\varepsilon)
+\end{equation}
+
+Where:
+\begin{itemize}
+  \item $X_h$: Return depth (Chapter~2)
+  \item $X_\pi$: Return symmetry (Chapter~4)
+  \item $X_\phi$: Fragility, defined as $1 / \rho$ (Chapter~4)
+  \item $X_\varepsilon$: Reuse elevation (defined in this chapter)
+  \item $X_c$: Coherence strength (defined next)
+\end{itemize}
+\end{definition}
+
+This signature completely characterizes the identity structure of $[A]$ with respect to reuse, return, and collapse.
+
+\section{Return Depth $X_h$ and Symmetry $X_\pi$}
+
+These two coherence metrics were previously defined in Chapters~2 and 4:
+
+\begin{itemize}
+  \item $X_h$ is the length of the shortest return loop $\mathcal{L}([A])$
+  \item $X_\pi$ is the directional imbalance of the return path (forward vs.\ reverse transitions)
+\end{itemize}
+
+Both are structural invariants derived from the resolution graph $G(R)$.
+
+\section{Coherence Strength $X_c$}
+
+Let $\mathcal{R}([A])$ be the set of all permitted return loops for $[A]$.  
+Let $\chi_0 = \chi(\mathcal{L}_0([A]))$ be the coherence signature of the minimal return path.
+
+For each alternate return path $\mathcal{L}_i \in \mathcal{R}([A])$, let $\chi_i := \chi(\mathcal{L}_i([A]))$  
+be the coherence signature derived from that path.
+
+\begin{definition}[Component-wise Deviation] \label{def:chi-deviation}
+We define the normalized component-wise deviation as:
+\begin{equation} \label{eq:delta-chi}
+\Delta \chi_i := \frac{1}{5} \sum_{k=1}^5 \left| \frac{\chi_i^{(k)} - \chi_0^{(k)}}{\chi_0^{(k)}} \right|
+\end{equation}
+\end{definition}
+
+Here, each coherence component is compared independently.  
+The result is a normalized average deviation across all five dimensions.
+
+\begin{definition}[Coherence Strength] \label{def:coherence-strength}
+We define $X_c([A])$ as the average complement of deviation:
+\begin{equation} \label{eq:xc-definition}
+X_c([A]) := \frac{1}{|\mathcal{R}([A])|} \sum_i \left( 1 - \Delta \chi_i \right)
+\end{equation}
+\end{definition}
+
+\textbf{Interpretation:}
+\begin{itemize}
+  \item $X_c \approx 1$: All return paths are consistent — identity is structurally coherent regardless of path
+  \item $X_c \ll 1$: Return paths diverge — identity is path-sensitive, fragile, or degenerate
+\end{itemize}
+
+This formally encodes coherence consistency without requiring a global metric.  
+It respects the non-normed, component-wise topology of $\chi$-space and ensures each dimension is weighted equally and independently.
+
+\section{Reuse Elevation $X_\varepsilon$} \label{reuse-elevation-xe}
+
+Let $G_{[A]}$ be the resolution subgraph of $[A]$ (as defined in Chapter~2).  
+Let $\text{support}([A])$ be the set of all structures reused in resolving $[A]$.
+
+\begin{definition}[Reuse Elevation] \label{def:reuse-elevation}
+We define reuse elevation as:
+\begin{equation} \label{eq:reuse-elevation}
+X_\varepsilon([A]) := \left| \text{support}([A]) \setminus \mathcal{L}([A]) \right|
+\end{equation}
+\end{definition}
+
+That is, $X_\varepsilon$ is the number of symbolic structures required for return  
+that are not part of $[A]$’s own minimal loop.
+
+\textit{Note:} $\text{support}([A])$ and $\mathcal{L}([A])$ are interpreted here as node sets  
+extracted from the return subgraph $G_{[A]}$, enabling set subtraction.
+
+\textbf{Interpretation:}
+\begin{itemize}
+  \item $X_\varepsilon = 0$: $[A]$ is internally return-closed (irreducible or composed)
+  \item $X_\varepsilon > 0$: $[A]$ depends on external reuse (elevated identity)
+\end{itemize}
+
+\section{Fragility $X_\phi$ and Collapse Threshold}
+
+As previously defined in Chapter~4:
+\begin{align*}
+X_\phi([A]) &:= \frac{1}{\rho([A])} \\
+\rho([A]) &:= \text{minimum symbolic effort to destroy } \mathcal{L}([A])
+\end{align*}
+
+Fragility encodes coherence brittleness.  
+This metric defines the symbolic boundary of collapse in $\chi$-space.
+
+\section{$\chi$-Space: The Topology of Identity} \label{chi-space-the-topology-of-identity}
+
+Let:
+\[
+X := \mathbb{N} \times [0,1] \times \mathbb{R}_+ \times \mathbb{R}_+ \times \mathbb{N}
+\]
+
+\begin{definition}[$\chi$-Space] \label{def:chi-space}
+We define $\chi$-space as the set of coherence signatures for all return-closed identities:
+\begin{equation} \label{eq:chi-space}
+\chi\text{-space} := \{ \chi([A]) \mid [A] \in \Omega_3 \}
+\end{equation}
+\end{definition}
+
+This is a symbolic, non-metric product space.  
+Each component of $\chi$ governs a distinct mode of coherence behavior.
+
+There is no global norm on $\chi$-space.  
+Comparison must occur componentwise or via defined $\chi$-neighborhoods.
+
+\section{$\chi$-Neighborhoods and Clustering} \label{chi-neighborhoods-and-clustering}
+
+Let $\chi_0 \in X$.  
+We define a $\chi$-neighborhood around $\chi_0$ as:
+
+\begin{definition}[$\chi$-Neighborhood] \label{def:chi-neighborhood}
+\begin{equation} \label{eq:chi-neighborhood}
+\mathcal{U}(\chi_0, \varepsilon) := \left\{ \chi([A]) \,\middle|\, \forall i,\, \left| \chi^{(i)} - \chi_0^{(i)} \right| < \varepsilon^{(i)} \right\}
+\end{equation}
+\end{definition}
+
+These neighborhoods enable:
+\begin{itemize}
+  \item Local clustering of structurally similar identities
+  \item Detection of reuse similarity across resolution graphs
+  \item Drift tolerance bounds in RuleEvolution
+\end{itemize}
+
+Identities that lie within $\mathcal{U}(\chi_0, \varepsilon)$ of an anchor may be stabilized through reuse.
+
+\section{Trajectories and the Invariant Surface} \label{trajectories-and-the-invariant-surface}
+
+Let $\chi_t([A])$ denote the coherence signature of $[A]$ at RuleEvolution time $t$.
+
+\begin{definition}[Drift] \label{def:drift}
+The drift of an identity is defined as:
+\begin{equation} \label{eq:drift}
+\partial \chi([A]) := \chi_{t+1}([A]) - \chi_t([A])
+\end{equation}
+\end{definition}
+
+We classify identities based on drift behavior:
+\begin{itemize}
+  \item \textbf{Saturated:} $\partial \chi = 0$
+  \item \textbf{Reactive:} $\partial \chi$ bounded but nonzero
+  \item \textbf{Collapsing:} $\partial \chi$ unbounded, or $\rho([A]) < \rho_c$
+\end{itemize}
+
+\begin{definition}[Invariant Surface $\mathcal{S}$] \label{def:invariant-surface}
+We define the invariant surface of $\chi$-space as:
+\begin{equation} \label{eq:invariant-surface}
+\mathcal{S} := \{ \chi \in \chi\text{-space} \mid \partial \chi = 0 \}
+\end{equation}
+\end{definition}
+
+This surface defines structural stability.  
+Anchors and conserved identities lie on $\mathcal{S}$.
+
+\begin{definition}[Revised Identity Domain $\Omega_3$] \label{def:omega3-revised}
+We restate $\Omega_3$ as the set of all identities satisfying:
+\begin{equation} \label{eq:omega3-closure}
+\Omega_3 := \left\{ [A] \,\middle|\, \mathcal{L}([A]) \neq \emptyset,\ \partial \chi([A]) \text{ is bounded},\ \rho([A]) \geq \rho_c \right\}
+\end{equation}
+\end{definition}
+
+This is the space of stable, coherence-resolved identities.  
+Only identities in $\Omega_3$ are considered valid elements of $\chi$-space and subject to RuleEvolution.
+
+\section{Minimality of the Coherence Signature} \label{minimality-of-the-coherence-signature}
+
+The coherence signature $\chi([A]) := (X_h, X_c, X_\pi, X_\phi, X_\varepsilon)$ defines the structural identity of every return-closed symbolic form in SCM.  
+This section addresses a foundational question:
+
+\textit{Why are exactly five components used? Why not three, or seven?}
+
+We assert that this five-variable signature is both minimal and sufficient for resolving identity behavior in $\Omega_3$.  
+Each component satisfies a distinct functional requirement:
+
+\begin{description}
+  \item[$X_h$ (Return Depth)] Captures structural loop complexity; required to distinguish shallow vs.\ deep identities.
+  \item[$X_c$ (Coherence Strength)] Measures return path consistency; required to differentiate stable vs.\ noisy identities.
+  \item[$X_\pi$ (Return Symmetry)] Detects directional imbalance; required to separate symmetric (e.g., reversible) from asymmetric identities.
+  \item[$X_\phi$ (Fragility)] Encodes susceptibility to collapse; required to predict breakdown under deformation.
+  \item[$X_\varepsilon$ (Reuse Elevation)] Measures external support; required to identify elevated vs.\ internally stable structures.
+\end{description}
+
+We claim that no proper subset of these five is sufficient to classify all resolved identities within $\Omega_3$:
+
+\begin{itemize}
+  \item Omitting $X_\varepsilon$ makes it impossible to distinguish elevated identities from composed ones.
+  \item Omitting $X_c$ obscures whether coherence is consistent across return paths.
+  \item Omitting $X_\pi$ erases directional structure and breaks the ability to detect symbolic charge.
+\end{itemize}
+
+These variables are functionally independent over $\chi$-space and span the complete classification range for:
+\begin{itemize}
+  \item Identity type: irreducible, composed, elevated
+  \item Return behavior: saturated, reactive, collapsing
+  \item Reuse structure: self-contained, clustered, anchor-dependent
+\end{itemize}
+
+A full formal proof of this minimality claim — including counterexamples under $\chi' \subset \chi$ — is provided in Appendix~A.
+
+\section{Injectivity and Classification Limits} \label{injectivity-and-classification-limits}
+
+While the coherence signature $\chi([A]) = (X_h, X_c, X_\pi, X_\phi, X_\varepsilon)$ is minimal and sufficient to classify identities in $\Omega_3$, it is not injective.
+
+That is, there exist distinct identities $[A] \ne [B] \in \Omega_3$ such that:
+\begin{equation} \label{eq:chi-noninjective}
+\chi([A]) = \chi([B])
+\end{equation}
+
+This occurs when distinct resolution graphs $G([A])$ and $G([B])$ yield the same coherence signature across all five dimensions.  
+In such cases, $\chi([A])$ and $\chi([B])$ occupy the same point in $\chi$-space, even though $[A]$ and $[B]$ are structurally distinct.
+
+\textbf{Conclusion:}
+\begin{itemize}
+  \item The resolution graph $G(R)$ is injective: each identity $[A] \in \Omega_3$ has a unique graph $G([A])$
+  \item The coherence signature $\chi$ is not injective: multiple identities may share the same coherence signature
+\end{itemize}
+
+Thus, $\chi$-space defines a classification topology, not an identity space.  
+It groups structurally distinct forms by behavioral similarity under reuse, drift, and return.
+
+\section{Summary}
+
+The coherence signature $\chi([A]) = (X_h, X_c, X_\pi, X_\phi, X_\varepsilon)$ defines the structural identity of every return-closed form.  
+The space of all such signatures — $\chi$-space — is a symbolic topology over which identities evolve, couple, drift, or collapse.
+
+In the next chapter, we define RuleEvolution formally and classify dynamic identity behavior according to trajectories in $\chi$-space.
