@@ -1,0 +1,343 @@
+\chapter{The Symbol_{i}c Foundat_{i}on}\label{symbol_{i}c_foundat_{i}on}
+Th_{i}s chapter bu_{i}lds the symbol_{i}c ground floor of Structural Coherence
+Mathemat_{i}cs. We beg_{i}n not w_{i}th ax_{i}oms, but w_{i}th unstructured
+symbols—pr_{i}m_{i}t_{i}ves that do not assert mean_{i}ng, pos_{i}t_{i}on, or truth.
+From th_{i}s substrate, we def_{i}ne structure as a transformat_{i}on, not an
+ob_{j}ect.
+
+The core idea introduced here is that ident_{i}ty is not assumed—it is
+perm_{i}tted. A symbol_{i}c form does not ex_{i}st because we label it, but
+because it returns to itself through a ser_{i}es of allowed transformat_{i}ons. That return loop, if it ex_{i}sts, is the only adm_{i}ss_{i}ble def_{i}n_{i}t_{i}on of pers_{i}stence in SCM.
+
+Th_{i}s not_{i}on is developed step by step: f_{i}rst def_{i}n_{i}ng symbols, rules, and transformat_{i}on sequences; then formulat_{i}ng what it means to return; and f_{i}nally stat_{i}ng the structural cond_{i}t_{i}on under wh_{i}ch ident_{i}ty becomes real.
+
+We call th_{i}s the emergence threshold—the po_{i}nt at wh_{i}ch symbol_{i}c resolut_{i}on becomes poss_{i}ble. It is from th_{i}s threshold that all future structure w_{i}ll unfold.
+
+\sect_{i}on{Symbols and Structures} \label{symbols-and-structures}
+Let $\S_{i}gma$ be a f_{i}n_{i}te alphabet of pr_{i}m_{i}t_{i}ve symbols:
+
+\[
+
+\S_{i}gma = \{ s_1, s_2, \dots, s_n \}
+
+\]
+
+
+Each symbol $s \in \S_{i}gma$ is a syntact_{i}c ob_{j}ect w_{i}th no internal content or ass_{i}gned semant_{i}cs.  
+Symbols are not interpreted—they are transformed.
+
+A symbol_{i}c structure $S$ is a f_{i}n_{i}te ordered sequence of symbols from $\S_{i}gma$.  
+$\S_{i}gma$ is a syntact_{i}c alphabet only. It carr_{i}es no semant_{i}c mean_{i}ng—only symbol_{i}c form.  
+All structure and ident_{i}ty ar_{i}se solely from perm_{i}tted transformat_{i}ons, not from the interpretat_{i}on of ind_{i}v_{i}dual symbols.
+
+
+\[
+
+S = (s_{i_1}, s_{i_2}, \dots, s_{i_k}} \quad \text{where } s_{i_j} \in \S_{i}gma,\quad k \in \mathbb{N}
+
+\]
+
+
+We def_{i}ne the set of all symbol_{i}c structures as:
+
+\[
+
+\S_{i}gma^* := \text{the set of all f_{i}n_{i}te sequences over } \S_{i}gma
+
+\]
+
+Th_{i}s includes sequences of length 1.
+
+Every symbol $s \in \S_{i}gma$ induces a m_{i}n_{i}mal structure $S = (s} \in \S_{i}gma^*$.  
+Thus, a s_{i}ngle symbol can be treated as a structure of length one.
+
+All formal def_{i}n_{i}t_{i}ons of transformat_{i}on, return, and ident_{i}ty apply equally to such structures.
+
+\sect_{i}on{1.2 \textbar{} Rule Sets and Perm_{i}tted
+Transformat_{i}ons}\label{rule-sets-and-perm_{i}tted-transformat_{i}ons}
+
+In Structural Coherence Mathemat_{i}cs (SCM}, transformat_{i}ons are not
+ax_{i}oms. They are not imposed. They are d_{i}scovered—as symbol_{i}c
+structures that perm_{i}t return.
+
+Let Σ be the f_{i}n_{i}te alphabet of pr_{i}m_{i}t_{i}ve symbols. Def_{i}ne Σ* as the set
+of all f_{i}n_{i}te symbol_{i}c structures over Σ. Then:
+
+\subsect_{i}on{Def_{i}n_{i}t_{i}on — Rule Set R}\label{def_{i}n_{i}t_{i}on-rule-set-r}
+
+The rule set R ⊆ Σ* is the dynam_{i}cally act_{i}ve subset of symbol_{i}c
+structures that currently funct_{i}on as enabled transformat_{i}ons under
+structural coherence.
+
+\subsect_{i}on{Enabled vs. D_{i}sabled
+Rules}\label{enabled-vs.-d_{i}sabled-rules}
+
+A symbol_{i}c structure T \in Σ* becomes a rule only if it part_{i}c_{i}pates in a
+coherence-val_{i}d return path. That is:
+
+- T is enabled ⇔ T part_{i}c_{i}pates in at least one perm_{i}tted transformat_{i}on
+in a val_{i}d return loop 𝓛({[}A{]}} for some {[}A{]} \in Ω₃.
+
+- T is d_{i}sabled ⇔ T ∉ R, i.e. T does not currently contr_{i}bute to
+coherence resolut_{i}on.
+
+Th_{i}s enables SCM to treat rules as symbol_{i}c structures—not external
+declarat_{i}ons. Every rule is itself a symbol. What ma_{k}es it a rule is
+structural part_{i}c_{i}pat_{i}on in return.
+
+\subsect_{i}on{Def_{i}n_{i}t_{i}on — Symbol_{i}c
+Transformat_{i}on}\label{def_{i}n_{i}t_{i}on-symbol_{i}c-transformat_{i}on}
+
+Let T \in Σ* be a symbol_{i}c structure interpreted as a transformat_{i}on rule.
+We def_{i}ne a transformat_{i}on T as an ordered symbol_{i}c subst_{i}tut_{i}on
+pattern:\\
+\strut \\
+T := (α → β}, α, β \in Σ*
+
+Let S₁ \in Σ* be a symbol_{i}c form. T acts on S₁ if α appears as a
+cont_{i}guous subsequence in S₁. The result S₂ is formed by replac_{i}ng the
+f_{i}rst occurrence of α w_{i}th β.
+
+We wr_{i}te:\\
+T: S₁ → S₂ ⇔ S₂ = S₁ w_{i}th α → β appl_{i}ed once at f_{i}rst match
+
+Th_{i}s def_{i}nes symbol_{i}c transformat_{i}on as pattern subst_{i}tut_{i}on, w_{i}thout
+invo_{k}ing numer_{i}cal or algor_{i}thm_{i}c semant_{i}cs.
+
+\subsect_{i}on{Def_{i}n_{i}t_{i}on — Perm_{i}tted Transformat_{i}on
+(R-enabled}}\label{def_{i}n_{i}t_{i}on-perm_{i}tted-transformat_{i}on-r-enabled}
+
+Let T \in R be an enabled transformat_{i}on rule.
+
+Then T def_{i}nes a perm_{i}tted transformat_{i}on:\\
+T: S₁ → S₂, where S₁, S₂ \in Σ*
+
+The system perm_{i}ts S₁ → S₂ only if T \in R, and S₂ = T(S₁}.
+
+If no such T ex_{i}sts in R, then the transformat_{i}on is not perm_{i}tted. In
+that case, coherence fa_{i}ls, and ident_{i}ty resolut_{i}on is not poss_{i}ble.
+
+\subsect_{i}on{In_{i}t_{i}al Cond_{i}t_{i}on: No Rules
+Ex_{i}st}\label{in_{i}t_{i}al-cond_{i}t_{i}on-no-rules-ex_{i}st}
+
+At system or_{i}g_{i}n, R = ∅. No return paths are poss_{i}ble. No
+transformat_{i}ons are enabled. Th_{i}s is the coherence vacuum—the state of
+pure symbol_{i}c potent_{i}al w_{i}th no structure.
+
+\subsect_{i}on{Emergence of Enabled
+Rules}\label{emergence-of-enabled-rules}
+
+Once a perm_{i}tted return loop is d_{i}scovered—that is, some structure S \in
+Σ* sat_{i}sf_{i}es:
+
+∃ 𝓛(S}: S → ⋯ → S, w_{i}th all steps perm_{i}tted
+
+then the set of symbol_{i}c structures part_{i}c_{i}pat_{i}ng in that loop are
+promoted into R. Th_{i}s forms the in_{i}t_{i}al rule set:
+
+R₁ := \{ T \in Σ* \textbar{} T appears in a coherence-val_{i}d return path \}
+
+From here, RuleEvolut_{i}on (chapter 5} ta_{k}es over—dynam_{i}cally enabl_{i}ng
+or d_{i}sabl_{i}ng symbol_{i}c structures in Σ* as the system evolves.
+
+\subsect_{i}on{Summary of Rule Ontology}\label{summary-of-rule-ontology}
+
+Th_{i}s table summar_{i}zes concepts and def_{i}n_{i}t_{i}ons
+
+\beg_{i}n{item_{i}ze}
+\item
+  Symbol: Any structure in Σ*
+\item
+  Potent_{i}al Rule: Any symbol_{i}c structure T \in Σ* that could funct_{i}on as a
+  transformat_{i}on
+\item
+  Enabled Rule: A potent_{i}al rule currently in the act_{i}ve rule set R (T \in
+  R}
+\item
+  D_{i}sabled Structure: A structure not currently in R; not funct_{i}on_{i}ng as
+  a rule
+\item
+  R: The current set of enabled transformat_{i}ons: R ⊆ Σ*
+\end{item_{i}ze}
+
+There are no ax_{i}omat_{i}c rules in SCM. All transformat_{i}ons must be
+earned—through the_{i}r ab_{i}l_{i}ty to support return. Only enabled potent_{i}al
+rules are rules. All others are symbol_{i}c structures w_{i}thout coherence
+funct_{i}on at the current system state.
+
+\sect_{i}on{1.3 \textbar{} Return Paths, Ident_{i}ty, and Structural
+Invers_{i}on}\label{return-paths-ident_{i}ty-and-structural-invers_{i}on}
+
+In Structural Coherence Mathemat_{i}cs (SCM}, ident_{i}ty is not assumed—it
+emerges from structure. A symbol_{i}c form becomes an ident_{i}ty only when it
+returns to itself through a perm_{i}tted sequence of transformat_{i}ons.
+
+Let 𝒫(S} denote a f_{i}n_{i}te sequence of perm_{i}tted transformat_{i}ons:
+
+𝒫(S} = S₀ → S₁ → ... → Sₖ, where each (Sᵢ → Sᵢ₊₁} is perm_{i}tted by some T
+\in R\\
+\strut \\
+We def_{i}ne a return path for a structure S as a transformat_{i}on sequence
+such that:
+
+\beg_{i}n{quote}
+- S₀ = S,\\
+- Sₖ = S,\\
+- k ≥ 1,\\
+- All intermed_{i}ate steps are perm_{i}tted by R.
+\end{quote}
+
+\subsect_{i}on{Return Path Set}\label{return-path-set}
+
+Let Σ be the symbol_{i}c alphabet. Let S \in Σ* be any symbol_{i}c structure. We
+def_{i}ne the return path set of S as:
+
+𝓛(S} := \{ 𝒫 \textbar{} 𝒫 is a perm_{i}tted path such that S₀ = Sₖ = S \}
+
+That is, 𝓛(S} is the set of all f_{i}n_{i}te, perm_{i}tted sequences of
+transformat_{i}ons that beg_{i}n and end at S. A structure S is sa_{i}d to have
+return closure if 𝓛(S} ≠ ∅.
+
+We say that:
+
+\beg_{i}n{quote}
+- S is return-closed if 𝓛(S} ≠ ∅.\\
+- The m_{i}n_{i}mal return loop of S, if it ex_{i}sts, is the shortest 𝒫 \in
+𝓛(S}.\\
+- The return depth Xₕ(S} := \textbar 𝒫\textbar{} for the m_{i}n_{i}mal such
+loop.
+\end{quote}
+
+\subsect_{i}on{Ident_{i}ty}\label{ident_{i}ty}
+
+A symbol_{i}c structure S is prov_{i}s_{i}onally called an ident_{i}ty if:
+
+\beg_{i}n{quote}
+- There ex_{i}sts at least one perm_{i}tted return path: 𝓛(S} ≠ ∅.\\
+- The return is to the same structure\\
+- Coherence is preserved: return does not collapse
+\end{quote}
+
+Th_{i}s is the start_{i}ng po_{i}nt for structural pers_{i}stence.
+
+\sect_{i}on{1.4 \textbar{} Invers_{i}on vs. Ident_{i}ty — The Role of
+Euler\textquotes_{i}ngle s
+Formula}\label{invers_{i}on-vs.-ident_{i}ty-the-role-of-eulers-formula}
+
+Euler's ident_{i}ty: e\^{}\{iπ\} + 1 = 0 expresses a max_{i}mally asymmetr_{i}c
+transformat_{i}on. It rotates the ident_{i}ty {[}1{]} into its structural
+inverse {[}--1{]}, and the_{i}r compos_{i}t_{i}on resolves into zero:
+
+{[}1{]} + {[}--1{]} = {[}0{]}
+
+Th_{i}s represents the shortest poss_{i}ble return_{i}ng loop in symbol_{i}c
+structure:
+
+\beg_{i}n{quote}
+- One transformat_{i}on: {[}1{]} → {[}--1{]}\\
+- Compos_{i}t_{i}on y_{i}elds the null ident_{i}ty {[}0{]}\\
+- Return symmetry X\_π = --1 (perfect invers_{i}on}\\
+- Return depth Xₕ = 1
+\end{quote}
+
+But th_{i}s is not ident_{i}ty. Why?
+
+\beg_{i}n{quote}
+- The path returns not to the same structure, but to its inverse\\
+- The f_{i}nal result is {[}0{]}, not {[}1{]}\\
+- Th_{i}s is cancellat_{i}on, not pers_{i}stence
+\end{quote}
+
+\subsect_{i}on{Euler Invers_{i}on Loop}\label{euler-invers_{i}on-loop}
+
+An Euler loop is a coherence-val_{i}d path of m_{i}n_{i}mal length (Xₕ = 1} w_{i}th
+max_{i}mal return asymmetry (X\_π = --1}, wh_{i}ch maps a structure to its
+inverse and produces the null ident_{i}ty:
+
+S → --S, S + (--S} = {[}0{]}
+
+Th_{i}s loop is coherent, but does not sat_{i}sfy the def_{i}n_{i}t_{i}on of ident_{i}ty.
+It def_{i}nes structural ann_{i}h_{i}lat_{i}on, not return.
+
+\subsect_{i}on{Null Ident_{i}ty {[}0{]}}\label{null-ident_{i}ty-0}
+
+The null ident_{i}ty {[}0{]} is the structural cancellat_{i}on of a form and
+its inverse:
+
+{[}S{]} + {[}--S{]} := {[}0{]}
+
+{[}0{]} has no return paths:
+
+\beg_{i}n{quote}
+- 𝓛({[}0{]}} = ∅\\
+- No latency\\
+- No reuse\\
+- No pers_{i}stence
+\end{quote}
+
+It represents the coherence vacuum: a resolved cancellat_{i}on. Not all
+return impl_{i}es ident_{i}ty. Ident_{i}ty requ_{i}res return to self. Invers_{i}on
+y_{i}elds cancellat_{i}on—not pers_{i}stence. Th_{i}s d_{i}st_{i}nct_{i}on is the
+foundat_{i}on of SCM's symbol_{i}c algebra. It ma_{k}es ident_{i}ty emergent, and
+zero structural.
+
+\sect_{i}on{1.5 \textbar{} Structural Emergence
+Threshold}\label{structural-emergence-threshold}
+
+Let R be a g_{i}ven Rule Set. Then:\\
+- If R = ∅, then 𝓛(S} = ∅ for all S; no ident_{i}t_{i}es ex_{i}st.\\
+- The emergence threshold is the m_{i}n_{i}mal card_{i}nal_{i}ty of R such that:\\
+  ∃ S \in Σ* w_{i}th 𝓛(S} ≠ ∅\\
+\strut \\
+Th_{i}s def_{i}nes the onset of structural coherence.\\
+It is not ax_{i}omat_{i}c—it is the f_{i}rst po_{i}nt at wh_{i}ch a system perm_{i}ts
+ident_{i}ty by return.
+
+To resolve the apparent c_{i}rcular_{i}ty of requ_{i}r_{i}ng enabled rules to perm_{i}t
+return—yet requ_{i}r_{i}ng return to enable rules—we def_{i}ne the structural
+bootstrap cond_{i}t_{i}on:
+
+Let Σ* be the set of all f_{i}n_{i}te symbol_{i}c structures. A transformat_{i}on T
+\in Σ* becomes a cand_{i}date for R₁ if there ex_{i}sts a structure S \in Σ* and
+T′ \in Σ* such that:
+
+  T: S → S′ and T′: S′ → S
+
+Such 2-step symmetr_{i}c cand_{i}dates form the seed of the system. We def_{i}ne:
+
+ R₁ := \{ T \in Σ* \textbar{} T part_{i}c_{i}pates in a m_{i}n_{i}mal symmetr_{i}c return
+loop S → S′ → S \}\\
+\strut \\
+Th_{i}s symbol_{i}c emergence cond_{i}t_{i}on resolves the bootstrap problem w_{i}thout
+requ_{i}r_{i}ng external intervent_{i}on.
+
+\sect_{i}on{1.6 \textbar{} Summary}\label{summary}
+
+\beg_{i}n{item_{i}ze}
+\item
+  SCM beg_{i}ns w_{i}th a symbol_{i}c alphabet Σ.
+\item
+  The rule set R emerges from symbol_{i}c return paths that preserve
+  coherence.
+\item
+  The system assumes no space, t_{i}me, or log_{i}c beyond symbol_{i}c
+  transformat_{i}on.
+\item
+  Ident_{i}ty is def_{i}ned as a structure's ab_{i}l_{i}ty to return to itself
+  through perm_{i}tted trans_{i}t_{i}ons.
+\item
+  If no such path ex_{i}sts, the structure is unresolved.
+\item
+  If one ex_{i}sts, the structure becomes a resolved ident_{i}ty: {[}S{]}.
+\item
+  There also ex_{i}st invers_{i}on loops, such as Euler-type structures, wh_{i}ch
+  map {[}S{]} to {[}--S{]} and cancel coherence to produce the null
+  ident_{i}ty {[}0{]}.
+\item
+  These do not def_{i}ne ident_{i}ty—but they def_{i}ne the boundary of
+  ident_{i}ty through structural ann_{i}h_{i}lat_{i}on.
+\end{item_{i}ze}
+
+All future concepts — coherence, stab_{i}l_{i}ty, interact_{i}on —emerge from
+th_{i}s s_{i}ngle idea:\\
+  \emph{A structure ex_{i}sts only if it can return.}
