@@ -1,0 +1,135 @@
+\chapter{Resolution Graphs}
+
+Having defined identity as the closure of permitted symbolic
+transformation, we now develop the structural space in which such
+closure occurs. That space is the resolution graph G(R), a directed
+graph induced by the permitted transformations in a rule set R.
+
+In this chapter, we show how resolved identities correspond to loops in
+this graph. We then define support, reuse, and coupling---not as
+probabilistic concepts, but as structural overlaps in transformation
+paths. This chapter formalizes the topology of symbolic identity: which
+forms resolve, which structures depend on others, and which loops
+stabilize coherence across reuse.
+
+\section{The Resolution Graph $G(R)$}
+
+Let $R$ be the rule set of permitted symbolic transformations, as defined previously in Equation~\ref{eq:rule-set}.
+\begin{definition}[Resolution Graph] \label{def:resolution-graph}
+We define the resolution graph $G(R) = (V, E)$ as follows:
+\begin{itemize}
+  \item \textbf{Nodes:} $V = \{ S \mid S \text{ is a symbolic structure over } \Sigma \}$
+  \item \textbf{Edges:} $E = \{ (S, S') \mid \exists\, T \in R \text{ such that } T(S) = S' \}$
+\end{itemize}
+\end{definition}
+
+Each edge $(S, S')$ in $G(R)$ corresponds to a symbolic form $T \in R \subset \Sigma^*$ that encodes the transformation from $S$ to $S'$.  
+A path in $G(R)$ is a finite sequence of such transformations.
+
+\section{Loops and Return Closure}
+
+Let $\mathcal{L}(S)$ be the set of permitted return paths from $S$ back to itself under $R$.
+
+A loop in $G(R)$ is a directed cycle of the form:
+\[
+S_0 \rightarrow S_1 \rightarrow \cdots \rightarrow S_k, \quad \text{with } S_0 = S_k
+\]
+
+\begin{definition}[Return Closure] \label{def:return-closure}
+A structure $S$ is said to be \textit{return-closed} if there exists at least one loop in $G(R)$ that begins and ends at $S$, i.e., $\mathcal{L}(S) \neq \emptyset$.
+\end{definition}
+
+We define the \textit{return depth} of $S$ as:
+\begin{equation} \label{eq:return-depth}
+X_h(S) := \min \{ k \mid S \rightarrow \cdots \rightarrow S \text{ under } R \}
+\end{equation}
+
+This is the length of the shortest return loop for $S$.
+Recall from Chapter~1: a structure is a resolved identity, $[S]$, if and only if $\mathcal{L}(S) \neq \emptyset$.
+
+\section{Resolution Subgraphs and Support}
+
+Let $[S]$ be a return-closed identity, i.e., $\mathcal{L}(S) \neq \emptyset$.
+
+\begin{definition}[Resolution Subgraph] \label{def:resolution-subgraph}
+The \textit{resolution subgraph} $G_{[S]} \subseteq G(R)$ is the subgraph induced by all nodes and edges appearing in valid return paths resolving $[S]$. That is:
+\begin{equation} \label{eq:resolution-subgraph}
+G_{[S]} := \text{subgraph of } G(R) \text{ induced by } \bigcup \mathcal{L}(S)
+\end{equation}
+\end{definition}
+
+This subgraph contains all structures visited in valid return loops that resolve $[S]$.
+
+\begin{definition}[Support Set] \label{def:support-set}
+The \textit{support set} of $[S]$ is defined as:
+\begin{equation} \label{eq:support-set}
+\text{support}([S]) := \{ S' \in G_{[S]} \mid S' \neq S \text{ and } S' \text{ appears in some } \mathcal{L}(S) \}
+\end{equation}
+\end{definition}
+
+The support set represents the set of structures \textit{reused} to complete return for $[S]$.
+
+\section{Reuse and Coupling}
+
+Let $[A]$, $[B]$ be two distinct return-closed identities.
+
+\begin{definition}[Reuse] \label{def:reuse}
+We say that $[B]$ \textit{reuses} $[A]$ if:
+\begin{equation} \label{eq:reuse-condition}
+[A] \in \text{support}([B])
+\end{equation}
+That is, the structure of $[B]$ depends on $[A]$ for return resolution.
+\end{definition}
+
+\begin{definition}[Return Coupling] \label{def:coupling}
+We define \textit{return coupling} between $[A]$ and $[B]$ if their resolution subgraphs overlap:
+\begin{equation} \label{eq:coupling-condition}
+G_{[A]} \cap G_{[B]} \neq \emptyset
+\end{equation}
+This indicates structural overlap — shared return paths or reused intermediates.
+\end{definition}
+
+\textbf{Consequences of reuse coupling:}
+\begin{itemize}
+  \item Coherence failure in $[A]$ may affect return of $[B]$
+  \item Reinforcement of $[A]$ may stabilize $[B]$
+  \item Collapse or drift may propagate through $G(R)$ via reuse coupling
+\end{itemize}
+
+Reuse and coupling define coherence dependencies between identities.
+
+\section{Return Depth and Loop Saturation}
+
+Each identity $[S]$ has a return depth defined as:
+\begin{equation} \label{eq:return-depth}
+X_h([S]) := \text{length of the minimal return loop}
+\end{equation}
+
+We classify identity depth as follows:
+\begin{itemize}
+  \item \textbf{Shallow identity:} $X_h = 2$ (minimal non-trivial loop)
+  \item \textbf{Deep identity:} $X_h \gg 1$ (possibly involving composed or reused structure)
+\end{itemize}
+
+\begin{definition}[Loop Saturation] \label{def:loop-saturation}
+An identity $[S]$ is said to be \textit{loop-saturated} if the return depth no longer decreases under RuleEvolution:
+\begin{equation} \label{eq:loop-saturation}
+\partial X_h([S]) = 0
+\end{equation}
+\end{definition}
+
+That is, no further reduction in loop length is permitted.  
+Loop saturation implies that identity resolution has reached a minimal, stable configuration.
+
+\section{Summary}
+
+\begin{itemize}
+  \item Every rule set $R$ induces a resolution graph $G(R)$
+  \item An identity $[S]$ corresponds to a return loop in $G(R)$
+  \item The subgraph $G_{[S]}$ contains all coherence-relevant structure for $[S]$
+  \item Support and reuse define structural dependency
+  \item Return coupling encodes coherence overlap
+  \item Loop saturation defines the minimal transformation needed to resolve identity
+\end{itemize}
+
+From this graph-theoretic foundation, we now define the quantitative properties of coherence: collapse robustness, fragility, latency, and structural stability.
