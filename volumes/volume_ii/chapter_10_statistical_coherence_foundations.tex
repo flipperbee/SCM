@@ -1,0 +1,139 @@
+
+\chapter{Statistical Coherence Foundations} \label{chapter-1-statistical-coherence-foundations}
+
+SCM Volume I established identity as the return-closed resolution of symbolic structure. It defined coherence signatures, collapse thresholds, and RuleEvolution dynamics. However, the symbolic model introduced there was fundamentally deterministic.
+
+In Volume II, we now introduce the statistical and thermodynamic interpretation of coherence behavior. This chapter establishes the foundations of:
+
+\begin{itemize}
+    \item Symbolic entropy,
+    \item Resolution multiplicity, and
+    \item Coherence temperature,
+\end{itemize}
+
+which allow us to treat return behavior probabilistically. These concepts serve as the basis for effort weighting, symbolic drift, and return-driven thermodynamics.
+
+We begin by defining the entropy of return structures. We then formalize the notion of symbolic temperature as a drift potential across $\chi$-space. These structures will ultimately support a statistical version of RuleEvolution and provide the internal mechanics for mass, curvature, and collapse.
+
+\medskip
+
+As established in Volume I, coherent inversion structures that return to a structural inverse ($X_\pi = -1$) but resolve to $[0]$ belong to $\Omega_-$.
+
+This volume extends that insight to examine how $\Omega_-$ influences symbolic effort, entropy flow, and system evolution.
+
+\section{Return Entropy} \label{return-entropy}
+
+Let $[A] \in \Omega_3$ be a resolved identity. Let $\mathcal{R}([A])$ denote the set of all permitted return loops through $[A]$ under the current Rule Set $R$.
+
+\begin{definition}[Return Entropy] \label{def:return-entropy}
+The return entropy of $[A]$ is defined as:
+\begin{equation} \label{eq:return-entropy}
+H([A]) := -\sum_{\mathcal{L}_i \in \mathcal{R}([A])} p_i \log p_i
+\end{equation}
+where
+\begin{equation} \label{eq:return-entropy-probs}
+p_i := \frac{1}{Z} \cdot \exp(-\Lambda(\mathcal{L}_i)), \quad
+Z := \sum_{\mathcal{L}_j \in \mathcal{R}([A])} \exp(-\Lambda(\mathcal{L}_j))
+\end{equation}
+Here, $\Lambda(\mathcal{L}_i)$ denotes the latency of loop $\mathcal{L}_i$, i.e., the total effort required to complete that return.
+\end{definition}
+
+\paragraph{Remark (Exclusion of $\Omega_-$ Paths).}
+Return loops that resolve to $[-A]$ via symmetry inversion ($X_\pi = -1$), such that $[A] + [-A] = [0]$, are excluded from $\mathcal{R}([A])$. These paths define structural cancellation, not identity persistence, and belong to $\Omega_-$.
+
+\paragraph{Interpretation}
+\begin{itemize}
+    \item $H([A])$ quantifies the distributional uncertainty over return loops.
+    \item High entropy implies many return options with comparable latency.
+    \item Low entropy indicates one or few energetically preferred return paths.
+\end{itemize}
+This entropy plays the role of symbolic freedom and becomes a thermodynamic quantity in later chapters.
+
+\section{Latency Distribution and Return Potential} \label{latency-distribution-and-return-potential}
+
+Each return loop $\mathcal{L}_i \in \mathcal{R}([A])$ contributes to the overall return behavior of $[A]$.
+
+\begin{definition}[Return Potential] \label{def:return-potential}
+The return potential $\Phi([A])$ is defined as the expected latency:
+\begin{equation} \label{eq:return-potential}
+\Phi([A]) := \sum_{\mathcal{L}_i \in \mathcal{R}([A])} p_i \cdot \Lambda(\mathcal{L}_i)
+\end{equation}
+This value plays the role of a symbolic free energy.
+\end{definition}
+
+\paragraph{Properties.}
+\begin{itemize}
+    \item $\Phi([A])$ is minimized when the return path distribution is sharply peaked (i.e., low $H([A])$).
+    \item $\Phi([A])$ increases as return diversity grows or loop latencies become large.
+\end{itemize}
+
+$\Phi([A])$ will later be used in defining symbolic collapse regions and coherence gradients.
+
+\section{Symbolic Temperature} \label{symbolic-temperature}
+
+We now define the symbolic coherence temperature $T_s$ as a measure of drift susceptibility:
+
+\begin{equation} \label{eq:symbolic-temperature}
+T_s([A]) := \frac{d\Phi}{dH}
+\end{equation}
+
+That is, $T_s$ captures how much symbolic potential ($\Phi$) increases per unit increase in entropy ($H$). This serves as a local measure of coherence disorder.
+
+\paragraph{Interpretation.}
+\begin{itemize}
+    \item $T_s \approx 0$ implies $[A]$ is coherence-stable (low entropy sensitivity).
+    \item $T_s \gg 0$ implies $[A]$ is drift-prone (potential rises sharply with entropy).
+\end{itemize}
+
+This temperature will later be used to define symbolic force, identity pressure, and thermal collapse behavior.
+
+\section{Resolution Capacity and Reuse Load} \label{resolution-capacity-and-reuse-load}
+
+Let $\deg([A])$ denote the number of identities that reuse $[A]$ in their return resolution.
+
+\begin{definition}[Resolution Capacity and Reuse Load]
+\begin{itemize}
+    \item \textbf{Resolution Capacity:} 
+    \[
+    C([A]) := \text{maximum number of return paths } [A] \text{ can participate in before } \partial\chi \text{ diverges}.
+    \]
+    \item \textbf{Reuse Load:}
+    \[
+    L([A]) := \text{current number of identities reusing } [A].
+    \]
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Coherence Pressure] \label{def:coherence-pressure}
+The coherence pressure is defined as:
+\begin{equation} \label{eq:coherence-pressure}
+P([A]) := \frac{L([A])}{C([A])}
+\end{equation}
+\end{definition}
+
+When $P([A]) \to 1$, the identity $[A]$ approaches reuse saturation and may trigger RuleEvolution or collapse.
+
+\section{Structural Summary} \label{structural-summary}
+
+We have now introduced four statistical quantities that define the coherence state of a resolved identity:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|l|}
+\hline
+\textbf{Quantity} & \textbf{Symbol} & \textbf{Interpretation} \\
+\hline
+Return Entropy         & $H([A])$      & Diversity of resolution paths \\
+Return Potential       & $\Phi([A])$   & Expected return effort         \\
+Coherence Temperature  & $T_s([A])$    & Sensitivity of $\Phi$ to entropy \\
+Coherence Pressure     & $P([A])$      & Reuse load relative to capacity \\
+\hline
+\end{tabular}
+\caption{Statistical descriptors of identity $[A]$}
+\end{table}
+
+These define the statistical state of a resolved identity $[A]$ and form the foundation for effort-weighted RuleEvolution and symbolic thermodynamics in later chapters.
+
+\medskip
+
+The domain $\Omega_-$, introduced in Volume I, contains structures that resolve coherently to $[0]$ via inversion loops. These forms raise $\Phi$ and symbolic entropy globally but do not contribute to $H([A])$ for identity-based ensembles.
