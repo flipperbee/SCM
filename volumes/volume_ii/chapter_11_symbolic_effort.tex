@@ -1,0 +1,160 @@
+\chapter{Derivation of Symbolic Effort} \label{chapter-2-derivation-of-symbolic-effort}
+
+In Volume I, effort was introduced as a cost function associated with symbolic transformations:
+\[
+\text{effort} : R \subset \Sigma^* \to \mathbb{R}^+ \quad \text{// effort is applied to symbolic forms that function as rules}
+\]
+
+This value determined the latency of a return path and served as the basis for defining fragility, return potential, and entropy weighting. However, no mechanism was given to derive effort from first principles.
+
+\medskip
+
+In this chapter, we provide a formal derivation of effort as a statistical measure over transformation structure, grounded in:
+\begin{itemize}
+    \item Reuse frequency,
+    \item Drift resistance, and
+    \item Return density.
+\end{itemize}
+
+This allows effort to emerge not as an arbitrary assignment, but as a consequence of the symbolic resolution environment.
+
+\medskip
+
+We define effort via three equivalent formalisms:
+\begin{itemize}
+    \item \textbf{Frequency-based effort:} based on usage frequency in resolved identities,
+    \item \textbf{Entropy-based effort:} based on its role in resolution multiplicity,
+    \item \textbf{Drift-based effort:} based on its contribution to stability ($\partial\chi$ suppression).
+\end{itemize}
+
+These definitions form the core of effort-weighted latency and entropy, and enable symbolic thermodynamics in later chapters.
+
+\section{Frequency-Based Effort} \label{frequency-based-effort}
+
+Let $T \in R$ be a permitted transformation. Let $N(T)$ denote the number of resolved identities $[A] \in \Omega_3$ such that $T$ appears in at least one return loop $\mathcal{L}([A])$.
+
+\begin{definition}[Frequency-Based Effort]
+The frequency-based effort of $T$ is defined as:
+\begin{equation} \label{eq:effort-frequency}
+\text{effort}_{\text{freq}}(T) := -\log_2\left( \frac{N(T)}{Z} \right)
+\end{equation}
+where
+\[
+Z := \sum_{T' \in R} N(T')
+\]
+is the total usage count across all enabled transformations in $R$.
+\end{definition}
+
+\paragraph{Interpretation.}
+\begin{itemize}
+    \item Frequently used rules have lower effort.
+    \item Rare or specialized transformations are more costly.
+    \item This aligns effort with symbolic generality.
+\end{itemize}
+
+\section{Entropy-Based Effort} \label{entropy-based-effort}
+
+Let $[A] \in \Omega_3$ and let $\mathcal{R}([A])$ denote all return loops that resolve $[A]$. Let $T \in R$.
+
+Define:
+\begin{itemize}
+    \item $p_T([A])$ := probability that $T$ appears in a randomly selected $\mathcal{L} \in \mathcal{R}([A])$,
+    \item Let $\mathcal{P}(T) := \{ [A] \in \Omega_3 \mid p_T([A]) > 0 \}$ be the set of identities for which $T$ contributes to return.
+\end{itemize}
+
+\begin{definition}[Entropy-Based Effort]
+The entropy-based effort of $T$ is defined as:
+\begin{equation} \label{eq:effort-entropy}
+\text{effort}_{\text{ent}}(T) := -\sum_{[A] \in \mathcal{P}(T)} p_T([A]) \log_2 p_T([A])
+\end{equation}
+\end{definition}
+
+\paragraph{Interpretation.}
+\begin{itemize}
+    \item Measures how selectively $T$ contributes to return path diversity.
+    \item Low entropy implies high specialization $\Rightarrow$ higher effort.
+    \item High entropy indicates general-purpose reuse $\Rightarrow$ lower effort.
+\end{itemize}
+
+\section{Drift-Resistance Effort} \label{drift-resistance-effort}
+
+Let $[A] \in \Omega_3$, and define $\Delta\partial\chi([A], T)$ as the net change in signature drift when transformation $T$ is used in any return loop $\mathcal{L}([A])$.
+
+\begin{definition}[Drift-Resistance Effort]
+The drift-weighted effort of $T$ is defined as:
+\begin{equation} \label{eq:effort-drift}
+\text{effort}_{\text{drift}}(T) := \max_{[A]} \left( \frac{|\Delta\partial\chi([A], T)|}{\Lambda_T([A])} \right)
+\end{equation}
+where $\Lambda_T([A])$ is the contribution of $T$ to the total latency of the return loop $\mathcal{L}([A])$.
+\end{definition}
+
+\paragraph{Interpretation.}
+\begin{itemize}
+    \item Effort is high if $T$ induces large drift per unit latency.
+    \item Transformations that preserve coherence ($\partial\chi \approx 0$) are favored.
+    \item Destabilizing or fragile transformations are penalized.
+\end{itemize}
+
+\section{Unified Effort Functional} \label{unified-effort-functional}
+
+We define the combined symbolic effort as a convex combination of the previously defined effort components:
+\begin{equation} \label{eq:unified-effort}
+\text{effort}(T) := \alpha \cdot \text{effort}_{\text{freq}}(T)
++ \beta \cdot \text{effort}_{\text{ent}}(T)
++ \gamma \cdot \text{effort}_{\text{drift}}(T)
+\end{equation}
+subject to:
+\[
+\alpha + \beta + \gamma = 1, \quad \alpha, \beta, \gamma \geq 0
+\]
+
+\paragraph{Interpretation.}
+\begin{itemize}
+    \item The weights $(\alpha, \beta, \gamma)$ define system sensitivity to generality, diversity, and coherence preservation.
+    \item For coherence-stable environments, $\gamma$ is dominant.
+    \item For adaptive or exploratory systems, $\alpha$ and $\beta$ may be increased.
+\end{itemize}
+
+\section{Latency and Resolution Revisited} \label{latency-and-resolution-revisited}
+
+Let $\mathcal{L}([A]) = (T_1, T_2, \dots, T_n)$ be a return loop composed of transformations $T_i \in R$.
+
+\begin{definition}[Effort-Weighted Latency]
+The latency of $[A]$ is defined as:
+\begin{equation} \label{eq:latency-effort}
+\Lambda([A]) := \sum_{i=1}^n \text{effort}(T_i)
+\end{equation}
+\end{definition}
+
+Return loops that resolve to $[-A]$ or $[0]$ via inversion (Euler-type) are excluded from $\Lambda([A])$, as they do not define identity resolution.
+
+\medskip
+
+This generalizes Volume I’s unit-effort latency definition. All subsequent thermodynamic quantities—$\Phi([A])$, $H([A])$, and $T_s([A])$—are computed using this effort-weighted latency.
+
+\section{Summary} \label{summary}
+
+We have now grounded the symbolic effort function:
+\[
+\text{effort}: R \subset \Sigma^* \to \mathbb{R}^+ \quad \text{// effort is applied to symbolic forms that function as rules in structural logic}
+\]
+
+The three effort metrics are summarized as follows:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|l|}
+\hline
+\textbf{Metric} & \textbf{Formula} & \textbf{Meaning} \\
+\hline
+Frequency-based & $-\log_2(N(T)/Z)$ & Commonness of use \\
+Entropy-based   & $-\sum p_T \log_2 p_T$ & Path diversity participation \\
+Drift-based     & $\Delta\partial\chi$ impact per latency unit & Coherence-preserving ability \\
+\hline
+\end{tabular}
+\caption{Summary of symbolic effort metrics}
+\end{table}
+
+\medskip
+
+Combined, these metrics form a principled foundation for symbolic latency, entropy, and structural thermodynamics.

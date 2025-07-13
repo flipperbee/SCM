@@ -1,0 +1,148 @@
+\chapter{Statistical RuleEvolution} \label{chapter-3-statistical-ruleevolution}
+
+In Volume I, the RuleEvolution operator $\mathcal{R}E$ was defined as a coherence-based symbolic filtering process over $\Sigma^*$. It adjusts which symbolic structures remain in $R \subset \Sigma^*$, based on return behavior and structural coherence.
+
+While this deterministic model suffices for foundational identity logic, it does not scale to complex symbolic systems with divergent reuse patterns and entropic fluctuations.
+
+\medskip
+
+In this chapter, we extend RuleEvolution into a statistical framework. This allows the system to evaluate transformations probabilistically, using symbolic entropy, reuse load, and coherence pressure to adjust transformation likelihoods across the Rule Set.
+
+\medskip
+
+We define a coherence score distribution, use it to compute update probabilities for each transformation $T \in R$, and then define the statistical RuleEvolution operator:
+\begin{equation} \label{eq:ruleevolution-stat}
+\mathcal{R}E_{\text{stat}} : (R_t, \chi_t, H_t, P_t) \longrightarrow \mathbb{P}_{t+1}(R)
+\end{equation}
+
+This enables stochastic symbolic evolution and supports thermodynamic analogs in later chapters.
+
+\section{Coherence Score Distribution} \label{coherence-score-distribution}
+
+Let $T \in R$, and let $[A] \in \Omega_3$ be any identity such that $T \in \mathcal{L}([A])$.
+
+\begin{definition}[Coherence Score] \label{def:coherence-score}
+The coherence score of $T$ is defined as:
+\begin{equation} \label{eq:coherence-score}
+S(T) := \sum_{[A] \in \mathcal{U}(T)} \left( \Delta\partial\chi([A], T) + \Delta\rho([A], T) \right)
+\end{equation}
+\end{definition}
+
+Where:
+\begin{itemize}
+    \item $\mathcal{U}(T)$ is the set of all identities influenced by $T$,
+    \item $\Delta\partial\chi([A], T)$ is the change in signature drift caused by $T$,
+    \item $\Delta\rho([A], T)$ is the change in collapse robustness caused by $T$.
+\end{itemize}
+
+\paragraph{Interpretation.}
+$S(T)$ is treated as a symbolic fitness metric: it quantifies the contribution of $T$ to structural coherence. Higher scores indicate more coherence-stabilizing transformations.
+
+\section{Probabilistic Retention and Removal} \label{probabilistic-retention-and-removal}
+
+Let $\theta_a$, $\theta_d$ be system parameters representing promotion and demotion sensitivity, respectively.
+
+\begin{definition}[Update Probabilities]
+We define the probability of retaining and promoting transformation $T$ based on its coherence score $S(T)$:
+\begin{align}
+\mathbb{P}_{\text{retain}}(T)  &:= \sigma\left(\frac{S(T) - \theta_d}{\delta}\right) \label{eq:retain-probability} \\
+\mathbb{P}_{\text{promote}}(T) &:= \sigma\left(\frac{S(T) - \theta_a}{\delta}\right) \label{eq:promote-probability}
+\end{align}
+\end{definition}
+
+Here, $\sigma$ is the logistic function defined as:
+\begin{equation} \label{eq:logistic-function}
+\sigma(x) := \frac{1}{1 + e^{-x}}
+\end{equation}
+and $\delta$ is a sharpness parameter controlling the slope of the transition.
+
+\paragraph{Interpretation.}
+\begin{itemize}
+    \item If $S(T) \gg \theta_a$, $T$ is promoted with high probability.
+    \item If $S(T) \ll \theta_d$, $T$ is removed with high probability.
+    \item For intermediate values, the update is soft and stochastic.
+\end{itemize}
+
+\section{Rule Set Distribution Update} \label{rule-set-distribution-update}
+
+Let $\mathbb{P}_t(R)$ be the probability distribution over the Rule Set $R$ at time $t$.
+
+\begin{definition}[Rule Update Equation]
+The update rule for transformation $T \in R$ is given by:
+\begin{equation} \label{eq:rule-update}
+\mathbb{P}_{t+1}(T) := \lambda \cdot \mathbb{P}_t(T) + (1 - \lambda) \cdot f(S(T))
+\end{equation}
+\end{definition}
+
+where:
+\begin{itemize}
+    \item $\lambda \in [0, 1]$ is a retention weight,
+    \item $f(S(T))$ is the normalized fitness score computed as:
+    \begin{equation} \label{eq:fitness-softmax}
+    f(S(T)) := \frac{\exp(S(T))}{\sum_{T' \in R} \exp(S(T'))}
+    \end{equation}
+\end{itemize}
+
+This defines a softmax-weighted evolutionary distribution over the rule set, balancing persistence and adaptation.
+
+\section{Statistical RuleEvolution Operator} \label{statistical-ruleevolution-operator}
+
+We now define the statistical RuleEvolution operator as:
+\begin{equation} \label{eq:RE-stat-operator}
+\mathcal{R}E_{\text{stat}} : (R_t, \chi_t, H_t, P_t) \longrightarrow \mathbb{P}_{t+1}(R)
+\end{equation}
+
+\paragraph{Inputs.}
+\begin{itemize}
+    \item $R_t \subset \Sigma^*$: the current set of coherence-permitting symbolic structures (rules),
+    \item $\chi_t$: coherence signature field at time $t$,
+    \item $H_t$: entropy field over $\Omega_3$,
+    \item $P_t$: coherence pressure map.
+\end{itemize}
+
+\paragraph{Outputs.}
+$\mathcal{R}E_{\text{stat}}$ computes:
+\begin{itemize}
+    \item Coherence scores $S(T)$ for all $T \in R_t$,
+    \item Promotion and removal probabilities,
+    \item Updated symbolic distribution $\mathbb{P}_{t+1}(R)$ over the Rule Set.
+\end{itemize}
+
+\section{Transition to Deterministic Limit} \label{transition-to-deterministic-limit}
+
+If $\lambda \to 0$ and $\delta \to 0$, the system behavior becomes deterministic:
+
+\begin{itemize}
+    \item $T$ is promoted if $S(T) > \theta_a$,
+    \item $T$ is removed if $S(T) < \theta_d$.
+\end{itemize}
+
+In this limit, $\mathcal{R}E_{\text{stat}}$ reduces to the original deterministic RuleEvolution operator defined in Volume I.
+
+\medskip
+
+Thus, the deterministic $\mathcal{R}E$ is a special case of the statistical operator, emerging when stochastic modulation vanishes.
+
+\section{Summary} \label{summary-1}
+
+The statistical RuleEvolution operator defines symbolic transformation update as a probability distribution evolving under coherence pressure.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|l|}
+\hline
+\textbf{Component} & \textbf{Symbol} & \textbf{Role} \\
+\hline
+Coherence Score         & $S(T)$                  & Fitness signal for rule utility       \\
+Promotion Probability   & $\mathbb{P}_{\text{promote}}(T)$ & Soft addition rate                  \\
+Retention Probability   & $\mathbb{P}_{\text{retain}}(T)$  & Soft survival rate                  \\
+Update Rule             & $\mathbb{P}_{t+1}(T)$   & Distribution shift                   \\
+Evolution Operator      & $\mathcal{R}E_{\text{stat}}$     & Governs symbolic adaptation         \\
+\hline
+\end{tabular}
+\caption{Components of the Statistical RuleEvolution framework}
+\end{table}
+
+\medskip
+
+This prepares the formal structure for coherence thermodynamics and symbolic system evolution in the presence of entropy and reuse fluctuations.
