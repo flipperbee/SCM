@@ -1,0 +1,180 @@
+\chapter{Coherence Thermodynamics} \label{chapter-5-coherence-thermodynamics}
+
+The coherence signature $\chi([A])$ and its drift $\partial\chi([A])$ describe how symbolic identities evolve under structural pressure. In this chapter, we formalize a thermodynamic interpretation of symbolic evolution using entropy, temperature, and symbolic work.
+
+\medskip
+
+We define symbolic analogues of classical thermodynamic quantities—entropy ($H$), free energy ($\Phi$), temperature ($T_s$), and coherence force—arising from the resolution behavior of return loops. These quantities do not emerge from statistical ensembles of particles, but from return multiplicity and effort-weighted latency within $\Omega_3$.
+
+\medskip
+
+Coherence thermodynamics provides a formal bridge from symbolic logic to system-wide equilibrium, collapse, and energy flow. It prepares the groundwork for the emergence of physical analogues (time, mass, curvature) in Volume III.
+
+\section{Symbolic Entropy Revisited} \label{symbolic-entropy-revisited}
+
+Let $[A] \in \Omega_3$ and let $\mathcal{R}([A])$ be its return set.
+
+Each return path $\mathcal{L}_i \in \mathcal{R}([A])$ has effort-weighted latency $\Lambda(\mathcal{L}_i)$, and associated probability:
+\begin{equation} \label{eq:return-probability-entropy}
+p_i := \frac{e^{-\Lambda(\mathcal{L}_i)}}{Z}, \quad
+Z := \sum_j e^{-\Lambda(\mathcal{L}_j)}
+\end{equation}
+
+The symbolic entropy of $[A]$ is defined as:
+\begin{equation} \label{eq:symbolic-entropy}
+H([A]) := -\sum_i p_i \log p_i
+\end{equation}
+
+\paragraph{Interpretation.}
+Symbolic entropy increases with:
+\begin{itemize}
+    \item A greater number of permitted return paths,
+    \item Shallower effort differences across those paths.
+\end{itemize}
+
+\section{Symbolic Free Energy $\Phi([A])$} \label{symbolic-free-energy-phi}
+
+We define the symbolic return potential (free energy) as:
+\begin{equation} \label{eq:free-energy}
+\Phi([A]) := \sum_i p_i \cdot \Lambda(\mathcal{L}_i)
+\end{equation}
+where $p_i$ is the probability of return path $\mathcal{L}_i$ as defined in Equation~\ref{eq:return-probability-entropy}.
+
+\paragraph{Interpretation.}
+$\Phi([A])$ represents the expected return effort. It is minimized when:
+\begin{itemize}
+    \item The number of return paths is small,
+    \item Return paths have low effort-weighted latency.
+\end{itemize}
+
+\section{Coherence Temperature $T_s$} \label{coherence-temperature-ts}
+
+We define the symbolic coherence temperature as:
+\begin{equation} \label{eq:coherence-temperature}
+T_s([A]) := \frac{d\Phi}{dH}
+\end{equation}
+
+This quantity measures the rate at which expected return effort increases with entropy—i.e., the symbolic disorder of identity $[A]$.
+
+\paragraph{Properties.}
+\begin{itemize}
+    \item $T_s \approx 0$ $\Rightarrow$ highly ordered identity (low entropy sensitivity),
+    \item $T_s \gg 0$ $\Rightarrow$ disordered identity (high entropy amplification).
+\end{itemize}
+
+\section{Coherence Force and Work} \label{coherence-force-and-work}
+
+Let $\chi([A])$ be the coherence signature of identity $[A]$, and let $\nabla\chi$ be the symbolic drift field.
+
+\begin{definition}[Coherence Force]
+The coherence force is defined as the negative gradient of free energy:
+\begin{equation} \label{eq:coherence-force}
+F_\chi([A]) := -\nabla \Phi([A])
+\end{equation}
+\end{definition}
+
+\begin{definition}[Symbolic Work]
+The symbolic work $W_\chi$ done along a path $\gamma$ in $\chi$-space is:
+\begin{equation} \label{eq:symbolic-work}
+W_\chi = \int_\gamma F_\chi \cdot d\chi
+\end{equation}
+\end{definition}
+
+\section{Symbolic Heat and Latency Flow} \label{symbolic-heat-and-latency-flow}
+
+\paragraph{Symbolic Heat Transfer.}
+We define symbolic heat as:
+\begin{equation} \label{eq:symbolic-heat}
+Q := T_s \cdot \Delta H
+\end{equation}
+This represents entropy flow under elevated symbolic temperature. It quantifies the symbolic "energy" transferred through coherence disorder.
+
+\paragraph{Latency Flow.}
+We define latency flow as the negative gradient of return effort:
+\begin{equation} \label{eq:latency-flow}
+J_\Lambda := -\nabla \Lambda
+\end{equation}
+
+This expresses the diffusion of identities toward regions of reduced return effort.
+
+\section{Symbolic First Law} \label{symbolic-first-law}
+
+We propose a symbolic analogue of the First Law of Thermodynamics:
+\begin{equation} \label{eq:first-law}
+\Delta \Phi = Q - W_\chi
+\end{equation}
+
+\paragraph{Where:}
+\begin{itemize}
+    \item $\Delta \Phi$: change in expected return effort (symbolic internal energy),
+    \item $Q$: symbolic heat—entropy-induced expansion,
+    \item $W_\chi$: symbolic work done by the coherence force along $\chi$-space trajectories.
+\end{itemize}
+
+\section{Thermal Collapse and Entropic Death} \label{thermal-collapse-and-entropic-death}
+
+As $T_s \to \infty$:
+\begin{itemize}
+    \item Fragility increases: $X_\phi \to 1$,
+    \item Return resolution becomes disordered,
+    \item Collapse robustness $\rho \to 0$,
+    \item $\Rightarrow$ System enters a \textbf{symbolic death zone}.
+\end{itemize}
+
+\medskip
+
+As $T_s \to 0$:
+\begin{itemize}
+    \item Structure freezes,
+    \item No new return paths emerge,
+    \item $\Rightarrow$ System enters a state of \textbf{coherence lock}.
+\end{itemize}
+
+\medskip
+
+Return-inverted structures of the form $[A] \to [-A] \to [0]$ may appear locally stable but result in net coherence loss. These identities lie in $\Omega_-$.
+
+While $T_s$ may remain bounded, the entropy flow diverges toward cancellation. Such forms are \textbf{thermodynamic sinks}—coherent, but not entropy-stabilizing.
+
+\section{Summary} \label{summary-3}
+
+\paragraph{Symbolic thermodynamic quantities from return structure:}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|l|}
+\hline
+\textbf{Quantity} & \textbf{Symbol} & \textbf{Interpretation} \\
+\hline
+Entropy              & $H([A])$       & Return path uncertainty \\
+Free Energy          & $\Phi([A])$    & Expected return effort \\
+Temperature          & $T_s([A])$     & Drift cost of entropy \\
+Coherence Force      & $F_\chi([A])$  & Gradient to reduce symbolic cost \\
+Symbolic Work        & $W_\chi$       & Cost to restructure identity \\
+Heat Transfer        & $Q$            & Entropy-induced effort change \\
+Collapse Condition   & $T_s \to \infty$ & Entropic instability \\
+\hline
+\end{tabular}
+\caption{Symbolic analogues of thermodynamic quantities}
+\end{table}
+
+These provide a symbolic analog of thermodynamic behavior and lead directly to physical emergence in Volume III.
+
+\paragraph{Clarification: Asymmetry-Weighted Effort}
+
+The base effort value $\text{effort}(T_i)$ is defined in Chapter 2 as a convex combination of symbolic metrics:
+\begin{equation} \label{eq:base-effort}
+\text{effort}(T_i) = \alpha \cdot f(T_i) + \beta \cdot H(T_i) + \gamma \cdot d(T_i)
+\end{equation}
+
+To account for symmetry inversion effects, we introduce an asymmetry penalty multiplier:
+\begin{equation} \label{eq:asymmetry-penalty}
+w_\pi([A]) := \frac{1}{1 - X_\pi([A])}
+\end{equation}
+
+Then the adjusted effort contribution of transformation $T_i$ in return loop $\mathcal{L}([A])$ becomes:
+\begin{equation} \label{eq:asymmetry-effort}
+\text{effort}_\pi(T_i) := \text{effort}(T_i) \cdot w_\pi([A])
+\end{equation}
+
+This adjustment ensures that highly asymmetric return paths ($X_\pi \to 1$) experience sharply increasing latency and $\Phi$ pressure. It does not replace the base effort model—it refines it structurally based on return symmetry.

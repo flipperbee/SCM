@@ -1,0 +1,112 @@
+\chapter{Structural Invariants and Transition Thresholds} \label{chapter-6-structural-invariants-and-thresholds}
+
+The dynamics of identity in $\chi$-space are governed not only by coherence signatures and their drift, but also by structural constants—thresholds and invariants that define the boundaries of stability, collapse, and transformation. These are not externally imposed parameters but emergent features of the return structure itself.
+
+\medskip
+
+This chapter defines key invariants:
+\begin{itemize}
+    \item the collapse threshold $\rho_c$,
+    \item the latency floor $\Lambda_0$,
+    \item and the coherence sensitivity thresholds $\theta_a$, $\theta_d$ used in RuleEvolution.
+\end{itemize}
+
+Together, these partition $\chi$-space into qualitatively distinct regions and allow symbolic dynamics to exhibit regulated behavior.
+
+\medskip
+
+These constants serve the same role as physical constants in thermodynamics or field theory: they make transitions discrete, constrain drift, and bound symbolic identity.
+
+\section{Collapse Robustness Threshold $\rho_c$} \label{collapse-robustness-threshold-rho_c}
+
+Let $\rho([A])$ denote the minimal number of transformations that must be removed to destroy all return loops $\mathcal{L}([A]) \in \mathcal{R}([A])$.
+
+\begin{definition}[Collapse Robustness Threshold]
+The collapse threshold is defined as:
+\begin{equation} \label{eq:rho_c-definition}
+\rho_c := \min \left\{ \rho([A]) \mid [A] \in \Omega_3 \text{ and } [A] \text{ is stable under reuse} \right\}
+\end{equation}
+\end{definition}
+
+Identities with $\rho([A]) < \rho_c$ are considered structurally fragile.
+
+\begin{definition}[Collapse Zone]
+\begin{equation} \label{eq:collapse-zone-rho}
+\mathcal{Z}_{\text{collapse}} := \{ [A] \in \Omega_3 \mid \rho([A]) < \rho_c \}
+\end{equation}
+\end{definition}
+
+\section{Latency Floor $\Lambda_0$} \label{latency-floor-lambda0}
+
+Let $\Lambda([A])$ denote the total effort-weighted latency of the minimal return path for identity $[A] \in \Omega_3$.
+
+\begin{definition}[Latency Floor]
+\begin{equation} \label{eq:latency-floor}
+\Lambda_0 := \min \left\{ \Lambda([A]) \mid [A] \in \Omega_3 \right\}
+\end{equation}
+\end{definition}
+
+Identities with $\Lambda([A]) < \Lambda_0$ cannot persist. This defines the symbolic threshold for structural persistence.
+
+\medskip
+
+Any structure $[A]$ with $\Lambda([A]) < \Lambda_0$ is at risk of symmetric inversion and annihilation into $\Omega_-$. The latency floor defines the minimal symbolic effort required for coherence survival—i.e., resistance to cancellation.
+
+\section{Coherence Sensitivity Thresholds $\theta_a$, $\theta_d$} \label{coherence-sensitivity-thresholds-thetaa-thetad}
+
+These thresholds are used in the statistical RuleEvolution operator to regulate transformation dynamics:
+
+\begin{itemize}
+    \item $\theta_a$: promotion threshold — if $S(T) > \theta_a$, then $T$ is promoted (rule added),
+    \item $\theta_d$: demotion threshold — if $S(T) < \theta_d$, then $T$ is demoted (rule removed).
+\end{itemize}
+
+\begin{definition}[Coherence Window]
+\begin{equation} \label{eq:coherence-window}
+\theta_d < S(T) < \theta_a
+\end{equation}
+\end{definition}
+
+Transformations with $S(T)$ within this window are retained with soft probability. This coherence window introduces symbolic hysteresis into RuleEvolution dynamics—allowing memory-like effects and inertia in structural updates.
+
+\section{Saturation Symmetry and Fixed Return Anchors} \label{saturation-symmetry-and-fixed-return-anchors}
+
+Let $[A]$ be reused by $n$ distinct identities in $\Omega_3$. If $\partial X_\epsilon([A]) = 0$ and $P([A]) \approx 1$, then $[A]$ is said to be \textbf{reuse saturated}.
+
+\begin{definition}[Saturation Symmetry]
+An identity $[A]$ exhibits saturation symmetry when:
+\begin{itemize}
+    \item $X_\epsilon$ is fixed (reuse elevation is stable),
+    \item $\partial\chi = 0$ (no structural drift),
+    \item $\rho([A]) > \rho_c$ (robust against collapse),
+    \item $T_s([A]) \approx 0$ (minimal entropy sensitivity).
+\end{itemize}
+\end{definition}
+
+Such identities act as \textbf{fixed return anchors} or attractors in $\chi$-space. They represent coherence-stabilizing points in the symbolic system.
+
+\section{Summary of Structural Constants} \label{summary-of-structural-constants}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|l|l|}
+\hline
+\textbf{Constant} & \textbf{Symbol} & \textbf{Definition} & \textbf{Role} \\
+\hline
+Collapse Threshold     & $\rho_c$         & Minimum robustness for stability     & Defines collapse zone \\
+Latency Floor          & $\Lambda_0$      & Minimum latency for identity persistence & Defines mass gap \\
+Promotion Level        & $\theta_a$       & Minimum score to add rule via $\mathcal{R}E_{\text{stat}}$ & RuleEvolution entry \\
+Demotion Level         & $\theta_d$       & Maximum score below which rule is removed & RuleEvolution decay \\
+Saturation State       & $\partial\chi = 0$ & Zero drift, reuse-locked stable identity & Resolution anchor \\
+\hline
+\end{tabular}
+\caption{Structural constants governing symbolic identity behavior}
+\end{table}
+
+\section{Conclusion} \label{conclusion}
+
+These constants define the structural boundaries of identity in $\chi$-space. They emerge from the internal logic of return and reuse, enabling regulation, symmetry, and discrete transitions.
+
+\medskip
+
+They will play key roles in the emergence of mass, inertia, curvature, and quantization in Volumes III and IV.
