@@ -1,0 +1,94 @@
+\chapter{RuleEvolution and Dynamic Return} \label{chapter-ruleevolution-dynamics}
+
+SCM dynamics are driven by structural coherence optimization. RuleEvolution, originally defined as symbolic pruning under collapse pressure, now functions as a variational update operator acting on the rule set $R_t$.
+
+In interacting systems, RuleEvolution must incorporate return fusion, structural drift, and latency redistribution. This chapter formalizes that process as a descent on the coherence–contradiction surface induced by symbolic interaction.
+
+\section{Multi-Identity RuleEvolution} \label{sec:multiidentity-re}
+
+Let $R_t \subset \Sigma^*$ be the active rule set at time $t$. Let $[A_1], \dots, [A_n] \in \Omega_3$ be identities participating in interaction.
+
+Define the collective return structure:
+\[
+\mathcal{L}_{\text{joint}} := \bigcup_{i=1}^n \mathcal{L}([A_i])
+\]
+
+RuleEvolution must now evaluate transformations not in isolation, but in the context of their effect on all overlapping identities. Define:
+
+\[
+S(T) := \nabla_T \left( \sum_{[A_i]} \mathcal{F}([A_i]) - \lambda \cdot \mathcal{C}([A_i]) \right)
+\]
+
+This scoring gradient reflects the contribution of $T$ to global symbolic structure.
+
+\section{Return Fusion and Interaction Threshold} \label{sec:return-fusion-threshold}
+
+Fusion of return paths is permitted only if the coherence gain outweighs the contradiction risk. Let:
+
+\[
+\Delta\mathcal{F} := \mathcal{F}([C]) - \sum_i \mathcal{F}([A_i]),\quad
+\Delta\mathcal{C} := \mathcal{C}([C]) - \sum_i \mathcal{C}([A_i])
+\]
+
+Then fusion is allowed if:
+
+\[
+\Delta\mathcal{F} - \lambda \cdot \Delta\mathcal{C} > 0
+\]
+
+This defines the **interaction threshold**. Only coherence-stabilizing fusion events survive RuleEvolution.
+
+\section{Symbolic Pressure Functional} \label{sec:symbolic-pressure}
+
+Let $T \in R$ be a transformation reused in identities $\{[A_i]\}$.
+
+Define symbolic pressure:
+\[
+P(T) := \sum_{[A_i] \ni T} - \max_j |\partial X_j([A_i])| \cdot w_{[A_i]}
+\]
+
+Where:
+- $w_{[A_i]}$ is a weighting factor based on reuse centrality or fragility,
+- $P(T) < 0$ implies contradiction-inducing transformation.
+
+Transformations with high pressure will be pruned under the descent of $\mathcal{F} - \lambda \cdot \mathcal{C}$.
+
+\section{RuleActivation and Drift Suppression} \label{sec:ruleactivation}
+
+A transformation $T$ may be (re)activated if its inclusion results in:
+
+\[
+\partial\chi([C]) \to 0,\quad
+\rho([C]) \uparrow,\quad
+X_\pi([C]) \downarrow
+\]
+
+RuleEvolution is not eliminative—it may also reintroduce transformations if they restore coherence under reuse.
+
+This enables symbolic structure to adapt to interaction-induced topology changes.
+
+\section{Symbolic Landscape and Local Descent} \label{sec:structural-landscape}
+
+Define the structural action landscape $\mathcal{R}(R)$ as the surface:
+\[
+\mathcal{R}(R) := \mathcal{F}[R] - \lambda \cdot \mathcal{C}[R]
+\]
+
+RuleEvolution acts as a symbolic descent operator:
+\[
+R_{t+1} = R_t + \Delta R,\quad \Delta R := \arg\min_T (-S(T))
+\]
+
+This is discrete, symbolic gradient descent—locally guided by coherence metrics, globally governed by return resolution.
+
+\section{Interaction as Rule Set Reorganization} \label{sec:interaction-restructuring}
+
+When two identities interact, the supporting rule set undergoes local topological restructuring.
+
+RuleEvolution selectively:
+- Removes transformations that destabilize $\partial\chi$,
+- Promotes transformations that enable return fusion,
+- Reconstructs minimal coherence-preserving subsets of $R_t$.
+
+Interaction is thus not an event—but a structural transition in the rule set, driven by coherence gain and contradiction minimization.
+
