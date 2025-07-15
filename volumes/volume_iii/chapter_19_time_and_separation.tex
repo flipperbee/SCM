@@ -1,0 +1,92 @@
+\chapter{Time and Separation}
+
+\section{Symbolic Time as Reuse Interval}
+
+In SCM, time does not exist a priori. It emerges from the reuse of resolved identities. Let $[A] \in \Omega_3$ be a coherence-resolved identity reused in multiple resolution chains.
+
+We define the symbolic reuse interval:
+\begin{equation} \label{eq:reuse-interval}
+\Delta\tau([A]) := \min \left\{ n \mid [A] \text{ reappears in } \mathcal{L}([B_n]) \text{ after reuse separation} \right\}
+\end{equation}
+
+This interval acts as a symbolic time step: the structural delay between reuse instances of $[A]$.
+
+\paragraph{Definition.} Symbolic time for identity $[A]$ is:
+\begin{equation} \label{eq:symbolic-time}
+\tau([A]) := \sum_i \Delta\tau_i([A])
+\end{equation}
+
+Time in SCM is cumulative reuse delay. It is identity-relative, not global.
+
+\section{Latency Drift as Local Clock Rate}
+
+Let $\Lambda_t([A])$ be the latency of $[A]$ at symbolic time $t$. Define the latency drift:
+\begin{equation} \label{eq:latency-drift}
+\partial_t \Lambda([A]) := \Lambda_{t+1}([A]) - \Lambda_t([A])
+\end{equation}
+
+This is the local clock rate for $[A]$. It indicates how much symbolic effort is accumulating across reuse.
+
+\begin{itemize}
+    \item $\partial_t \Lambda = 0$ → return loop is stable
+    \item $\partial_t \Lambda > 0$ → resolution is decaying
+    \item $\partial_t \Lambda < 0$ → resolution is collapsing
+\end{itemize}
+
+\section{Drift Geometry and Motion}
+
+Let $\chi([A])$ be the coherence signature of $[A]$.
+
+Define symbolic velocity:
+\begin{equation} \label{eq:symbolic-velocity}
+v_\chi([A]) := \frac{\partial \chi([A])}{\partial \tau}
+\end{equation}
+
+This is the rate of coherence signature change per reuse interval. It expresses motion not as trajectory, but as identity deformation over time.
+
+\begin{itemize}
+    \item $v_\chi = 0$: [A] is structurally stationary
+    \item $v_\chi \ne 0$ but bounded: [A] is reactive
+    \item $v_\chi \to \infty$: [A] is collapsing
+\end{itemize}
+
+\section{Symbolic Separation}
+
+Let $[A], [B] \in \Omega_3$ be two identities.
+
+Define structural separation:
+\begin{equation} \label{eq:separation}
+d([A], [B]) := \min \left\{ \text{length}(\mathcal{L}([C])) \mid [A], [B] \subset \mathcal{L}([C]) \right\}
+\end{equation}
+
+This is the minimal permitted transformation path connecting $[A]$ and $[B]$ via reuse. It is not a metric:
+- $d([A], [B]) \ne d([B], [A])$
+- Triangle inequality may not hold
+- Distance reflects coherence embedding, not space
+
+\section{Temporal Structure Without Coordinates}
+
+In SCM:
+- Time is reuse delay ($\tau$)
+- Motion is deformation of $\chi$
+- Distance is coherence separation
+
+There is no underlying manifold. All structure is derived from return logic.
+
+\section{Summary Table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|l|}
+\hline
+\textbf{Concept} & \textbf{Symbol} & \textbf{Role} \\
+\hline
+Symbolic Time & $\tau([A])$ & Reuse-accumulated delay for identity \\
+Reuse Interval & $\Delta\tau([A])$ & Time between permitted return events \\
+Latency Drift & $\partial_t \Lambda([A])$ & Clock rate under reuse \\
+Symbolic Velocity & $v_\chi([A])$ & Structural deformation rate \\
+Symbolic Distance & $d([A], [B])$ & Minimal reuse separation \\
+\hline
+\end{tabular}
+\caption{Symbolic definitions of time, motion, and separation}
+\end{table}

@@ -1,0 +1,109 @@
+\chapter{Emergence of Mass}
+
+\section{Structural Precondition: The Mass Gap}
+
+From Chapter 1, we established the following threshold:
+
+\[
+\Lambda([A]) < \Lambda_0 \quad \Rightarrow \quad [A] \notin \Omega_3
+\]
+
+That is, no identity can persist unless its asymmetry-weighted latency exceeds $\Lambda_0$.
+
+This implies the following boundary condition for mass:
+
+\[
+m([A]) = 0 \quad \text{for all} \quad \Lambda([A]) < \Lambda_0
+\]
+
+Only identities that cross the coherence threshold may carry symbolic mass.
+
+\section{Fragility as Return Instability}
+
+Let $\rho([A])$ be the collapse robustness of identity $[A]$.
+
+We define symbolic fragility as:
+\begin{equation} \label{eq:fragility}
+X_\phi([A]) := \frac{1}{\rho([A])}
+\end{equation}
+
+A fragile identity is structurally unstable—it loses return closure with minimal rule removal. Fragility reflects coherence tension: how sensitive the identity is to perturbation.
+
+\section{Elevation as Reuse Role}
+
+Let $X_\epsilon([A])$ be the reuse elevation of $[A]$, measuring how many other identities resolve through $[A]$.
+
+High elevation means that $[A]$ participates in anchored resolution chains—it is not only persistent but structurally influential.
+
+\section{Return Asymmetry and Resistance}
+
+Let $X_\pi([A])$ be the return symmetry of $[A]$.
+
+As $X_\pi \to 1$, return becomes increasingly one-directional. Inversion is lost. This raises symbolic resistance and coherence tension.
+
+We interpret this as **asymmetry amplification**: identities that are structurally hard to return must expend more effort to remain coherent.
+
+\section{Definition: Symbolic Mass}
+
+We define symbolic mass as:
+\begin{equation} \label{eq:symbolic-mass}
+m([A]) := 
+\begin{cases}
+X_\phi([A]) \cdot X_\epsilon([A]) \cdot \frac{1}{(1 - X_\pi([A]))^2}, & \text{if } \Lambda([A]) \geq \Lambda_0 \\
+0, & \text{otherwise}
+\end{cases}
+\end{equation}
+
+This formula encodes:
+- fragility (coherence instability),
+- elevation (reuse anchoring),
+- and return asymmetry (inversion resistance).
+
+It supersedes earlier latency-based definitions by expressing mass as **resistance to coherence deformation**.
+
+\section{Interpretation}
+
+\begin{itemize}
+    \item High $X_\phi$ = structurally fragile → requires preservation
+    \item High $X_\epsilon$ = heavily reused → coherence load-bearing
+    \item High $X_\pi$ → asymmetry → coherence divergence risk
+\end{itemize}
+
+Symbolic mass is not inertia—it is **the effort required to preserve identity** under reuse and asymmetry.
+
+\section{Massless Identities}
+
+Let $X_\epsilon([A]) = 0$. Then by Equation~\ref{eq:symbolic-mass}, $m([A]) = 0$.
+
+These identities:
+- May still return coherently,
+- But are not reused by others,
+- Do not store coherence across transformations.
+
+They behave as **coherence carriers**, not coherence anchors.
+
+\paragraph{Example (Photon):}
+The photon identity $[\gamma]$ satisfies:
+\[
+X_\epsilon([\gamma]) = 0, \quad X_\pi([\gamma]) = 0, \quad X_\phi([\gamma]) \approx 0.
+\]
+Therefore, its symbolic mass is:
+\[
+m([\gamma]) = 0.
+\]
+\section{Summary Table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|l|}
+\hline
+\textbf{Quantity} & \textbf{Symbol} & \textbf{Role} \\
+\hline
+Fragility & $X_\phi([A])$ & Sensitivity to rule removal \\
+Reuse Elevation & $X_\epsilon([A])$ & Structural reuse load \\
+Return Symmetry & $X_\pi([A])$ & Inversion balance in return loop \\
+Symbolic Mass & $m([A])$ & Coherence resistance to reuse deformation \\
+\hline
+\end{tabular}
+\caption{Mass formula and symbolic quantities}
+\end{table}

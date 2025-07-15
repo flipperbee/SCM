@@ -1,0 +1,89 @@
+\chapter{The Mass Gap}
+
+\section{Identity Persistence Requires Latency}
+
+In SCM, identity is coherence-closed structure. A symbolic form $[A] \in \Omega_3$ exists if—and only if—it returns under permitted transformation. But not all return paths define persistence. Some collapse under minimal RuleEvolution; others never stabilize. 
+
+This chapter formalizes the first nontrivial structural threshold in SCM: the minimum latency required for an identity to persist in $\Omega_3$. This is the symbolic \textbf{mass gap}.
+
+\section{Latency and Coherence Survival}
+
+Let $[A] \in \Omega_3$ be a candidate identity. Let $\mathcal{L}([A]) = \{T_1, T_2, \dots, T_n\}$ be a permitted return loop.
+
+We define:
+\begin{equation} \label{eq:euler-latency}
+\Lambda([A]) := \text{len}(\mathcal{L}([A])) \cdot \frac{1}{1 - X_\pi([A])}
+\end{equation}
+
+This is the asymmetry-weighted latency. As $X_\pi([A]) \to 1$, latency diverges. As $X_\pi([A]) \to 0$, latency approximates path length.
+
+\paragraph{Persistence condition.} Identity $[A]$ can persist in $\Omega_3$ only if:
+\begin{enumerate}
+  \item $\mathcal{L}([A])$ exists,
+  \item Collapse robustness $\rho([A]) \geq 1$,
+  \item $[A]$ survives reuse ($\partial\chi([A])$ bounded).
+\end{enumerate}
+
+\section{Theorem: Latency Threshold for Identity Persistence}
+
+\begin{definition}[Mass Gap Theorem] \label{thm:mass-gap}
+There exists a minimum latency $\Lambda_0 > 0$ such that:
+\[
+\Lambda([A]) < \Lambda_0 \quad \Rightarrow \quad [A] \notin \Omega_3
+\]
+\end{definition}
+
+\begin{proof}[Sketch]
+If $\Lambda \to 0$, either:
+- the loop is degenerate (e.g., identity transformation), which is disallowed by SCM's return rules;
+- or the loop is too fragile ($\rho([A]) = 1$) and eliminated by RuleEvolution;
+- or drift is unbounded ($\partial\chi \ne 0$) and return does not stabilize.
+
+In all cases, $[A]$ cannot persist. Thus, a minimum latency floor $\Lambda_0$ must exist.
+\end{proof}
+
+\section{Definition: The Mass Gap}
+
+We define the mass gap as:
+\begin{equation} \label{eq:mass-gap-definition}
+\Lambda_0 := \inf \left\{ \Lambda([A]) \mid [A] \in \Omega_3 \text{ and } \rho([A]) \geq 1 \right\}
+\end{equation}
+
+This is the coherence threshold: no identity exists below it.
+
+\section{Structural Consequences}
+
+Identities with $\Lambda([A]) < \Lambda_0$:
+- cannot act as reuse anchors,
+- collapse under minimal RuleEvolution perturbation,
+- fail to satisfy reuse persistence conditions.
+
+This threshold behaves as a symbolic quantization condition. It defines the floor of persistence in SCM: only identities above $\Lambda_0$ are coherent under return.
+
+\section{Interpretation}
+
+The mass gap is not arbitrary. It arises from:
+\begin{itemize}
+  \item The minimum structure needed for return closure,
+  \item The symbolic resistance required to prevent RuleEvolution collapse,
+  \item The amplification of return cost under asymmetry.
+\end{itemize}
+
+This is the first quantized threshold in SCM. It marks the emergence of structure from permitted return.
+
+\section{Summary Table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|l|}
+\hline
+\textbf{Quantity} & \textbf{Symbol} & \textbf{Role} \\
+\hline
+Latency & $\Lambda([A])$ & Return cost under asymmetry \\
+Mass Gap & $\Lambda_0$ & Minimum latency for identity to persist \\
+Collapse Robustness & $\rho([A])$ & Rule removal threshold \\
+Persistence Condition & $\Lambda([A]) \geq \Lambda_0$ & Required for $[A] \in \Omega_3$ \\
+\hline
+\end{tabular}
+\caption{Structural terms defining the symbolic mass gap}
+\end{table}
