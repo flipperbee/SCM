@@ -4,6 +4,40 @@ SCM identifies identity as a return-invariant symbolic structure. However, not a
 
 This chapter defines the conditions under which identities become stable symbolic particles. We classify their functional roles, persistence criteria, and coherence signatures. All definitions are now framed within the variational system defined in Chapter 1.
 
+\section{Mass as Latency in Particle Definition} \label{sec:mass-latency-particles}
+
+In SCM, the symbolic mass of an identity is defined canonically as:
+\[
+m([A]) := \Lambda([A]),
+\]
+where $\Lambda([A])$ is the effort-weighted latency of $[A]$'s minimal return loop, as introduced in Volume III, Chapter 18.
+
+This definition applies to all structural particles presented in this chapter and the following tables. Each particle's latency determines its symbolic mass. When $\Lambda([A]) < \Lambda_0$, the mass is zero and the identity is considered massless.
+
+To distinguish from interaction-specific resistance, we refer to any metric derived from $X_\phi, X_\pi, X_\epsilon$—such as:
+\[
+\mathcal{I}([A]) := \frac{X_\phi([A]) \cdot X_\epsilon([A])}{(1 - X_\pi([A]))^2}
+\]
+as structural inertia, not mass. These will be used for qualitative comparison but are not equivalent to latency.
+
+\subsection{Formal Definition of Reuse Elevation} \label{sec:xe-definition}
+
+The reuse elevation $X_\epsilon([A])$ quantifies the symbolic elevation of identity $[A]$ above the coherence base. It measures how many distinct structural reuse layers separate $[A]$ from its own reuse sources.
+
+\begin{definition}[Reuse Elevation $X_\epsilon$]
+Let $[A] \in \Omega_3$. Then $X_\epsilon([A])$ is defined as the minimal number of symbolic return layers between $[A]$ and the lowest-latency identity $[B]$ such that $[B] \in \mathcal{L}([A])$ and $\Lambda([B]) = \Lambda_0$.
+\end{definition}
+
+\paragraph{Interpretation.}
+\begin{itemize}
+    \item If $X_\epsilon = 0$, $[A]$ is a coherence ground anchor (e.g., photon).
+    \item If $X_\epsilon = 1$, $[A]$ reuses a base identity directly.
+    \item If $X_\epsilon = 2$, $[A]$ is one reuse layer above that, and so on.
+\end{itemize}
+
+This quantity is discrete and hierarchical. For stable particle triplets (e.g., in Koide resonance), $X_\epsilon$ often takes values like $\{0,1,2\}$ reflecting clean reuse separation across the coherence base.
+
+
 \section{From Identity to Particle} \label{sec:identity-to-particle}
 
 Let $[A] \in \Omega_3$ be a return-resolved identity. We define $[A]$ to be a **structural particle** if:

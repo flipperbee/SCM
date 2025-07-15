@@ -1,136 +1,97 @@
-\chapter{Emergence of Mass}
+\chapter{Emergence of Mass} \label{chapter:mass}
 
-\section{Structural Precondition: The Mass Gap}
-
-From Chapter 1, we established the following threshold:
-
+\section{18.1 \textbar{} Structural Precondition: The Mass Gap}
+Mass in SCM does not arise from intrinsic substance, but from symbolic latency. As shown in the previous chapter, the existence of identity $[A] \in \Omega_3$ requires a minimal latency:
 \[
-\Lambda([A]) < \Lambda_0 \quad \Rightarrow \quad [A] \notin \Omega_3
+\Lambda([A]) \geq \Lambda_0
 \]
+This mass gap, $\Lambda_0$, defines the structural energy floor needed to sustain coherence over a closed return loop.
 
-That is, no identity can persist unless its asymmetry-weighted latency exceeds $\Lambda_0$.
-
-This implies the following boundary condition for mass:
-
-\[
-m([A]) = 0 \quad \text{for all} \quad \Lambda([A]) < \Lambda_0
-\]
-
-Only identities that cross the coherence threshold may carry symbolic mass.
-
-\section{Fragility as Return Instability}
-
-Let $\rho([A])$ be the collapse robustness of identity $[A]$.
-
-We define symbolic fragility as:
-\begin{equation} \label{eq:fragility}
-X_\phi([A]) := \frac{1}{\rho([A])}
-\end{equation}
-
-A fragile identity is structurally unstable—it loses return closure with minimal rule removal. Fragility reflects coherence tension: how sensitive the identity is to perturbation.
-
-\section{Elevation as Reuse Role}
-
-Let $X_\epsilon([A])$ be the reuse elevation of $[A]$, measuring how many other identities resolve through $[A]$.
-
-High elevation means that $[A]$ participates in anchored resolution chains—it is not only persistent but structurally influential.
-
-\section{Return Asymmetry and Resistance}
-
-Let $X_\pi([A])$ be the return symmetry of $[A]$.
-
-As $X_\pi \to 1$, return becomes increasingly one-directional. Inversion is lost. This raises symbolic resistance and coherence tension.
-
-We interpret this as **asymmetry amplification**: identities that are structurally hard to return must expend more effort to remain coherent.
-
-\section{Definition: Symbolic Mass}
-
-We define symbolic mass as:
-\begin{equation} \label{eq:symbolic-mass}
-m([A]) := 
-\begin{cases}
-X_\phi([A]) \cdot X_\epsilon([A]) \cdot \frac{1}{(1 - X_\pi([A]))^2}, & \text{if } \Lambda([A]) \geq \Lambda_0 \\
-0, & \text{otherwise}
-\end{cases}
-\end{equation}
-
-This formula encodes:
-- fragility (coherence instability),
-- elevation (reuse anchoring),
-- and return asymmetry (inversion resistance).
-
-It supersedes earlier latency-based definitions by expressing mass as **resistance to coherence deformation**.
-
-\section{Interpretation}
-
+\section{18.2 \textbar{} Fragility as Return Instability}
+Let $X_\phi([A])$ denote the fragility of an identity, defined as its likelihood to collapse under reuse or RuleEvolution pressure. Fragility reflects:
 \begin{itemize}
-    \item High $X_\phi$ = structurally fragile → requires preservation
-    \item High $X_\epsilon$ = heavily reused → coherence load-bearing
-    \item High $X_\pi$ → asymmetry → coherence divergence risk
+    \item Sensitivity to deformation,
+    \item Collapse-prone symmetry or low support,
+    \item Instability in return coherence.
 \end{itemize}
 
-Symbolic mass is not inertia—it is **the effort required to preserve identity** under reuse and asymmetry.
+\section{18.3 \textbar{} Elevation as Reuse Role}
+Return elevation $X_\epsilon([A])$ measures how far identity $[A]$ sits above its own reuse base. It counts the minimal number of coherence layers required to complete return, with $X_\epsilon = 0$ indicating a foundational identity (e.g., the photon), and $X_\epsilon > 0$ indicating structural elevation.
 
-\section{Massless Identities}
-
-Let $X_\epsilon([A]) = 0$. Then by Equation~\ref{eq:symbolic-mass}, $m([A]) = 0$.
-
-These identities:
-- May still return coherently,
-- But are not reused by others,
-- Do not store coherence across transformations.
-
-They behave as **coherence carriers**, not coherence anchors.
-
-\paragraph{Example (Photon):}
-The photon identity $[\gamma]$ satisfies:
+\section{18.4 \textbar{} Return Asymmetry and Resistance}
+The signature component $X_\pi([A])$ captures return symmetry:
 \[
-X_\epsilon([\gamma]) = 0, \quad X_\pi([\gamma]) = 0, \quad X_\phi([\gamma]) \approx 0.
+X_\pi = -1 \Rightarrow \text{inversion/collapse}, \quad
+X_\pi = 0 \Rightarrow \text{perfect balance}, \quad
+X_\pi \to 1 \Rightarrow \text{highly asymmetrical loop}.
 \]
-Therefore, its symbolic mass is:
+This metric plays a key role in collapse resistance and coherence pressure.
+
+\section{18.5 \textbar{} Definition: Symbolic Mass}
+SCM defines mass not as an intrinsic quantity, but as a structural latency threshold.
+
+\begin{definition}[Symbolic Mass]
+Let $[A] \in \Omega_3$ be a resolved identity. Then:
 \[
-m([\gamma]) = 0.
+m([A]) := \Lambda([A]),
 \]
+where $\Lambda([A])$ is the total effort-weighted latency of the minimal return path resolving $[A]$.
+\end{definition}
 
-\section{The Uncertainty Principle as Structural Latency Tradeoff} \label{sec:uncertainty-scm}
+\noindent Mass represents the irreducible cost of symbolic return. It reflects the structural investment required to sustain persistence. This definition is invariant under transformation and applies across all volumes, including Volume IV (particle classification) and Volume V (Koide resonance).
 
-The canonical uncertainty principle in quantum mechanics states:
+\paragraph{Related Concept: Structural Inertia}
+
+Not all massive identities are equally stable under reuse. We define a related quantity:
+
+\begin{definition}[Structural Inertia]
+Let $[A]$ have coherence signature components $(X_\phi, X_\pi, X_\epsilon)$. Then:
 \[
-\Delta x \cdot \Delta p \geq \frac{\hbar}{2},
+\mathcal{I}([A]) := \frac{X_\phi([A]) \cdot X_\epsilon([A])}{(1 - X_\pi([A]))^2}
 \]
-suggesting a trade-off between knowledge of position and momentum. In SCM, this uncertainty is not a measurement problem—it is a structural feature of coherence return.
+\end{definition}
 
-\begin{definition}[SCM Uncertainty Principle]
-Let $[A] \in \Omega_3$ be a resolved identity with return latency $\Lambda([A])$ and coherence fragility $X_\phi([A])$. Then:
+\noindent Inertia captures symbolic resistance to deformation—not total return cost, but structural stiffness. It plays a key role in interaction dynamics and will be used in later volumes to model interaction cross-section and coherence lifetime.
+
+\section{18.6 \textbar{} Interpretation}
+\begin{itemize}
+    \item $m([A])$ (mass) measures the absolute effort needed to sustain coherence.
+    \item $\mathcal{I}([A])$ (inertia) measures how easily $[A]$ is disturbed by reuse or drift.
+    \item Mass is global; inertia is local.
+\end{itemize}
+
+\section{18.7 \textbar{} Massless Identities}
+Let $[A] \in \Omega_3$ with $\Lambda([A]) = \Lambda_0$. Then $[A]$ has minimal mass and is often structurally invariant:
+\[
+X_\phi = 0, \quad X_\pi = 0, \quad X_\epsilon = 0
+\]
+Such identities include the photon and other return-closed, reuse-invariant forms. These satisfy:
+\[
+m([A]) = \Lambda_0
+\]
+and form the coherence ground layer of the SCM structure.
+
+\section{18.8 \textbar{} The Uncertainty Principle as Structural Latency Tradeoff}
+SCM predicts the following structural bound:
 \[
 \Lambda([A]) \cdot X_\phi([A]) \geq \Lambda_0
 \]
-where $\Lambda_0$ is the mass gap threshold defined in Volume III, Chapter 1.
-\end{definition}
+This expresses a fundamental tradeoff: to achieve low latency, an identity must become fragile. Robust, reusable identities require effort to construct. This will be formally proven in Appendix A.
 
-\noindent This relation is not empirical—it emerges from the definition of return structure:
-\begin{itemize}
-    \item Low-latency identities must be fragile (high $X_\phi$),
-    \item High-coherence identities require time and effort (high $\Lambda$),
-    \item Identities violating this trade-off collapse into $\Omega_-$.
-\end{itemize}
-
-\paragraph{Interpretation.}
-The SCM uncertainty principle describes the **minimum return effort required to stabilize fragile coherence**. It replaces $\hbar$ with a structurally defined latency floor, and reframes “uncertainty” as an unavoidable **property of resolution under reuse**.
-
-\section{Summary Table}
+\section{18.9 \textbar{} Summary Table}
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{|l|c|l|}
+\begin{tabular}{|l|l|l|}
 \hline
-\textbf{Quantity} & \textbf{Symbol} & \textbf{Role} \\
+\textbf{Quantity} & \textbf{Formula} & \textbf{Interpretation} \\
 \hline
-Fragility & $X_\phi([A])$ & Sensitivity to rule removal \\
-Reuse Elevation & $X_\epsilon([A])$ & Structural reuse load \\
-Return Symmetry & $X_\pi([A])$ & Inversion balance in return loop \\
-Symbolic Mass & $m([A])$ & Coherence resistance to reuse deformation \\
+Mass $m([A])$ & $\Lambda([A])$ & Return effort to sustain coherence \\
+Inertia $\mathcal{I}([A])$ & $\frac{X_\phi \cdot X_\epsilon}{(1 - X_\pi)^2}$ & Deformation resistance \\
+Fragility $X_\phi$ & -- & Collapse tendency \\
+Elevation $X_\epsilon$ & -- & Reuse height above base \\
+Symmetry $X_\pi$ & -- & Return loop asymmetry \\
 \hline
 \end{tabular}
-\caption{Mass formula and symbolic quantities}
+\caption{Symbolic quantities underlying mass and inertia}
 \end{table}
