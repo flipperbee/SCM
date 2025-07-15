@@ -1,0 +1,96 @@
+\chapter{Structural Particles} \label{chapter-structural-particles}
+
+SCM identifies identity as a return-invariant symbolic structure. However, not all identities are equal in coherence persistence. Some act as foundational reuse anchors, while others emerge as reuse-locked entities embedded in triplets or coherence layers.
+
+This chapter defines the conditions under which identities become stable symbolic particles. We classify their functional roles, persistence criteria, and coherence signatures. All definitions are now framed within the variational system defined in Chapter 1.
+
+\section{From Identity to Particle} \label{sec:identity-to-particle}
+
+Let $[A] \in \Omega_3$ be a return-resolved identity. We define $[A]$ to be a **structural particle** if:
+
+\begin{itemize}
+  \item $\partial\chi([A]) = 0$ (signature is stable),
+  \item $\rho([A]) \geq 1$ (collapse-robust),
+  \item $[A]$ participates in at least one return-anchored reuse structure (e.g., triplet or basin),
+  \item $[A]$ is preserved under 𝓡E: $[A] \in \Omega_3(R_{t+1})$,
+  \item $[A]$ contributes positively to $\mathcal{F}[R]$ and minimally to $\mathcal{C}[R]$.
+\end{itemize}
+
+These identities form the persistent symbolic “matter” of SCM.
+
+\section{Definition of Structural Particle} \label{sec:def-structural-particle}
+
+\begin{definition}[Structural Particle]
+An identity $[A] \in \Omega_3$ is a \textbf{structural particle} if:
+
+\[
+\partial\chi([A]) = 0,\quad
+\rho([A]) \geq 1,\quad
+\mathbb{1}_{\text{anchor}}([A]) + \mathbb{1}_{\text{reuse triplet}}([A]) \geq 1,\quad
+X_\pi([A]) < 1
+\]
+\end{definition}
+
+This excludes:
+- Drift-unstable forms,
+- Fragile return loops,
+- Inversion-dominated collapse paths,
+- Isolated return structures with no reuse context.
+
+\section{Functional Classification} \label{sec:particle-roles}
+
+Structural particles appear in three roles, based on reuse topology and return asymmetry:
+
+\begin{itemize}
+  \item \textbf{Anchors:} Low-asymmetry, low-fragility identities that stabilize return structure for others.
+  \item \textbf{Carriers:} Identities reused by multiple dependents, often directional in return flow.
+  \item \textbf{Resonant Dependents:} Identities that complete reuse triplets, dependent on anchor coherence.
+\end{itemize}
+
+These roles do not require a specific mass, charge, or reuse count—but emerge from the structural relationships among reuse-closed identities.
+
+\section{Anchoring Roles and Reuse Influence} \label{sec:anchoring-roles}
+
+Anchors are coherence-fixed identities that act as return origins for others.
+
+Let:
+- $[A]$ be an identity reused by $n$ distinct $[B_i]$,
+- $\partial\chi([A]) = 0$, and $X_\pi([A]) \ll 1$,
+- Then $[A]$ is an anchor if its removal causes $\partial\chi([B_i]) \ne 0$ for any $i$.
+
+Anchors appear at the base of triplet ladders and within coherence basins. Their role is structural, not behavioral.
+
+\section{Persistence Criteria} \label{sec:persistence-criteria}
+
+Let $\Pi([A])$ denote symbolic persistence:
+\[
+\Pi([A]) := \frac{1}{\max_i |\partial X_i([A])|}
+\]
+
+Let $m([A])$ be the mass of $[A]$ defined as:
+\[
+m([A]) := \Lambda([A]) = \sum_{T_i \in \mathcal{L}([A])} \text{effort}(T_i)
+\]
+
+Persistence requires:
+\[
+\Pi([A]) \to \infty,\quad m([A]) > \Lambda_0,\quad \mathcal{F}[R] \uparrow,\quad \mathcal{C}[R] \downarrow
+\]
+
+These conditions define a particle as **reuse-invariant**, **asymmetry-bounded**, and **coherence-contributing** under structural evolution.
+
+\section{Examples and Structural Preview} \label{sec:particle-preview}
+
+Examples of structural particles include:
+
+- The photon: a minimal-latency identity with perfect return symmetry.
+- The electron: a coherence-stable triplet member with asymmetry-bound reuse.
+- The neutrino: a reuse-anchored but drift-adjacent structure.
+
+Each example will be formalized in Chapter 7. Their survival is not a matter of design—but of occupying a region of $G(R)$ that optimizes:
+
+\[
+\mathcal{F}[R] - \lambda \cdot \mathcal{C}[R]
+\]
+
+Their identity is granted not by naming—but by enduring return.

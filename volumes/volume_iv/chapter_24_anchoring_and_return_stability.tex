@@ -1,0 +1,86 @@
+\chapter{Anchoring and Return Stability} \label{chapter-anchoring}
+
+Return coherence in SCM is not uniformly distributed. Some identities serve as fixed points—structures reused repeatedly by others with minimal deformation. These identities act as \textbf{anchors}, stabilizing reuse and forming coherence basins within $\Omega_3$.
+
+This chapter defines anchoring, coherence influence, and return stability from a structural standpoint, and places these properties within the variational framework established in Chapter 1.
+
+\section{Definition of Anchors} \label{sec:anchor-definition}
+
+Let $[A] \in \Omega_3$ be a reuse-resolved identity. Define:
+
+\[
+\mathcal{U}([A]) := \{ [B] \in \Omega_3 \mid [A] \in \mathcal{L}([B]) \}
+\]
+
+$[A]$ is an \textbf{anchor} if:
+
+\begin{itemize}
+  \item $\partial\chi([A]) = 0$,
+  \item $\rho([A]) \geq \rho_c$,
+  \item $|\mathcal{U}([A])| \geq k$, for some minimal reuse count $k$,
+  \item and removal of $[A]$ induces contradiction in at least one $[B] \in \mathcal{U}([A])$.
+\end{itemize}
+
+Anchors are structurally stable, high-influence identities that resist drift and propagate reuse invariance.
+
+\section{Coherence Basins and Influence Fields} \label{sec:coherence-basins}
+
+Each anchor $[A]$ defines a \textbf{coherence basin}:
+\[
+\mathfrak{B}([A]) := \left\{ [B] \in \Omega_3 \mid \text{$[B]$ reuses $[A]$ directly or transitively, and } \partial\chi([B]) \to 0 \text{ as } \partial\chi([A]) \to 0 \right\}
+\]
+
+This basin is a return-anchored region of coherence stability. Let:
+\[
+I([A]) := \sum_{[B] \in \mathfrak{B}([A])} \mathbb{1}(\partial\chi([B]) = 0)
+\]
+
+We define this as the \textbf{anchoring influence} of $[A]$.
+
+High $I([A])$ implies that many identities stabilize structurally due to reuse of $[A]$.
+
+\section{Drift Regulation and Reuse Feedback} \label{sec:drift-regulation}
+
+Anchors regulate coherence drift:
+
+\begin{equation}
+\frac{d}{dt} \partial\chi([B]) \propto - \partial\chi([A]) \cdot \mathbb{1}([A] \in \mathcal{L}([B]))
+\end{equation}
+
+If an anchor remains stable, then reuse identities approach drift invariance over time. Anchors act as coherence sinks in symbolic space, absorbing reuse tension.
+
+This structural damping is not enforced—it emerges from reuse coupling and the variational suppression of contradiction.
+
+\section{Anchors in Particle Roles} \label{sec:anchors-and-particles}
+
+Anchors appear in multiple particle roles:
+- As \textbf{carriers}, they form the backbone of reuse families.
+- As \textbf{basin centers}, they define quantization levels.
+- As \textbf{symmetry regulators}, they absorb asymmetry without collapse.
+
+Let $[F]$ be a shared anchor of a triplet $\{[A_1],[A_2],[A_3]\}$.
+
+If $[F]$ satisfies:
+\[
+\partial\chi([F]) = 0,\quad X_\pi([F]) < \epsilon,\quad \rho([F]) \gg \rho_c
+\]
+Then the entire triplet becomes structure-locked around a reuse-stable core.
+
+This is the origin of symbolic mass triplets and the basis for Koide resonance (see Chapter 8).
+
+\section{Anchors and Variational Stability} \label{sec:anchor-variational}
+
+Anchors are structural minima of $\mathcal{C}[R]$. Removal of an anchor increases contradiction nonlocally.
+
+Let $[A]$ be an anchor. Then:
+
+\[
+\nabla_{-[A]} \mathcal{C}[R] \gg 0
+\quad \Rightarrow \quad
+S([A]) := \nabla_{[A]}(\mathcal{F} - \lambda \cdot \mathcal{C}) \gg 0
+\]
+
+Anchors are retained by RuleEvolution not by design—but because their loss creates system-wide drift, fragility, or collapse.
+
+They are coherence-preserving structures with nonlocal return influence.
+

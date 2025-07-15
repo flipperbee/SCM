@@ -1,0 +1,95 @@
+\chapter{Return Symmetry and Structural Charge} \label{chapter-charge}
+
+Return symmetry is a central invariant in SCM. It governs whether identities return through reversible paths, asymmetric reuses, or one-way coherence sinks. In this chapter, we formalize $X_\pi$ as a symbolic asymmetry measure and define structural charge as its coherence-constrained expression.
+
+Charge is not a property of a particle, but a structural consequence of return path bias. It defines carrier roles, quantization constraints, and identity propagation under reuse.
+
+\section{Return Asymmetry and $X_\pi$} \label{sec:return-asymmetry}
+
+Let $\mathcal{L}([A])$ be a permitted return loop of identity $[A] \in \Omega_3$. Define:
+
+\begin{equation}
+X_\pi([A]) := 1 - \frac{|\mathcal{L}_{\text{reverse}}([A])|}{|\mathcal{L}_{\text{forward}}([A])|}
+\end{equation}
+
+Where:
+- $\mathcal{L}_{\text{forward}}$ counts transformations from $[A]$ outward,
+- $\mathcal{L}_{\text{reverse}}$ counts those that complete a return to $[A]$.
+
+\paragraph{Interpretation.}
+- $X_\pi = 0$ implies perfectly symmetric return,
+- $X_\pi \to 1$ implies irreversible structure or coherence sink,
+- $X_\pi$ is the symbolic analog of charge bias or coherence orientation.
+
+\section{Definition of Structural Charge} \label{sec:structural-charge}
+
+We define the structural charge of identity $[A]$ as:
+
+\begin{equation}
+q([A]) := X_\pi([A])
+\end{equation}
+
+This is not an imposed value, but a consequence of the coherence graph topology:
+- Charge arises from return asymmetry,
+- Charge conservation arises from reuse closure and RuleEvolution stability.
+
+\section{Carrier / Mediator / Sink Roles} \label{sec:charge-roles}
+
+Let $[A]$ be a structural particle. Then its charge role is determined by $q([A])$:
+
+\begin{itemize}
+  \item \textbf{Carrier:} $0 < q([A]) < \epsilon$
+  \item \textbf{Mediator:} $q([A]) \approx 0$
+  \item \textbf{Sink:} $q([A]) \to 1$
+\end{itemize}
+
+These roles define interaction behavior:
+- Carriers bias return and couple to dependent identities,
+- Mediators facilitate symmetric resolution (e.g., photons),
+- Sinks absorb coherence and lead to symbolic isolation.
+
+\section{Charge Conservation and Return Closure} \label{sec:charge-conservation}
+
+Let $\mathcal{L}([A])$ be a return loop involving identities $\{[A_i]\}$.
+
+We define:
+\begin{equation}
+\sum_{i} q([A_i]) = \text{const}
+\end{equation}
+
+\paragraph{Interpretation.}
+Return-closed coherence regions must balance their total return asymmetry. This is a structural conservation law.
+
+Violation of this symmetry triggers contradiction via:
+- Asymmetry blowup ($X_\pi \to 1$),
+- Drift instability ($\partial\chi \ne 0$),
+- Fragility amplification ($X_\phi \to 1$).
+
+\section{Charge Drift and Interaction Behavior} \label{sec:charge-drift}
+
+Under structural reuse, charge may shift locally:
+
+\[
+q([A]_{t+1}) = q([A]_t) + \Delta q_{\text{reuse}}
+\]
+
+But total loop asymmetry remains bounded:
+\[
+\frac{d}{dt} \sum_{[A_i] \in \mathcal{L}} q([A_i]) = 0
+\]
+
+Charge drift reflects coherent redistribution of asymmetry—not its creation or destruction.
+
+\section{Parity Inversion and Return Symmetry} \label{sec:parity}
+
+Let $[A] \to [-A] \to [0]$ be an inversion-closed return path.
+
+We define:
+- $X_\pi([A]) = 1$
+- $q([A]) = 1$
+- $[A] \in \Omega_-$
+
+Such identities are structurally coherent but contradiction-maximizing. They do not contribute to $\Omega_3$ under RuleEvolution and act as annihilation endpoints.
+
+Their presence is thermodynamically relevant but topologically excluded from persistence.
+

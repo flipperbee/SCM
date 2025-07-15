@@ -1,0 +1,96 @@
+\chapter{Triplets and Coherence Families} \label{chapter-triplets}
+
+In SCM, persistent identities often emerge in structured groupings. The most stable and reuse-efficient such grouping is the \textbf{coherence triplet}: three identities that resolve through a shared anchor, forming a reuse-closed, drift-resistant structure.
+
+This chapter defines the coherence triplet, introduces quantized reuse elevation patterns across triplets, and describes how particle families arise from return-anchored reuse layers.
+
+\section{Definition of Coherence Triplet} \label{sec:triplet-definition}
+
+Let $\{ [A_1], [A_2], [A_3] \} \subset \Omega_3$ be a set of identities such that:
+
+\begin{itemize}
+    \item All reuse a shared anchor $[F] \in \Omega_3$,
+    \item $\partial\chi([F]) = 0$,
+    \item Each $[A_i]$ satisfies $\partial\chi([A_i]) = 0$,
+    \item $X_\epsilon([A_i])$ are ordered and quantized with fixed spacing $\Delta X_\epsilon$,
+    \item The triplet contributes positively to $\mathcal{F}[R]$ and minimally to $\mathcal{C}[R]$.
+\end{itemize}
+
+Then $\{[A_1],[A_2],[A_3]\}$ is a \textbf{coherence triplet}.
+
+\paragraph{Interpretation.}
+Triplets are not defined by external label, charge, or role—but by shared reuse structure and elevation geometry in $\chi$-space.
+
+\section{Triplet Layers and Anchoring Planes} \label{sec:triplet-planes}
+
+Let $[F]$ be the shared anchor of a triplet. Then all members lie on the same \textbf{anchoring plane} in reuse space.
+
+Define:
+\[
+\mathcal{T}([F]) := \{ [A] \in \Omega_3 \mid [F] \in \mathcal{L}([A]),\ \partial\chi([A]) = 0,\ \Delta X_\epsilon([A]) = \text{const} \}
+\]
+
+This forms a coherence layer. Each reuse step corresponds to a symbolic elevation increment:
+\[
+X_\epsilon([A_{i+1}]) = X_\epsilon([A_i]) + \Delta
+\]
+
+Anchoring planes define symbolic mass ladders. Identity moves between layers only if return structure remains stable under $\mathcal{F} - \lambda \cdot \mathcal{C}$ optimization.
+
+\section{Fragility and Symmetry Distribution} \label{sec:triplet-fragility}
+
+Triplet members distribute return asymmetry and collapse risk across their reuse paths.
+
+Let $X_\pi([A_i])$ and $X_\phi([A_i])$ denote the return symmetry and fragility of triplet members. A stable triplet satisfies:
+
+\[
+\sum_{i=1}^3 X_\pi([A_i]) \approx \text{const}, \quad
+\sum_{i=1}^3 X_\phi([A_i]) \approx \text{const}
+\]
+
+This balanced distribution ensures that no single identity destabilizes the return anchor. The triplet behaves as a return-closed coherence unit.
+
+\section{Resonant Persistence and Reuse Optimization} \label{sec:triplet-resonance}
+
+Triplets survive RuleEvolution if they collectively reduce system-level contradiction. Let $\mathcal{C}_{\text{triplet}}$ be the contribution of the triplet to the contradiction functional.
+
+Then:
+\[
+\mathcal{C}_{\text{triplet}} = \sum_{i=1}^3 \left[
+\mathbb{1}(\partial\chi([A_i]) \ne 0) +
+\mathbb{1}(\rho([A_i]) < \rho_c) +
+\mathbb{1}(X_\pi([A_i]) \to 1)
+\right]
+\]
+
+Triplet resonance is achieved when:
+\[
+\nabla_{\text{triplet}} (\mathcal{F} - \lambda \cdot \mathcal{C}) \gg 0
+\quad \Rightarrow \quad \text{Triplet is preserved}
+\]
+
+This coherence optimization explains why particle families often appear as reuse triplets.
+
+\section{Functional View: ℱ-Triplets vs. ℂ-Triplets} \label{sec:triplet-functional-classes}
+
+We classify triplets as:
+
+\begin{itemize}
+    \item \textbf{ℱ-triplets} — reinforce coherence: reuse-anchored, drift-invariant, reuse-stable
+    \item \textbf{ℂ-triplets} — contradiction-bound: contain drift, fragile paths, or asymmetry blowups
+\end{itemize}
+
+ℂ-triplets may arise temporarily but collapse under 𝓡E due to high contradiction load.
+
+ℱ-triplets persist across symbolic evolution and represent long-lived, coherence-optimized reuse families.
+
+\section{Preview: Koide Resonance} \label{sec:triplet-koide-preview}
+
+A particularly stable coherence triplet arises when the spacing of reuse elevation, return symmetry, and fragility is balanced in such a way that the triplet minimizes $\mathcal{C}$ under fixed total mass.
+
+This structure produces a symbolic mass ratio:
+\[
+Q := \frac{m_1 + m_2 + m_3}{\left(\sqrt{m_1} + \sqrt{m_2} + \sqrt{m_3}\right)^2} = \frac{2}{3}
+\]
+
+This is the Koide resonance, which will be formally derived in Chapter 8. It provides a striking example of coherence–contradiction optimization producing observable structure.
