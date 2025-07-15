@@ -1,0 +1,134 @@
+\chapter{Dynamics, Drift, and the Variational Law} \label{chapter:dynamics-variational}
+
+\section{Angular Drift as Identity Evolution}
+
+In SCM, identity is not static—it evolves under reuse, transformation, and return instability. Euler’s formula captures this evolution structurally:
+
+\begin{equation}
+\frac{d}{dx} e^{ix} = i e^{ix}
+\end{equation}
+
+This phase slope represents **symbolic drift**, a directional change in coherence configuration.
+
+\begin{definition}[Symbolic Drift]
+Let $[A] \in \Omega_3$ have phase $\theta([A])$. Then:
+\[
+\partial \chi([A]) := \frac{d}{dx} \theta([A]) \in \mathbb{R}
+\]
+represents the local angular deformation rate of symbolic coherence.
+\end{definition}
+
+\noindent Drift indicates whether identity is:
+\begin{itemize}
+    \item \textbf{Stable:} $\partial \chi = 0$,
+    \item \textbf{Reactive:} bounded $\partial \chi \neq 0$,
+    \item \textbf{Collapsing:} $\left| \partial \chi \right| \to \infty$.
+\end{itemize}
+
+\section{Symbolic Entropy and Free Energy}
+
+Let return paths $\mathcal{L}_i$ have angular effort weights $\Lambda(\mathcal{L}_i)$.
+
+\begin{definition}[Symbolic Entropy]
+\[
+H([A]) := -\sum_i p_i \log p_i, \quad \text{with } p_i = \frac{1}{Z} \exp(-\Lambda(\mathcal{L}_i))
+\]
+\end{definition}
+
+\begin{definition}[Return Potential (Free Energy)]
+\[
+\Phi([A]) := \sum_i p_i \cdot \Lambda(\mathcal{L}_i)
+\]
+\end{definition}
+
+These quantities determine the **internal thermodynamic state** of an identity under reuse and return fluctuation.
+
+\section{Symbolic Temperature and Gradient Force}
+
+Define the symbolic coherence temperature as:
+
+\begin{equation}
+T_s([A]) := \frac{d\Phi}{dH}
+\end{equation}
+
+\noindent This represents the sensitivity of identity structure to entropy-induced effort.
+
+\begin{definition}[Symbolic Force]
+Let $\Phi$ be the return potential. Then:
+\[
+F_\chi := -\nabla \Phi([A])
+\]
+is the symbolic force vector acting on identity structure in coherence space.
+\end{definition}
+
+\noindent Symbolic work is:
+\[
+W_\chi := \int_\gamma F_\chi \cdot d\chi
+\]
+along a path $\gamma$ in $\chi$-space.
+
+\section{Contradiction Functional and Collapse Risk}
+
+\begin{definition}[Contradiction Functional]
+Let $C([A])$ be the structural collapse risk. Define:
+\[
+C([A]) := \mathbf{1}_{\partial \chi \neq 0} + \mathbf{1}_{\rho < \rho_c} + \mathbf{1}_{X_\pi \to 1}
+\]
+\end{definition}
+
+Where:
+\begin{itemize}
+    \item $\partial \chi$: nonzero drift (instability),
+    \item $\rho$: collapse robustness,
+    \item $X_\pi \to 1$: return asymmetry.
+\end{itemize}
+
+$C$ counts symbolic violations of return coherence.
+
+\section{The Variational Law of SCM}
+
+We define the **structural evolution** of the rule set $R$ via a variational principle.
+
+\begin{definition}[SCM Variational Law]
+Let $\mathcal{F}[R]$ denote the coherence benefit (number or quality of stable identities), and $\mathcal{C}[R]$ the total contradiction cost. Then:
+\[
+R^* := \arg\max_{R'} \left( \mathcal{F}[R'] - \lambda \cdot \mathcal{C}[R'] \right)
+\]
+\end{definition}
+
+\noindent This is the fundamental law of SCM:  
+The symbolic system evolves toward rule sets that maximize coherence while minimizing contradiction.
+
+\section{Eulerian Derivation of the Variational Law}
+
+On the unit circle:
+\begin{itemize}
+    \item Coherent identities form when angular paths **close** under composition,
+    \item Collapse occurs when opposing phase terms cancel: \( e^{i\pi} + 1 = 0 \),
+    \item Drift occurs when phase increment is small and coherence is not restored.
+\end{itemize}
+
+Thus:
+\begin{itemize}
+    \item $\mathcal{F}$ corresponds to the **density of closed Eulerian loops**,
+    \item $\mathcal{C}$ corresponds to the **density of drift-prone or cancelling interactions**.
+\end{itemize}
+
+Therefore, the return engine evolves symbolically under:
+\[
+\max \left( \text{Return closure} - \text{Contradiction risk} \right)
+\]
+
+This is the structural interpretation of Euler's transformation as a **generative system** for identity persistence.
+
+\section{Summary}
+
+\begin{itemize}
+    \item Symbolic drift encodes return deformation over Eulerian phase,
+    \item Collapse and reuse arise from phase cancellation or phase preservation,
+    \item The coherence potential $\Phi$ determines structural directionality,
+    \item SCM evolves under a variational law that maximizes coherence and minimizes contradiction,
+    \item Euler’s rotation structure provides the symbolic substrate for these dynamics.
+\end{itemize}
+
+The next chapter will quantify the physical consequences of this structure—mass, collapse thresholds, reuse energy, and Planck-scale coherence limits.
