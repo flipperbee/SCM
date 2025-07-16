@@ -1,0 +1,108 @@
+\chapter{Superposition as Coherence Ambiguity} \label{chapter:superposition}
+
+In standard quantum mechanics, superposition describes a state where a system exists in multiple possible configurations simultaneously, collapsing to a definite outcome only upon measurement. In SCM, superposition arises when an identity possesses multiple return-complete structures that are **coherence-compatible but unresolved**. This condition reflects ambiguity in symbolic return—not indeterminacy of state.
+
+\section{Structural Basis of Superposition}
+
+Let $[A]$ be a coherence-permitting identity with multiple distinct return loops:
+\[
+\mathcal{R}([A]) = \{\mathcal{L}_1, \mathcal{L}_2, \dots, \mathcal{L}_n\}
+\]
+
+If each $\mathcal{L}_i$ satisfies symbolic return closure:
+\[
+\sum_{T_j \in \mathcal{L}_i} \theta_j = 2\pi n_i,\quad n_i \in \mathbb{Z}
+\]
+then $[A]$ is **return-resolvable** via multiple coherence paths.
+
+\begin{definition}[Symbolic Superposition]
+An identity $[A] \in \Omega_3$ is in superposition if:
+\begin{itemize}
+  \item $|\mathcal{R}([A])| > 1$,
+  \item Each $\mathcal{L}_i \in \mathcal{R}([A])$ satisfies phase closure independently,
+  \item No reuse constraint or external coherence field currently selects among them.
+\end{itemize}
+\end{definition}
+
+\paragraph{Interpretation.}  
+Superposition is not indeterminacy. It is **coherence degeneracy**—a structurally unresolved identity with multiple allowed phase-closed return configurations.
+
+---
+
+\section{Symbolic Collapse as Reuse Resolution}
+
+Let $\partial \chi([A])$ be the drift of $[A]$ under reuse interaction. Collapse occurs when contradiction pressure selects a dominant return path:
+\[
+\mathcal{L}_\text{selected} := \arg\min_{\mathcal{L}_i} \mathcal{C}([\mathcal{L}_i])
+\]
+
+\begin{definition}[Collapse Criterion]
+Collapse of superposition occurs when coherence pressure or reuse saturation forces resolution:
+\[
+P([A]) := \frac{L([A])}{C([A])} \to P_{\text{crit}}
+\]
+\end{definition}
+
+When this condition is met, the system selects a single return path and all competing coherence configurations are pruned by RuleEvolution.
+
+---
+
+\section{Eulerian Representation of Superposition}
+
+Let each return path be represented by a closed Euler rotation:
+\[
+\mathcal{L}_i([A]) \sim e^{i\theta_i}
+\]
+
+Then superposition is represented by a **coherence sum**:
+\[
+\Psi([A]) := \sum_{i=1}^n \alpha_i e^{i\theta_i}
+\]
+
+This is not a wavefunction in the classical sense—but a **weighted symbolic projection of return options**.
+
+\begin{itemize}
+  \item The amplitudes $\alpha_i$ represent symbolic entropy weighting (effort-discounted),
+  \item The phases $\theta_i$ are the closure angles of each path,
+  \item Collapse corresponds to the pruning of all but one term in $\Psi([A])$.
+\end{itemize}
+
+---
+
+\section{Measurement as Structural Selection}
+
+In SCM, "measurement" does not collapse a wavefunction. It imposes **external reuse constraints** on the return graph, forcing selection of a specific resolution path.
+
+Let $\Gamma$ be the extended return graph with:
+- Internal symbolic structure (loop candidates),
+- External coherence field (reuse environment).
+
+Then:
+
+\[
+\text{Measurement} := \text{external reduction of } \Gamma \to \mathcal{L}_j
+\]
+
+\paragraph{Interpretation.}  
+Collapse is symbolic, not epistemic. Measurement is not "seeing"—it is **forcing reuse** through one of the coherence paths, deleting the rest.
+
+---
+
+\section{Superposition Without Probability}
+
+In contrast to standard quantum theory, SCM does not require postulating a Born rule.
+
+Return probabilities emerge naturally from entropy-weighted effort distributions:
+\[
+p_i := \frac{e^{-\Lambda(\mathcal{L}_i)}}{Z},\quad Z = \sum_j e^{-\Lambda(\mathcal{L}_j)}
+\]
+
+This matches the functional form of quantum probability amplitudes—but arises from structural stability preferences, not axioms.
+
+---
+
+\section{Conclusion: Superposition as Path Ambiguity}
+
+Superposition is not the coexistence of states—it is the **non-resolution of multiple structurally valid return paths**. Collapse occurs when coherence pressure forces commitment. Probabilities reflect return effort costs, not epistemic uncertainty.
+
+In the next chapter, we will examine how multiple identities can **share phase-locked return paths**, producing nonlocal coherence and symbolic entanglement.

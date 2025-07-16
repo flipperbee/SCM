@@ -1,0 +1,93 @@
+\chapter{Quantization from Symbolic Closure} \label{chapter:quantization}
+
+In traditional quantum mechanics, quantization is introduced through boundary conditions on differential wave equations, such as the Schrödinger equation. In SCM, quantization emerges not from wavefunctions but from symbolic return constraints: identities may only persist if their phase-rotated return structure closes coherently on the Euler circle.
+
+This chapter shows that quantization arises as a structural condition for coherence, not as an imposed numerical rule.
+
+\section{Symbolic Return Closure}
+
+Let $[A] \in \Omega_3$ be a resolved identity with return loop $\mathcal{L}([A])$. Its coherence closure requires:
+\[
+\prod_{T_i \in \mathcal{L}} e^{i\theta_i} = 1 \quad \Rightarrow \quad \sum_i \theta_i = 2\pi n,\quad n \in \mathbb{Z}
+\]
+
+\begin{definition}[Quantized Phase Closure]
+An identity $[A]$ is quantized if its return path corresponds to a full phase rotation of $2\pi n$ radians.
+\end{definition}
+
+These allowed return paths define the discrete phase bands of symbolic stability.
+
+---
+
+\section{Quantized Latency and Discrete Mass}
+
+From Chapter 1, we define the symbolic angle:
+\[
+\theta([A]) := \frac{2\pi \Lambda([A])}{\Lambda_{\text{norm}}}
+\quad \Rightarrow \quad \Lambda([A]) = n \Lambda_0
+\]
+
+\begin{proposition}[Latency Quantization]
+If $\theta([A]) = 2\pi n$, then $\Lambda([A]) = n \Lambda_0$, where $\Lambda_0$ is the minimal latency corresponding to one full coherence rotation.
+\end{proposition}
+
+\paragraph{Interpretation.}  
+Mass (via latency) is inherently quantized: only symbolic return loops that satisfy $n \in \mathbb{N}$ are coherence-permitting.
+
+This defines a **symbolic mass ladder**:
+\[
+m_n := \Lambda_n = n \Lambda_0
+\]
+
+---
+
+\section{Eigenstates and Symbolic Stationarity}
+
+Let return loops define symbolic transformations $T_i$ that rotate identity by $\theta_i$.
+
+\begin{definition}[Symbolic Eigenstate]
+An identity $[A]$ is an eigenstate if all permitted return paths $\mathcal{L}_k([A])$ satisfy:
+\[
+\sum_{T_i \in \mathcal{L}_k} \theta_i = 2\pi n_k \quad \text{(with constant $n_k$)}
+\]
+\end{definition}
+
+In this sense, eigenstates are **return-locked structures**—they cannot deform under symbolic drift. Their phase is stationary modulo $2\pi$.
+
+---
+
+\section{Forbidden States and Phase Discontinuity}
+
+Any identity with $\sum \theta_i \notin 2\pi \mathbb{Z}$ cannot satisfy return closure:
+\[
+e^{i \sum \theta_i} \ne 1
+\quad \Rightarrow \quad [A] \notin \Omega_3
+\]
+
+These identities:
+- Cannot resolve,
+- Accumulate contradiction pressure,
+- Collapse or transform under RuleEvolution.
+
+\begin{definition}[Forbidden Phase Configuration]
+An identity is structurally unstable if its return phase $\theta$ is non-integral modulo $2\pi$.
+\end{definition}
+
+---
+
+\section{Comparison to Wave-Based Quantization}
+
+| Classical QM                      | SCM Euler View                                   |
+|----------------------------------|--------------------------------------------------|
+| Wavefunction $\psi(x)$           | Phase-rotated return structure $e^{i\theta}$     |
+| Boundary conditions              | Return closure on Euler circle                   |
+| Quantized eigenvalues            | Discrete latency bands $\Lambda_n = n\Lambda_0$ |
+| Forbidden energy levels          | Non-integral phase returns                       |
+
+---
+
+\section{Conclusion: Quantization as Return Locking}
+
+Quantization in SCM is not imposed—it is the result of **return loop closure under angular coherence**. Identities may only persist if they lock to stable phase rotation cycles on the unit circle.
+
+In the next chapter, we will show that when identities possess multiple valid but unresolved return paths, they exhibit superposition behavior until reuse pressure forces collapse.
