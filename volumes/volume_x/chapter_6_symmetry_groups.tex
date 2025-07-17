@@ -1,0 +1,105 @@
+\chapter{Symmetry Groups from Return Closure} \label{chapter-symmetry-return-closure}
+
+Classical gauge theories begin with a symmetry group \( G \) and define the field dynamics accordingly. SCM inverts this logic. In SCM, stable reuse structures—identities embedded in return-closed loops—give rise to \emph{emergent} symmetries.
+
+In this chapter, we formally define return-induced invariance and show how symmetry groups arise from the structural closure of reuse systems. These groups play the role of gauge symmetries: transformations that preserve coherence.
+
+\section{Return Loops and Invariance}
+
+Let \( \{[A_i]\} \subset \Omega_3 \) be a set of identities participating in a return-closed loop \( \mathcal{L} \). The coherence signature of each \( [A_i] \) is:
+
+\[
+\chi([A_i]) = (X_h, X_\pi, X_\phi, X_\epsilon, X_c)
+\]
+
+\begin{definition}[Return Closure]
+A set \( \{[A_i]\} \) is return-closed if:
+\begin{itemize}
+  \item There exists a return path \( \mathcal{L} \) such that \( \mathcal{L}([A_i]) \subset \{[A_j]\} \) for all \( i \),
+  \item The total contradiction \( \mathcal{C}(\mathcal{L}) < \infty \),
+  \item The drift vector \( \vec{\partial \chi}([A_i]) = 0 \) for all \( i \).
+\end{itemize}
+\end{definition}
+
+We now ask: what structural transformations of \( \{[A_i]\} \) leave coherence invariant?
+
+\begin{definition}[Return-Preserving Transformation]
+Let \( \sigma \) be a permutation or symbolic mapping acting on \( \{[A_i]\} \). We say that \( \sigma \) is return-preserving if:
+\[
+\forall \mathcal{L} \in \mathcal{R}(\{[A_i]\}), \quad \sigma(\mathcal{L}) \in \mathcal{R}(\{[A_i]\})
+\]
+and
+\[
+\Phi(\sigma([A_i])) = \Phi([A_i]) \quad \forall i
+\]
+\end{definition}
+
+The set of all such transformations forms a group under composition.
+
+\begin{proposition}
+The set of all return-preserving transformations \( \mathcal{G} \) acting on \( \{[A_i]\} \) forms a group:
+\[
+\mathcal{G} := \{ \sigma : \sigma \text{ is return-preserving on } \{[A_i]\} \}
+\]
+\end{proposition}
+
+\section{Emergent Gauge Symmetry}
+
+\paragraph{Key Observation.} SCM identities form stable structures only under strict reuse constraints. The set \( \{[A_i]\} \) must satisfy coherence, latency, and reuse balance:
+\begin{itemize}
+  \item Total latency quantized: \( \sum_i \Lambda([A_i]) = \text{const} \)
+  \item Total asymmetry balanced: \( \sum_i X_\pi([A_i]) = 0 \)
+  \item Reuse symmetry: \( \forall i, \exists j \ne i : [A_i] \to [A_j] \)
+\end{itemize}
+
+These invariances naturally lead to discrete or continuous symmetries over the reuse space.
+
+\begin{definition}[Coherence Symmetry Group]
+Let \( \mathcal{L} \) be a return-closed loop of identities. The coherence symmetry group of \( \mathcal{L} \) is:
+\[
+G_\mathcal{L} := \text{Aut}(\mathcal{L}) = \{ \sigma \mid \sigma : \mathcal{L} \to \mathcal{L}, \; \Phi \circ \sigma = \Phi \}
+\]
+\end{definition}
+
+This is the SCM analogue of a gauge symmetry: the set of transformations that preserve the coherence field.
+
+\section{Triplet Closure and SU(3)}
+
+Let \( \{[q_1], [q_2], [q_3]\} \) be a coherence-locked reuse triplet with:
+\begin{itemize}
+  \item Balanced latency: \( \Lambda([q_1]) = \Lambda([q_2]) = \Lambda([q_3]) \),
+  \item Balanced charge: \( X_\pi([q_i]) = -X_\pi([q_j]) \), etc.,
+  \item Reuse circularity: \( [q_1] \to [q_2] \to [q_3] \to [q_1] \).
+\end{itemize}
+
+Such a structure has return-preserving symmetries under cyclic permutation and internal interchange, forming the group:
+
+\[
+\text{Symmetry}(\{[q_i]\}) \cong \text{SU}(3)
+\]
+
+This coherence group acts on the triplet's symbolic return channels and is responsible for confining reuse into a closed, symmetric structure.
+
+\paragraph{Implication.}
+The SU(3) symmetry of the strong force emerges as the structural group of coherence-preserving transformations over a reuse triplet.
+
+\section{Toward Higher Groups: SU(5), SU(10)}
+
+In Section~\ref{chapter-multiplet-symmetry}, we will explore whether more complex, coherence-balanced multiplets—such as the 5-particle lepton family or a 10-particle GUT candidate—admit invariance under larger symmetry groups.
+
+The working hypothesis is:
+
+\begin{quote}
+\textit{Any return-closed coherence multiplet with constant latency and balanced asymmetry defines a unique symmetry group via its return-preserving transformations.}
+\end{quote}
+
+This group is structural—not imposed—and encodes all coherence-respecting transitions between the multiplet elements.
+
+\section{Conclusion}
+
+SCM does not begin with a symmetry group. It derives one.
+
+Stable reuse families, once formed, admit internal permutations that leave their coherence field invariant. These permutations form groups. The strongest of these are the return-preserving transformations, which define the structural analogues of gauge symmetries.
+
+Thus, symmetry is not foundational—it is emergent from return closure.
+

@@ -1,0 +1,113 @@
+\chapter{The Translation Dictionary} \label{chapter-translation-dictionary}
+
+In order to formally demonstrate that Yang--Mills theory is an emergent approximation of SCM, we must construct a precise mapping between their key mathematical objects.
+
+This chapter defines a structural correspondence between classical gauge field constructs and symbolic structures in the SCM framework.
+
+\section{Overview of the Correspondence}
+
+Let us begin with a side-by-side mapping of core quantities:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Conceptual Role} & \textbf{Gauge Theory (GT)} & \textbf{SCM Equivalent} \\
+\hline
+Spacetime domain         & $\mathbb{R}^4$, smooth manifold & Resolution Graph $G(R)$ \\
+\hline
+Field variable           & Gauge connection $A_\mu(x)$     & Coherence field $\Phi(\chi)$ \\
+\hline
+Field strength / curvature & $F_{\mu\nu}$                   & Symbolic curvature $\nabla_\mu \nabla_\nu \Phi$ \\
+\hline
+Dynamics                 & Euler--Lagrange PDE             & Symbolic evolution via $\mathcal{R}E$ \\
+\hline
+Invariance               & Local gauge symmetry            & Return-invariance of $[A]$ under $R$ \\
+\hline
+Energy                   & $\mathcal{L} = \text{Tr}(F_{\mu\nu}F^{\mu\nu})$ & $\mathcal{C}[R]$, total contradiction \\
+\hline
+Mass gap                 & $\Delta E > 0$ in spectrum      & Minimal latency $\Lambda_0 > 0$ \\
+\hline
+\end{tabular}
+\caption{Translation dictionary between Yang--Mills theory and SCM}
+\end{table}
+
+\section{Coherence Field and Symbolic Curvature}
+
+\begin{definition}[Symbolic Coherence Field]
+Let $[A] \in \Omega_3$ be a resolved identity with return path set $\mathcal{R}([A])$. The \textbf{coherence field} at $[A]$ is:
+\[
+\Phi([A]) := \sum_{i} p_i \Lambda(\mathcal{L}_i)
+\]
+where $p_i$ is the normalized probability of return path $\mathcal{L}_i$ and $\Lambda(\mathcal{L}_i)$ is its effort-weighted latency.
+\end{definition}
+
+This scalar field $\Phi([A])$ governs symbolic evolution, just as the potential $A_\mu(x)$ governs field evolution in gauge theory.
+
+\begin{definition}[Symbolic Curvature]
+Let $\chi([A]) = (X_h, X_c, X_\pi, X_\phi, X_\epsilon)$ be the coherence signature of $[A]$. The symbolic curvature is the second-order change in coherence potential:
+\[
+\mathcal{K}([A]) := \nabla \nabla \Phi(\chi([A]))
+\]
+\end{definition}
+
+This plays the structural role of the classical field strength tensor $F_{\mu\nu}$.
+
+\section{Contradiction Functional vs. Field Lagrangian}
+
+In Yang--Mills theory, the Lagrangian density is:
+\[
+\mathcal{L}_{YM} = -\frac{1}{4} \text{Tr}(F_{\mu\nu} F^{\mu\nu})
+\]
+
+In SCM, we define an equivalent structural quantity:
+
+\begin{definition}[Contradiction Functional]
+Let $R$ be a Rule Set and $[A] \in \Omega_3(R)$. The total contradiction of the system is:
+\[
+\mathcal{C}[R] := \sum_{[A]} \left( 1(\vec{\partial \chi}([A]) \neq 0) + 1(\rho([A]) < \rho_c) + 1(X_\pi([A]) \to \pm 1) \right)
+\]
+\end{definition}
+
+This contradiction functional plays the same role as a classical energy: high $\mathcal{C}$ means unstable or incoherent symbolic configurations.
+
+\section{Return-Invariance as Gauge Symmetry}
+
+\begin{definition}[Return-Invariance]
+A Rule Set $R$ is return-invariant over identity $[A]$ if all transformations $T \in R$ that preserve $[A]$ form closed loops in $\mathcal{R}([A])$, and modifying any $T_i$ in the loop yields $\mathcal{C}[R'] \geq \mathcal{C}[R]$.
+\end{definition}
+
+This structural invariance defines the symmetry of the system under symbolic evolution. In the continuum limit, this corresponds to gauge invariance.
+
+\section{Latency and the Mass Gap}
+
+In classical gauge theory, the mass gap is an assumed property of the energy spectrum:
+\[
+E_0 = 0,\quad E_1 \geq \Delta > 0
+\]
+
+In SCM, this is a provable structural fact:
+
+\begin{definition}[Symbolic Mass Gap]
+The mass gap in SCM is the minimal latency required for a persistent identity to exist:
+\[
+\Lambda_0 := \min \{ \Lambda([A]) \mid [A] \in \Omega_3 \}
+\]
+\end{definition}
+
+In both systems, excitations must overcome this floor to exist. But only SCM provides the \emph{reason}.
+
+\section{Conclusion: A Precise Structural Analogy}
+
+We summarize:
+
+\begin{itemize}
+    \item $A_\mu(x)$ is the approximation of $\Phi(\chi)$.
+    \item $F_{\mu\nu}$ is the projection of $\nabla\nabla \Phi$.
+    \item Gauge invariance is symbolic return-invariance.
+    \item Energy minimization is contradiction minimization.
+    \item The mass gap is not a hypothesis---it is a topological requirement.
+\end{itemize}
+
+This dictionary now allows us to construct the argument, in the rest of the volume, that classical Yang--Mills theory is the smooth shadow of symbolic coherence topology.
+

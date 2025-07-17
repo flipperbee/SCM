@@ -1,0 +1,100 @@
+\chapter{Return Invariance as Emergent Gauge Symmetry} \label{chapter-return-invariance}
+
+In classical gauge theory, physical observables are invariant under local transformations of the internal gauge space. In SCM, an analogous invariance emerges from the equivalence of all coherence-preserving return paths under RuleEvolution. This chapter demonstrates that gauge symmetry is not a primitive assumption, but a necessary consequence of symbolic closure under return.
+
+\section{Return Path Equivalence in SCM}
+
+\begin{definition}[Return Loop Equivalence]
+Let \( \mathcal{L}_1([A]), \mathcal{L}_2([A]) \in \mathcal{R}([A]) \) be two return paths resolving identity \( [A] \in \Omega_3 \). We write:
+\[
+\mathcal{L}_1([A]) \sim \mathcal{L}_2([A])
+\quad \text{if} \quad
+\Lambda(\mathcal{L}_1) = \Lambda(\mathcal{L}_2) \text{ and } \chi(\mathcal{L}_1) = \chi(\mathcal{L}_2)
+\]
+\end{definition}
+
+This defines symbolic invariance: different sequences of transformations result in the same identity structure.
+
+\paragraph{Interpretation.}
+This equivalence defines an internal redundancy in how identities are resolved. It plays the structural role of a gauge transformation.
+
+\section{Gauge Invariance in Field Theory}
+
+\begin{definition}[Gauge Transformation]
+In a Yang--Mills theory with gauge group \( G \), a gauge transformation is a smooth map:
+\[
+g: \mathbb{R}^4 \to G
+\quad \text{acting as} \quad
+A_\mu \mapsto A_\mu^g := g A_\mu g^{-1} - (\partial_\mu g) g^{-1}
+\]
+\end{definition}
+
+\paragraph{Physical Invariance.}
+Observable quantities like \( F_{\mu\nu} \) are invariant under \( g \). Only the structure of field curvature matters—not the particular connection used.
+
+\section{Structural Mapping}
+
+We now formalize the structural equivalence between SCM return invariance and classical gauge symmetry.
+
+\begin{definition}[Return Group \( \mathcal{G}([A]) \)]
+For an identity \( [A] \in \Omega_3 \), define:
+\[
+\mathcal{G}([A]) := \{ \mathcal{L}_i([A]) \in \mathcal{R}([A]) \mid \chi(\mathcal{L}_i) = \chi([A]) \}
+\]
+\end{definition}
+
+This set forms a symbolic transformation group under composition (modulo RuleEvolution closure), preserving coherence signature.
+
+\begin{proposition}[Return Group Invariance]
+Let \( [A] \in \Omega_3 \). Then:
+\[
+\forall \mathcal{L}_i \in \mathcal{G}([A]), \quad \Phi([A]) = \Phi(\mathcal{L}_i)
+\]
+\end{proposition}
+
+\paragraph{Analogy.}
+This invariance under coherent return variation plays the same role as gauge invariance: transformations in an internal space that leave physical structure unchanged.
+
+\section{Local vs. Global Invariance}
+
+In classical gauge theory:
+- \emph{Global gauge transformations} are constant across spacetime.
+- \emph{Local gauge transformations} vary pointwise: \( g(x) \).
+
+In SCM:
+- \emph{Global return invariance} applies to identities reused identically across contexts.
+- \emph{Local return invariance} arises when the reuse context varies: return paths differ symbolically but yield equivalent coherence closure.
+
+\begin{definition}[Contextual Return Freedom]
+Let \( [A] \in \Omega_3 \) and \( [B_1], [B_2] \) be reuse identities. If:
+\[
+[A] \to \mathcal{L}_1 \to [B_1] \quad \text{and} \quad [A] \to \mathcal{L}_2 \to [B_2]
+\]
+with \( \chi(\mathcal{L}_1) = \chi(\mathcal{L}_2) \), then symbolic gauge freedom is preserved under local variation.
+
+\end{definition}
+
+\section{Return Constraints and Gauge Fixing}
+
+Return paths that fail coherence closure induce symbolic drift and contradiction:
+
+\begin{itemize}
+  \item Non-closure: \( \chi(\mathcal{L}_i) \ne \chi([A]) \) ⇒ instability.
+  \item Overconstraint: Unresolvable symbolic cycles ⇒ collapse or pruning by \( \mathcal{R}E \).
+\end{itemize}
+
+\paragraph{Gauge Fixing Analogy.}
+In Yang--Mills theory, arbitrary freedom in \( A_\mu \) is reduced via gauge fixing (e.g., Lorenz gauge). In SCM, RuleEvolution plays the same role: it prunes incoherent return freedom, preserving only viable transformations.
+
+\section{Summary}
+
+Symbolic return invariance in SCM serves as the structural origin of gauge symmetry:
+
+\begin{itemize}
+  \item All coherence-preserving return paths are structurally equivalent.
+  \item Observable structure depends only on coherence signature, not path history.
+  \item Local return variation induces symbolic curvature, equivalent to gauge field strength.
+  \item RuleEvolution enforces consistency, acting as a symbolic gauge constraint.
+\end{itemize}
+
+This provides a rigorous foundation for interpreting gauge invariance as an emergent, structural symmetry in coherence logic.
