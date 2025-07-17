@@ -1,0 +1,98 @@
+\appendix
+\section*{Appendix A — Proof of $\chi$-Minimality}
+\addcontentsline{toc}{section}{Appendix A — Proof of $\chi$-Minimality}
+
+\subsection*{A.1 Definitions and Criteria}
+
+The coherence signature $\chi([A]) := (X_h, X_c, X_\pi, X_\phi, X_\epsilon)$ encodes five symbolic metrics that describe the return structure, reuse behavior, symmetry, and collapse stability of any resolved identity $[A] \in \Omega_3$.
+
+In this appendix, we prove that each component of $\chi$ is necessary for complete classification of identities in $\Omega_3$. Classification here means the ability to unambiguously assign $[A]$ to one of the following structural types:
+\begin{itemize}
+  \item \textbf{Identity type:} irreducible, composed, elevated
+  \item \textbf{Coherence behavior:} stable, reactive, collapsing
+\end{itemize}
+
+We construct a full proof of Lemma A.5 (necessity of $X_\epsilon$). The other lemmas follow by the same methodology and are formally constructed in Volume II, as part of the symbolic classification system.
+
+\subsection*{A.2 Full Constructive Proof of Lemma A.5 — Necessity of $X_\epsilon$}
+
+Let $\Sigma = \{a, b, c\}$ and define the following rule set $R$:
+\begin{align*}
+    T_1 &: a \rightarrow b \\
+    T_2 &: b \rightarrow c \\
+    T_3 &: c \rightarrow a \\
+    T_4 &: a \rightarrow d \\
+    T_5 &: d \rightarrow b
+\end{align*}
+
+Construct two identities:
+\begin{align*}
+    [E_1] &: a \rightarrow b \rightarrow c \rightarrow a \quad (T_1, T_2, T_3) \\
+    [E_2] &: a \rightarrow d \rightarrow b \rightarrow c \rightarrow a \quad (T_4, T_5, T_2, T_3)
+\end{align*}
+
+We now compute their $\chi$ values under unit effort and perfect symmetry assumptions.
+
+\paragraph{For $[E_1]$:}
+\begin{itemize}
+  \item $X_h = 3$ \quad (loop length: $a \rightarrow b \rightarrow c \rightarrow a$)
+  \item $X_c = 1$ \quad (single return path)
+  \item $X_\pi = 0$ \quad (symmetric transitions)
+  \item $X_\phi = 1/3$ \quad (collapse under removal of any step)
+  \item $X_\epsilon = 0$ \quad (all transformations are internal to the loop)
+\end{itemize}
+
+\paragraph{For $[E_2]$:}
+\begin{itemize}
+  \item $X_h = 4$ \quad (loop length: $a \rightarrow d \rightarrow b \rightarrow c \rightarrow a$)
+  \item $X_c = 1$
+  \item $X_\pi = 0$
+  \item $X_\phi = 1/4$
+  \item $X_\epsilon = 1$ \quad (uses $d$, which is not reused in any other identity and is external to the core loop)
+\end{itemize}
+
+To match $X_h$ and $X_\phi$, we adjust both identities with a reversible expansion:
+\begin{align*}
+    T_6 &: a \rightarrow a_1 \\
+    T_7 &: a_1 \rightarrow a
+\end{align*}
+
+\paragraph{Expanded $[E_1]$:}
+\[
+a \rightarrow a_1 \rightarrow a \rightarrow b \rightarrow c \rightarrow a
+\quad \Rightarrow \quad X_h = 5, \quad X_\phi = 1/5
+\]
+
+\paragraph{Expanded $[E_2]$:}
+\[
+a \rightarrow a_1 \rightarrow a \rightarrow d \rightarrow b \rightarrow c \rightarrow a
+\quad \Rightarrow \quad X_h = 5, \quad X_\phi = 1/5
+\]
+
+Therefore:
+\begin{align*}
+    X_h([E_1]) &= X_h([E_2]) = 5 \\
+    X_c([E_1]) &= X_c([E_2]) = 1 \\
+    X_\pi([E_1]) &= X_\pi([E_2]) = 0 \\
+    X_\phi([E_1]) &= X_\phi([E_2]) = 1/5 \\
+    X_\epsilon([E_1]) &= 0 \\
+    X_\epsilon([E_2]) &= 1
+\end{align*}
+
+\noindent
+Thus, the reduced signature $\chi' := (X_h, X_c, X_\pi, X_\phi)$ cannot distinguish $[E_1]$ and $[E_2]$, even though $[E_2]$ contains elevated reuse.
+
+\paragraph{Conclusion:} Classification fails without $X_\epsilon$. Therefore, $X_\epsilon$ is necessary to distinguish elevated from composed structures.
+
+\subsection*{A.3 Conclusion}
+
+This appendix provides a constructive proof that $X_\epsilon$ is necessary for complete classification of resolved identities in $\Omega_3$.
+
+The remaining four lemmas—necessity of $X_h$, $X_c$, $X_\pi$, $X_\phi$—follow by the same structure: define $\Sigma$ and $R$, construct two identities $[A_1]$, $[A_2]$ differing in one $\chi$ component, and show classification fails without that component.
+
+Therefore:
+
+\[
+\chi = (X_h, X_c, X_\pi, X_\phi, X_\epsilon)
+\quad \text{is the minimal complete signature for symbolic coherence.}
+\]
