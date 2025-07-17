@@ -1,0 +1,75 @@
+\appendix
+\section*{Appendix B — Triadic Principle}
+\addcontentsline{toc}{section}{Appendix B — Triadic Principle}
+
+\subsection*{B.1 \quad Statement of the Triadic Principle}
+
+Let $[A] \in \Omega_3$ be any coherence-resolved identity. Then $[A]$ must fall into exactly one of the following three mutually exclusive identity classes:
+
+\begin{enumerate}
+    \item \textbf{Irreducible:} $[A]$ resolves return without reusing any other identity.
+    \item \textbf{Composed:} $[A]$ resolves return through internal reuse of substructures.
+    \item \textbf{Elevated:} $[A]$ cannot resolve return without external reuse support.
+\end{enumerate}
+
+We call this the \textit{Triadic Principle}. This appendix presents a formal proof that these three classes are exhaustive and mutually exclusive over $\Omega_3$.
+
+\subsection*{B.2 \quad Formal Definitions}
+
+Let:
+\begin{itemize}
+    \item $\mathcal{L}([A])$: minimal return path for $[A]$
+    \item $\operatorname{support}([A])$: the set of identities reused in resolving $\mathcal{L}([A])$
+    \item $X_\epsilon([A])$: reuse elevation (number of external structures required to stabilize $[A]$)
+    \item $X_h([A])$: number of steps in $\mathcal{L}([A])$
+\end{itemize}
+
+We define:
+
+\begin{itemize}
+    \item \textbf{Irreducible:} $X_h = 1$ \textit{or} $\operatorname{support}([A]) = \emptyset$
+    \item \textbf{Composed:} $X_\epsilon = 0$ and $\operatorname{support}([A]) \ne \emptyset$
+    \item \textbf{Elevated:} $X_\epsilon > 0$
+\end{itemize}
+
+\subsection*{B.3 \quad Mutual Exclusivity}
+
+We now prove that no identity in $\Omega_3$ can simultaneously satisfy more than one of these definitions.
+
+\paragraph{Case 1: Irreducible.} If $\operatorname{support}([A]) = \emptyset$, then $[A]$ cannot be composed (no reuse exists). Also, $X_\epsilon = 0$ trivially, so it is not elevated either.
+
+\paragraph{Case 2: Composed.} If $\operatorname{support}([A]) \ne \emptyset$ but all reuse is internal ($X_\epsilon = 0$), then $[A]$ cannot be irreducible, and it also cannot be elevated (since $X_\epsilon = 0$).
+
+\paragraph{Case 3: Elevated.} If $X_\epsilon > 0$, then $[A]$ depends on external reuse to resolve return. It is clearly not irreducible (reuse exists), and not composed (some reuse lies outside the structure of $[A]$).
+
+Therefore, the three classes are pairwise disjoint.
+
+\subsection*{B.4 \quad Exhaustiveness}
+
+Let $[A] \in \Omega_3$ be any coherence-resolved identity.
+
+There are only two logical possibilities:
+\begin{itemize}
+    \item If $\operatorname{support}([A]) = \emptyset$ $\Rightarrow$ $[A]$ is irreducible.
+    \item If $\operatorname{support}([A]) \ne \emptyset$:
+    \begin{itemize}
+        \item If $X_\epsilon = 0$ $\Rightarrow$ $[A]$ is composed.
+        \item If $X_\epsilon > 0$ $\Rightarrow$ $[A]$ is elevated.
+    \end{itemize}
+\end{itemize}
+
+No additional case exists.
+
+\subsection*{B.5 \quad Conclusion}
+
+The three identity classes:
+
+\begin{itemize}
+    \item \textbf{Irreducible:} no reuse,
+    \item \textbf{Composed:} internal reuse only,
+    \item \textbf{Elevated:} external reuse required,
+\end{itemize}
+
+are mutually exclusive and collectively exhaustive over the set of coherence-resolved identities $\Omega_3$.
+
+\hfill $\blacksquare$

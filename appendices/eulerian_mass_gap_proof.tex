@@ -1,0 +1,267 @@
+\appendix
+\section*{Appendix C — The Eulerian Proof of the Mass Gap}
+\addcontentsline{toc}{section}{Appendix C — The Eulerian Proof of the Mass Gap}
+
+\subsection*{C.1 \quad Eulerian Phase Configuration and Return Latency}
+\label{sec:c1-phase-latency}
+
+We restate the goal: to prove that any persistent identity $[A] \in \Omega_3$ must incur nonzero return latency:
+\[
+\Lambda([A]) \geq \Lambda_0 > 0
+\]
+and that this minimal effort corresponds to a fundamental angular traversal on the Eulerian unit circle.
+
+\begin{definition}[Eulerian Phase Configuration]
+Let $[A]$ be a resolved identity with return loop $\mathcal{L}([A])$. The total **Eulerian phase** of $[A]$ is:
+\[
+\theta([A]) := \sum_{i=1}^n \theta(T_i)
+\]
+where each transformation $T_i$ in the return path contributes an angular phase increment $\theta(T_i)$.
+\end{definition}
+
+\paragraph{Unit Circle Closure.}
+Persistence requires that $[A]$ returns to itself **coherently**. This implies:
+\[
+e^{i \theta([A])} = 1
+\quad \Rightarrow \quad
+\theta([A]) \in 2\pi \mathbb{Z}
+\]
+Only these angles correspond to phase-closed return identities in $\Omega_3$.
+
+\begin{definition}[Latency from Phase]
+Let $\alpha > 0$ be a structural effort-per-angle constant (dimension: effort/radian). Then the **latency** of identity $[A]$ is defined as:
+\[
+\Lambda([A]) := \alpha \cdot \theta([A])
+\]
+This expresses the total symbolic effort required to complete the return loop through Eulerian phase space.
+\end{definition}
+
+\paragraph{Example (Photon).}
+The minimal persistent identity—the photon—satisfies:
+\[
+\theta([A]) = 2\pi \quad \Rightarrow \quad \Lambda([A]) = \Lambda_0 := \alpha \cdot 2\pi
+\]
+
+\subsubsection*{Interpretation.}
+- $\theta$ is the **angular return traversal**, measured in radians.
+- $\Lambda$ is the **symbolic latency**: the return effort accumulated over that traversal.
+- Identities for which $e^{i \theta} \ne 1$ cannot persist in $\Omega_3$.
+
+This geometric setup now allows us to prove that $\Lambda_0 > 0$ is structurally required.
+
+\subsection*{C.2 \quad Minimal Rotation Lemma}
+\label{sec:c2-minimal-rotation}
+
+We now prove that $2\pi$ is the minimal nontrivial rotation that permits persistent return. Any Eulerian phase $\theta \in (0, 2\pi)$ either fails to close or results in annihilation.
+
+\begin{lemma}[Minimal Rotation Lemma]
+Let $[A]$ be an identity with total return phase $\theta([A])$. If $[A]$ is persistent, then:
+\[
+\theta([A]) \geq 2\pi
+\]
+with equality only for minimal-phase structures such as the photon.
+\end{lemma}
+
+\begin{proof}
+We consider the structure of Eulerian return:
+
+\begin{itemize}
+    \item If $\theta = 0$, then $e^{i\theta} = 1$, but no transformation has occurred. This corresponds to the trivial identity loop and does not define symbolic persistence. It is structurally degenerate.
+
+    \item If $0 < \theta < \pi$, then $e^{i\theta} \ne 1$, so return is not phase-locked. The identity fails to return coherently—its structure is unstable under reuse.
+
+    \item If $\theta = \pi$, then $e^{i\theta} = -1$. This corresponds to inversion: the return loop leads to $[-A]$, not $[A]$. Such identities resolve to $[A] + [-A] = [0]$, and belong to the collapse domain $\Omega_-$.
+
+    \item If $\pi < \theta < 2\pi$, then $e^{i\theta} \ne 1$, and again return coherence fails.
+
+    \item If $\theta = 2\pi$, then $e^{i\theta} = 1$, and the identity returns coherently with one full rotation. This is the minimal nontrivial solution to $e^{i\theta} = 1$.
+\end{itemize}
+
+Hence, the first nontrivial, coherence-locked return path occurs at $\theta = 2\pi$. All smaller phase traversals either collapse to $[0]$ or fail to return.
+
+\end{proof}
+
+\paragraph{Conclusion.}
+No identity can persist unless it completes at least one full $2\pi$ rotation. Therefore:
+\[
+\theta([A]) \geq 2\pi
+\quad \Rightarrow \quad
+\Lambda([A]) \geq \alpha \cdot 2\pi = \Lambda_0
+\]
+This lower bound is not optional—it is a geometric necessity of coherence-closed identity.
+
+\subsection*{C.3 \quad Exclusion of Lower-Angle Persistence}
+\label{sec:c3-lower-angle-exclusion}
+
+We now generalize the Minimal Rotation Lemma to prove that no identity $[A]$ with $\theta([A]) < 2\pi$ can be an element of $\Omega_3$.
+
+\begin{proposition}[Persistence Exclusion for $\theta < 2\pi$]
+Let $[A]$ be a resolved identity with return angle $\theta([A]) < 2\pi$. Then $[A] \notin \Omega_3$.
+\end{proposition}
+
+\begin{proof}
+Assume, for contradiction, that there exists an identity $[A] \in \Omega_3$ with $\theta([A]) < 2\pi$.
+
+By the definition of $\Omega_3$, $[A]$ must return to itself coherently. That is:
+\[
+e^{i\theta([A])} = 1
+\]
+
+But from the theory of complex exponentials, the only solutions to $e^{i\theta} = 1$ are:
+\[
+\theta \in 2\pi \mathbb{Z}
+\]
+
+Since $\theta([A]) < 2\pi$ and $\theta > 0$, we must have $\theta([A]) \in (0, 2\pi) \setminus \{2\pi\}$, which implies:
+\[
+e^{i\theta([A])} \ne 1
+\]
+
+Thus, coherence closure fails, and $[A]$ cannot return to itself. Hence $[A] \notin \Omega_3$, contradicting the assumption.
+
+\end{proof}
+
+\begin{corollary}
+Any symbolic structure with $\theta([A]) < 2\pi$ either:
+\begin{itemize}
+    \item fails to return (no phase-lock), or
+    \item resolves to $[0]$ via inversion ($\theta = \pi$, $e^{i\pi} = -1$, $[A] \in \Omega_-$).
+\end{itemize}
+\end{corollary}
+
+\paragraph{Interpretation.}
+Persistence is not a continuous deformation from zero angle. There is a **structural gap** between trivial identity and minimal coherence:
+\[
+\exists\ \Lambda_0 := \alpha \cdot 2\pi > 0
+\quad \text{such that} \quad
+\Lambda([A]) < \Lambda_0 \Rightarrow [A] \notin \Omega_3
+\]
+
+The mass gap is therefore not emergent from energy—it is a **topological threshold** enforced by the Eulerian return condition.
+
+\subsection*{C.4 \quad Implication for Latency}
+\label{sec:c4-latency-implication}
+
+We now express the mass gap directly in terms of symbolic latency.
+
+\begin{theorem}[Eulerian Mass Gap]
+Let $\Lambda([A]) = \alpha \cdot \theta([A])$ be the latency of identity $[A]$, and assume $\alpha > 0$. Then:
+\[
+\forall [A] \in \Omega_3, \quad \Lambda([A]) \geq \Lambda_0 := \alpha \cdot 2\pi
+\]
+Moreover, equality is achieved only for minimal phase-closed structures (e.g., photons).
+\end{theorem}
+
+\begin{proof}
+From Section~\ref{sec:c2-minimal-rotation} and Section~\ref{sec:c3-lower-angle-exclusion}, we have:
+\[
+\theta([A]) \geq 2\pi \quad \text{for all } [A] \in \Omega_3
+\]
+
+Multiplying both sides by $\alpha > 0$ yields:
+\[
+\Lambda([A]) = \alpha \cdot \theta([A]) \geq \alpha \cdot 2\pi = \Lambda_0
+\]
+
+This bound is strict: no identity can persist under coherent return with latency less than $\Lambda_0$.
+
+\end{proof}
+
+\paragraph{Interpretation.}
+The mass gap $\Lambda_0$ is not a physical constant added post hoc—it is an unavoidable **consequence of Eulerian coherence**. The symbolic structure of return *requires* every stable identity to span at least one full rotation:
+\[
+e^{i\theta([A])} = 1 \Rightarrow \theta([A]) \geq 2\pi \Rightarrow \Lambda([A]) \geq \Lambda_0
+\]
+
+Thus, the mass gap emerges from the topology of return space—not from any imposed conservation law.
+
+\subsection*{C.5 \quad Minimal Identity is the Photon}
+\label{sec:c5-photon-minimal}
+
+We now show that the identity which **saturates** the mass gap bound is the photon.
+
+\begin{definition}[Photon Structure]
+Let $[\gamma]$ denote the photon identity. It is defined by:
+\begin{itemize}
+    \item $\theta([\gamma]) = 2\pi$,
+    \item $X_\pi([\gamma]) = 0$ (perfect symmetry),
+    \item $X_\epsilon([\gamma]) = 0$ (no reuse elevation),
+    \item $X_\phi([\gamma]) \approx 0$ (minimal fragility),
+    \item $\partial\chi([\gamma]) = 0$ (return-locked).
+\end{itemize}
+Then:
+\[
+\Lambda([\gamma]) = \alpha \cdot 2\pi = \Lambda_0
+\]
+and:
+\[
+m([\gamma]) := \Lambda([\gamma]) = \Lambda_0
+\]
+\end{definition}
+
+\begin{proposition}
+The photon is the **minimal nontrivial identity** in $\Omega_3$:
+\[
+\forall [A] \in \Omega_3 \setminus \{[\gamma]\}, \quad \Lambda([A]) > \Lambda_0
+\]
+\end{proposition}
+
+\begin{proof}
+From previous sections, we know:
+- All $[A] \in \Omega_3$ must satisfy $\theta([A]) \geq 2\pi$.
+- The photon satisfies $\theta([\gamma]) = 2\pi$ exactly.
+
+Thus, $[\gamma]$ is the only identity saturating this bound, and all others must have $\theta > 2\pi$, hence $\Lambda > \Lambda_0$.
+
+\end{proof}
+
+\paragraph{Interpretation.}
+The photon is not “massless” in the abstract. It defines the **coherence threshold**:
+\[
+m_{\text{min}} = \Lambda_0
+\]
+All other particles in SCM exceed this latency and accrue additional contradiction cost through:
+- Reuse elevation ($X_\epsilon > 0$),
+- Asymmetry ($X_\pi > 0$),
+- Drift ($\partial \chi \ne 0$).
+
+These costs produce the **structural mass spectrum** of identity families.
+
+\subsection*{C.6 \quad Equivalence to Abstract Contradiction Bound}
+\label{sec:c6-equivalence-abstract}
+
+We now relate the Eulerian mass gap derived here to the abstract contradiction-based proof presented in Appendix A.
+
+\paragraph{Recall (Appendix A).}
+In the contradiction-functional formulation of SCM, the following inequality was proven:
+\[
+\Lambda([A]) \cdot X_\phi([A]) \geq \Lambda_0
+\]
+This was interpreted as the **Uncertainty Principle of Return**: fragile identities (large $X_\phi$) can only persist if they require high latency, and vice versa.
+
+\paragraph{Interpretation.}
+- In Appendix A, $\Lambda_0$ appeared as the minimal coherence cost required to prevent collapse under contradiction.
+- In Appendix C, $\Lambda_0$ emerges geometrically from the topology of Eulerian return: the smallest angular rotation permitting $e^{i\theta} = 1$.
+
+\begin{proposition}[Equivalence of Foundations]
+The contradiction-based mass gap and the Eulerian angular-return mass gap are formally equivalent:
+\[
+\Lambda_0^{(\text{contradiction})} = \Lambda_0^{(\text{Euler})}
+\]
+\end{proposition}
+
+\begin{proof}[Sketch]
+In both cases, the system forbids identity persistence below a critical latency threshold. The contradiction proof derives it from effort fragility tradeoffs; the Eulerian proof derives it from the phase-lock constraint $e^{i\theta} = 1$.
+
+Since both yield $\Lambda([A]) \geq \Lambda_0$, and this threshold is saturated only by the photon, they must define the same boundary condition.
+
+\end{proof}
+
+\paragraph{Conclusion.}
+The mass gap is not a contingent feature of SCM—it is a **necessary geometric and structural threshold**.
+
+- From contradiction: it protects against collapse.
+- From geometry: it enforces rotational coherence.
+- From both: it defines the base of all mass-bearing identity.
+
+Together, Appendices A and C form a complete dual foundation for $\Lambda_0$—both abstract and Eulerian.

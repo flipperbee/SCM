@@ -1,0 +1,154 @@
+\chapter{Resolution Domains}
+
+In this chapter, we introduce a structural classification of symbolic forms based on return behavior.  
+Given a symbolic structure $S \in \Sigma^*$ and a permitted rule set $R \subset \Sigma^*$,  
+we define the \textit{resolution space} as the partitioning of $\Sigma^*$ into four coherence domains:  
+$\Omega_1$, $\Omega_2$, $\Omega_3$, and $\Omega_-$.
+
+These domains represent increasing levels of return coherence, from unresolved forms to stable identities, and finally to structural annihilation.
+
+\section{Domain Definitions}
+
+Let $\mathcal{L}(S)$ denote the set of permitted return paths from a structure $S$ back to itself, as defined in Chapter~2.
+
+\begin{definition}[Unresolved Domain $\Omega_1$] \label{def:omega1}
+The domain $\Omega_1$ consists of unresolved structures. We define:
+\begin{equation} \label{eq:omega1}
+S \in \Omega_1 \iff \mathcal{L}(S) = \emptyset
+\end{equation}
+These structures admit no return path under the current rule set $R$.  
+They are unresolved, unstable, and cannot form identities.
+\end{definition}
+
+\begin{definition}[Unstable Return Domain $\Omega_2$] \label{def:omega2}
+The domain $\Omega_2$ consists of partially or unstably resolved structures. We define:
+\begin{equation} \label{eq:omega2}
+S \in \Omega_2 \iff \mathcal{L}(S) \neq \emptyset \text{ but return is unstable or fragile}
+\end{equation}
+These structures return, but the path may be incoherent, high-drift, or exhibit unbounded fragility ($X_\phi \rightarrow \infty$), a concept formalized in chapter 4.  
+$\Omega_2$ captures structures on the boundary of resolution, including unstable loops and transient identity forms.
+\end{definition}
+
+\begin{definition}[Resolved Identity Domain $\Omega_3$] \label{def:omega3}
+The domain $\Omega_3$ consists of fully resolved, coherence-stable identities. We define:
+\begin{equation} \label{eq:omega3}
+S \in \Omega_3 \iff \mathcal{L}(S) \neq \emptyset \text{ and return is coherent, stable, and bounded}
+\end{equation}
+These structures satisfy all return conditions: finite loop length, bounded fragility, and minimal reuse.  
+$\Omega_3$ is the space of symbolic identity stability and the foundation for all coherent structure in SCM.
+\end{definition}
+
+\section{Structural Interpretation} \label{structural-interpretation}
+
+The $\Omega$-partition provides a coarse symbolic topology over $\Sigma^*$.  
+A structure transitions through coherence domains as stability increases:
+\begin{equation} \label{eq:omega-transition}
+\Omega_1 \rightarrow \Omega_2 \rightarrow \Omega_3
+\end{equation}
+
+These domains are not axiomatic.  
+They emerge from the behavior of return paths under a given rule set $R$.
+
+Volume~I focuses primarily on $\Omega_3$, the space of coherent identities.  
+Later volumes may develop models for instability and partial identity in $\Omega_2$.
+
+\section{Constructive Identity in $\Omega_3$}
+
+We now show that the coherence-resolved identity space $\Omega_3$ is non-empty by constructing a simple identity from first principles.
+
+\begin{definition}[Minimal Rule System] \label{def:minimal-rule-system}
+Let the symbolic alphabet be:
+\[
+\Sigma = \{a, b\}
+\]
+Define the following transformation rules:
+\begin{align}
+T_1 &: a \rightarrow b \label{eq:rule-t1} \\
+T_2 &: b \rightarrow a \label{eq:rule-t2}
+\end{align}
+Assume $T_1, T_2 \in R$, the enabled rule set.
+\end{definition}
+
+\begin{definition}[Constructed Identity] \label{def:constructed-identity}
+Let $S = a$. Apply the sequence of transformations:
+\[
+a \xrightarrow{T_1} b \xrightarrow{T_2} a
+\]
+This defines the return path:
+\begin{equation} \label{eq:return-loop-identity}
+\mathcal{L}([S]) = \{ a \rightarrow b \rightarrow a \}
+\end{equation}
+This loop is finite, coherent, and composed entirely of enabled rules.
+\end{definition}
+
+\begin{definition}[Verification of $\Omega_3$ Membership] \label{def:omega3-verification}
+We now verify that $[a]$ satisfies the criteria for membership in $\Omega_3$, drift and collapse robustness will be formally defined in chapter 4:
+\begin{itemize}
+  \item \textbf{Return path exists:} $\mathcal{L}([a]) \neq \emptyset$
+  \item \textbf{Drift is zero:} $\chi([a])$ remains invariant under reuse
+  \item \textbf{Collapse robustness:} $\rho([a])$ is finite and nonzero
+\end{itemize}
+Thus:
+\begin{equation} \label{eq:a-in-omega3}
+[a] \in \Omega_3
+\end{equation}
+\end{definition}
+
+\begin{definition}[Excluded Structure: Euler Inversion] \label{def:euler-inversion-exclusion}
+Consider instead the Euler-style loop:
+\begin{align}
+T_3 &: a \rightarrow -a \label{eq:rule-t3} \\
+T_4 &: -a \rightarrow a \label{eq:rule-t4}
+\end{align}
+This inversion pair completes a path with maximal return asymmetry $X_\pi = -1$ and resolves via cancellation:
+\begin{equation} \label{eq:euler-cancellation-example}
+[a] + [-a] = [0]
+\end{equation}
+Such cancellation loops do not qualify as identities. They resolve to the null structure $[0]$ and are excluded from $\Omega_3$.
+\end{definition}
+
+This constructive example confirms that $\Omega_3$ contains nontrivial, coherence-resolved identities, and is therefore non-empty.
+
+\section{Structural Annihilation and the $\Omega_-$ Domain}
+
+In addition to the previously defined identity resolution spaces $\Omega_1$, $\Omega_2$, and $\Omega_3$, the discovery of symmetry-inverted return loops introduces a fourth domain of structural behavior: $\Omega_-$.
+
+\begin{definition}[Symmetry-Inverted Transformation] \label{def:symmetry-inversion}
+Let $[A]$ be a symbolic structure with a permitted transformation $T_1$ such that:
+\begin{equation} \label{eq:symmetry-inversion}
+T_1 : [A] \rightarrow [-A]
+\end{equation}
+This one-step symmetry inversion is coherent, permitted, and of minimal return depth ($X_h = 1$), but it does not return to $[A]$ and therefore does not constitute an identity.
+\end{definition}
+
+Now consider the loop formed by a pair of symmetry-inverted transformations:
+\begin{align}
+T_1 &: [A] \rightarrow [-A] \label{eq:annihilation-t1} \\
+T_2 &: [-A] \rightarrow [A] \label{eq:annihilation-t2}
+\end{align}
+
+This 2-step loop is coherent and symmetric under inversion. If $[A]$ and $[-A]$ together resolve to the null identity $[0]$ under structural addition, we define this as a case of structural annihilation.
+
+\begin{definition}[Annihilation Domain $\Omega_-$] \label{def:omega-minus}
+The annihilation domain is defined as:
+\begin{equation} \label{eq:omega-minus}
+\Omega_- := \{ [A], [-A] \mid [A] + [-A] = [0] \}
+\end{equation}
+These structures meet coherence requirements: they have return paths and bounded fragility, but they are not identities. They do not return to themselves, but cancel to the null identity $[0]$.
+\end{definition}
+
+This domain is structurally coherent but non-persistent.  
+$\Omega_-$ forms the annihilation boundary of $\Omega_3$ — the symbolic equivalent of coherence collapse via structural inversion.
+
+\subsection*{Summary: Full Identity Resolution Topology}
+
+The complete symbolic topology of identity resolution in SCM includes four regions:
+
+\begin{itemize}
+  \item $\Omega_1$: Unresolved structures (no return path)
+  \item $\Omega_2$: Fragile or unstable coherence ($\partial \chi$ unbounded or $\rho < \rho_c$)
+  \item $\Omega_3$: Stable identity (return exists, bounded drift, and robustness)
+  \item $\Omega_-$: Coherence-resolved but annihilating (returns to $[0]$, not $[A]$)
+\end{itemize}
+
+Volume~I now defines $\Omega_-$ as the symbolic terminal class of coherence: fully allowed under return, but excluded from identity due to complete inversion.

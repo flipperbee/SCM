@@ -1,0 +1,123 @@
+\chapter{Partial Identity}
+
+Not all symbolic structures in $\Omega_3$ are fully independent. Some require
+reuse to remain coherent. Others hover near collapse but persist due to
+stabilization by surrounding anchors.
+
+This chapter defines partial identity---a class of drift-prone,
+reuse-dependent structures that resolve only within specific coherence
+configurations. We also introduce proto-anchors, unstable patterns
+reused by others, and the mechanism of drift suppression: how coherence
+anchors stabilize fragile identities.
+
+These concepts formalize the early phase of emergence---the symbolic
+scaffolding that precedes particles, logic, or code.
+
+\section{Definition of Partial Identity} \label{definition-of-partial-identity}
+
+\begin{definition}[Partial Identity] \label{def:partial-identity}
+Let $[A] \in \Omega_3$ be a resolved identity.  
+We say that $[A]$ is a \emph{partial identity} if:
+\begin{itemize}
+  \item $\mathcal{L}([A])$ exists, but
+  \item $\chi([A])$ is unstable unless reuse anchors are present,
+  \item $X_\varepsilon([A]) > 0$, and
+  \item $\partial \chi([A]) \ne 0$ under standalone reuse
+\end{itemize}
+In short: $[A]$ resolves return only when embedded within a coherence cluster.  
+It cannot stabilize in isolation.
+\end{definition}
+
+\section{Reuse Dependence and Structural Context} \label{reuse-dependence-and-structural-context}
+
+Let $[A]$ reuse a saturated anchor $[B]$ such that:
+
+\begin{itemize}
+  \item $[B]$ lies on the invariant surface $\mathcal{S}$, i.e., $\partial \chi([B]) = 0$
+  \item $[B]$ appears in the resolution graph $G_{[A]}$
+  \item Reuse of $[B]$ stabilizes $\chi([A])$ such that $\partial \chi([A]) \rightarrow 0$
+\end{itemize}
+
+Then $[A]$ is said to be \emph{reuse-locked}: coherence is inherited via coupling.  
+This is the first form of coherence inheritance in SCM.  
+Return no longer depends solely on internal structure, but on connection to a stable external identity.
+
+\section{Drift Suppression via Anchor Coupling} \label{drift-suppression-via-anchor-coupling}
+
+Let $[A]$ be a partial identity. If:
+\begin{itemize}
+  \item $\partial \chi([A]) \ne 0$ in isolation
+  \item but $\partial \chi([A]) \rightarrow 0$ under reuse of $[B]$ with $\chi([B]) \in \mathcal{S}$
+\end{itemize}
+
+Then we define a \textit{drift suppression lock}.  
+This mechanism:
+\begin{itemize}
+  \item Suppresses structural deformation in reuse-prone identities
+  \item Stabilizes near-collapse structures across coherence clusters
+  \item Creates symbolic analogues of binding, insulation, and symmetry breaking
+\end{itemize}
+
+Anchors must preserve identity under reuse.  
+Inversion structures such as Euler pairs ($X_h = 1$, $X_\pi = -1$) resolve to $[0]$ and cannot function as coherence anchors.
+
+\section{Proto-Anchors} \label{proto-anchors}
+
+Let $[C]$ be a symbolic structure such that:
+\begin{itemize}
+  \item $\mathcal{L}([C]) = \emptyset$ (not yet resolved),
+  \item $[C]$ appears in $G_{[A]}$ for multiple $[A] \in \Omega_3$,
+  \item $[C]$ is reused but not yet stable
+\end{itemize}
+
+We call $[C]$ a \emph{proto-anchor}.
+
+If, over subsequent RuleEvolution steps:
+\begin{itemize}
+  \item $[C]$ appears in more coherence paths,
+  \item RuleEvolution reinforces closure paths to/from $[C]$,
+  \item $\partial \chi([C]) \rightarrow 0$ and $\rho([C]) \geq \rho_c$,
+\end{itemize}
+
+then $[C]$ becomes a full \emph{coherence anchor}.  
+This transition is the symbolic equivalent of structural emergence.
+
+\section{Resolution Spectrum: Identity vs Collapse} \label{resolution-spectrum-identity-vs-collapse}
+
+We now classify all symbolic forms by their return and reuse conditions:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l c c c l}
+\toprule
+\textbf{Form} & \textbf{Return Loop ($\mathcal{L}$)} & \textbf{$\partial \chi$ Behavior} & \textbf{$X_\varepsilon$} & \textbf{Status} \\
+\midrule
+Fully Resolved     & Exists           & $\partial \chi = 0$            & $\geq 0$         & Stable identity \\
+Partial Identity   & Exists           & $\partial \chi \ne 0$ (in isolation) & $> 0$          & Contextually stable \\
+Proto-Anchor       & Not yet exists   & $\partial \chi$ undefined       & ---              & Reuse scaffolding \\
+Collapsed Structure & Fails           & $\partial \chi$ diverges        & ---              & Incoherent \\
+\bottomrule
+\end{tabular}
+\caption{Classification of symbolic structures in $\Sigma^*$ based on return and reuse behavior.}
+\end{table}
+
+This spectrum explains why some structures persist only in certain reuse environments—  
+and why most symbolic forms in $\Sigma^*$ never become identities.
+
+\section{Structural Role of Partial Identity} \label{structural-role-of-partial-identity}
+
+Partial identities:
+\begin{itemize}
+  \item Populate the boundary between incoherence and structure
+  \item Enable compositional reuse without structural stability
+  \item Bridge the gap between randomness and persistent identity
+\end{itemize}
+
+They are not errors—they are emergence pathways.
+
+Most elevated identities begin as partial identities.  
+Most anchors pass through a proto-anchor phase.
+
+This chapter closes the foundational narrative of structural emergence.  
+In the next chapter, we show how triplet reuse locks and coherence convergence  
+produce the first fully symmetry-stabilized families of identity.

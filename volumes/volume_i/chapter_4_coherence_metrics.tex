@@ -1,0 +1,176 @@
+\chapter{Coherence Metrics}
+
+Now that identity domains $\Omega_1$, $\Omega_2$, and $\Omega_3$ have been introduced,  
+we turn our attention to quantitative measures that apply within $\Omega_3$, the space of coherence-stable identity.  
+Not all return-closed structures are equally robust.  
+Some collapse under minimal symbolic deformation, while others exhibit persistent coherence across reuse and drift.
+
+This chapter defines four coherence metrics that distinguish between fragile and stable identity behavior in $\Omega_3$.
+
+The following metrics define key axes of identity coherence:
+
+\begin{itemize}
+  \item \textbf{Collapse robustness} ($\rho$): How far can an identity deform before it exits $\Omega_3$?
+  \item \textbf{Fragility} ($X_\phi$): The inverse of robustness; susceptibility to symbolic collapse
+  \item \textbf{Latency} ($\Lambda$): Total symbolic effort required to complete a return loop
+  \item \textbf{Return symmetry} ($X_\pi$): Structural asymmetry in the permitted return cycle
+\end{itemize}
+
+These quantities form part of the coherence signature $\chi([A])$ and help define coherence surfaces in $\chi$-space.
+
+\section{Collapse Robustness $\rho$}
+
+Let $[A] \in \Omega_3$ be a resolved identity.  
+Let $D([A], [A'])$ be a permitted deformation path, defined as any finite, directed path in the resolution graph $G(R)$ that starts at node A and ends at node A'.  
+Each transformation $T_i$ in the path contributes symbolic effort $\text{effort}(T_i)$.
+
+\begin{definition}[Collapse Robustness]
+Collapse robustness $\rho([A])$ is defined as:
+\begin{equation} \label{eq:collapse-robustness}
+\rho([A]) := \inf \left\{ \varepsilon > 0 \,\middle|\, \exists [A'] \in D([A], [A']) \text{ such that } \mathcal{L}([A']) = \emptyset \right\}
+\end{equation}
+This is the minimal symbolic effort required to push $[A]$ into $\Omega_1$ — that is, to destroy return closure.
+\end{definition}
+
+We say that $[A]$ is \textit{collapse-robust} if:
+\begin{equation} \label{eq:collapse-threshold}
+\rho([A]) \geq \rho_c, \quad \text{for some coherence threshold } \rho_c > 0
+\end{equation}
+
+\section{Fragility $X_\phi$}
+
+\begin{definition}[Fragility] \label{def:fragility}
+Fragility is defined as the inverse of collapse robustness:
+\begin{equation} \label{eq:fragility}
+X_\phi([A]) := \frac{1}{\rho([A])}
+\end{equation}
+\end{definition}
+
+\textbf{Interpretation:}
+\begin{itemize}
+  \item High $X_\phi$ $\Rightarrow$ identity collapses under minor deformation
+  \item Low $X_\phi$ $\Rightarrow$ identity resists perturbation
+\end{itemize}
+
+As $[A]$ approaches the $\Omega_3 \rightarrow \Omega_2$ or $\Omega_1$ boundary, $X_\phi([A])$ diverges.  
+This metric forms the first axis of the coherence signature $\chi([A])$.
+
+\section{Latency $\Lambda$ and Symbolic Effort} \label{latency-lambda-and-symbolic-effort}
+
+Each transformation $T \in R$ carries an assigned symbolic effort.  
+We define this as a function:
+\begin{equation} \label{eq:effort-function}
+\text{effort} : \Sigma^* \rightarrow \mathbb{R}^+
+\end{equation}
+
+\begin{definition}[Latency] \label{def:latency}
+The latency of a resolved identity $[A]$ is the minimal total effort required to complete a valid return loop:
+\begin{equation} \label{eq:latency}
+\Lambda([A]) := \min_{\mathcal{P} \in \mathcal{L}([A])} \sum_{T_i \in \mathcal{P}} \text{effort}(T_i)
+\end{equation}
+\end{definition}
+
+If symbolic effort is uniform across all transformations (i.e., $\text{effort}(T) \equiv 1$ for all $T$), then latency reduces to return depth:
+\begin{equation} \label{eq:latency-depth-equivalence}
+\Lambda([A]) = X_h([A])
+\end{equation}
+
+\subsection{Effort Function} \label{effort-function}
+
+Symbolic effort is defined structurally. Common examples include:
+\begin{itemize}
+  \item $\text{effort}(T) := \text{length}(T)$ — the number of primitive symbols in $T$
+  \item $\text{effort}(T) := \text{entropy}(T)$ — the number of distinct symbols in $T$
+\end{itemize}
+
+These definitions allow $\Lambda([A])$ to be computed purely from symbolic structure.
+
+\begin{definition}[Inverse Transformation] \label{def:inverse-transformation}
+Let $T : S \rightarrow S'$ be a permitted transformation.  
+We say that an inverse $T^{-1}$ exists if there is $T' \in \Sigma^*$ such that:
+\begin{equation} \label{eq:inverse-transform}
+T'(S') = S
+\end{equation}
+Then we write: $T' = T^{-1}$.
+\end{definition}
+
+\textit{Note:} Not all transformations have inverses.  
+Return symmetry $X_\pi$ is computed using only known forward and reverse steps.  
+When no inverse is present in $R$, that segment is treated as directionally asymmetric.
+\section{Return Symmetry $X_\pi$}
+
+Return symmetry quantifies the structural asymmetry of a permitted return loop.  
+In SCM, this asymmetry plays a critical role in defining coherence behavior, interaction potential, and structural charge.
+
+\begin{definition}[Return Symmetry] \label{def:return-symmetry}
+Let $[A]$ be a symbolic structure with a permitted return path $\mathcal{L}([A])$.  
+Let:
+\begin{itemize}
+  \item $F$ = number of forward-directed transformations (under $R$)
+  \item $R$ = number of reverse-directed transformations (under $R^{-1}$)
+\end{itemize}
+
+Return symmetry is defined as:
+\begin{equation} \label{eq:return-symmetry}
+X_\pi([A]) := \frac{F - R}{F + R}
+\end{equation}
+
+This ratio measures the net directional bias of the return loop. It ranges from $-1$ to $+1$.
+\end{definition}
+
+\subsection*{Interpretation of $X_\pi$} \label{interpretation-of-xpi}
+
+\begin{center}
+\begin{tabular}{|c|l|l|}
+\hline
+\textbf{$X_\pi$ Value} & \textbf{Meaning} & \textbf{Interpretation} \\
+\hline
+$-1$ & Full inversion & Maximal asymmetry: $S \rightarrow -S$ (e.g., Euler pair) \\
+$0$  & Symmetric      & Perfectly balanced return loop \\
+$+1$ & Forward-only   & Source-directed coherence structure \\
+\hline
+\end{tabular}
+\end{center}
+
+A return loop with $X_\pi = -1$ corresponds to structural inversion.  
+If the coherence pair resolves to $[0]$, this defines an $\Omega_-$-type annihilation path — not an identity.
+
+\subsection*{Symmetry and Identity} \label{symmetry-and-identity}
+
+Return symmetry does not determine whether identity exists, but it classifies identities once return closure is confirmed:
+\begin{itemize}
+  \item $[A]$ is an identity $\iff \mathcal{L}([A]) \neq \emptyset$ and $S_0 = S_k$
+  \item If $X_\pi = 0$, then $[A]$ is structurally neutral
+  \item If $X_\pi > 0$, $[A]$ acts as a coherence source
+  \item If $X_\pi < 0$, $[A]$ behaves as a coherence sink
+  \item If $X_\pi = -1$ and $S_k \neq S_0$, return resolves to $[0]$, not $[A]$
+\end{itemize}
+
+This last case is the Euler inversion: a coherence-valid path that defines structural annihilation.
+
+$X_\pi$ is not merely a measure of asymmetry — it is a structural fingerprint of return logic:
+\begin{itemize}
+  \item It determines interaction directionality
+  \item It distinguishes return from inversion, and identity from cancellation
+\end{itemize}
+
+In $\chi$-space, $X_\pi$ is a fully directional axis of coherence structure.  
+Its endpoints, $[-1, +1]$, are not boundaries of collapse — but poles of inversion and emission.
+
+\section{Summary}
+
+These coherence metrics apply only to identities in $\Omega_3$.  
+Each plays a role in defining the coherence structure of $[A]$ and its behavior under reuse, drift, or collapse.
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Metric} & \textbf{Meaning} & \textbf{Symbol} \\
+\hline
+Collapse robustness & Minimum deformation before failure & $\rho([A])$ \\
+Fragility            & Inverse robustness                 & $X_\phi([A])$ \\
+Latency              & Total symbolic effort to return    & $\Lambda([A])$ \\
+Return symmetry      & Directional asymmetry in return loop & $X_\pi([A])$ \\
+\hline
+\end{tabular}
+\end{center}

@@ -1,0 +1,96 @@
+\chapter{Curvature and Persistence}
+
+\section{From Drift to Curvature}
+
+In SCM, identity evolves under symbolic reuse. Structural drift $\partial\chi$ captures this evolution. But drift itself may change—become suppressed, concentrated, or redirected.
+
+\paragraph{Definition (Symbolic Curvature):}
+We define symbolic curvature not as acceleration in metric space, but as the \textbf{gradient of structural robustness} in $\chi$-space. That is,
+\[
+\mathcal{K} := \nabla \rho([A]),
+\]
+where $\rho([A])$ is the collapse robustness of identity $[A]$. Regions with high $|\mathcal{K}|$ indicate structural instability—identities deform under reuse even without spatial displacement.
+
+\noindent This is curvature \emph{without geometry}: a purely symbolic measure of deformation in return logic.
+
+\section{Robustness Field and Gradient}
+
+Let $\rho([A])$ be the collapse robustness of identity $[A]$.
+
+Define the robustness gradient:
+\begin{equation} \label{eq:robustness-gradient}
+\nabla \rho := \left( \frac{\partial \rho}{\partial X_h}, \frac{\partial \rho}{\partial X_c}, \frac{\partial \rho}{\partial X_\pi}, \frac{\partial \rho}{\partial X_\phi}, \frac{\partial \rho}{\partial X_\epsilon} \right)
+\end{equation}
+
+Each partial derivative reflects how fragile the identity becomes as one coherence component changes.
+
+\section{Definition: Symbolic Curvature}
+
+We define symbolic curvature at $[A]$ as:
+\begin{equation} \label{eq:symbolic-curvature}
+\mathcal{K}([A]) := \max_i \left| \frac{\partial \rho([A])}{\partial X_i} \right|
+\end{equation}
+
+Where the maximum is taken across all coherence signature components.
+
+\paragraph{Interpretation.}
+- High $\mathcal{K}$: robustness changes rapidly → drift concentrates → identity destabilizes
+- Low $\mathcal{K}$: robustness is flat → drift slows → identity is coherence-stable
+
+\section{Persistence Without Norms}
+
+Let:
+\[
+\chi([A]) = (X_h, X_c, X_\pi, X_\phi, X_\epsilon)
+\]
+Let:
+\[
+\partial\chi([A]) = (\partial X_h, \partial X_c, \partial X_\pi, \partial X_\phi, \partial X_\epsilon)
+\]
+
+We define symbolic persistence as:
+\begin{equation} \label{eq:persistence}
+\Pi([A]) := \frac{1}{\max_i |\partial X_i([A])|}
+\end{equation}
+
+\paragraph{Interpretation.}
+\begin{itemize}
+    \item $\Pi \to \infty$ if $\partial X_i = 0$ for all $i$ — the identity is fully persistent.
+    \item $\Pi$ is small if $\partial X_i$ is large for any $i$ — the identity is fragile or collapsing.
+\end{itemize}
+
+This definition avoids norms or distance—it reflects coherence decay via fastest-deforming signature component.
+
+\section{Curvature–Persistence Relationship}
+
+Symbolic curvature and persistence are inversely related.
+
+\begin{itemize}
+    \item If $\mathcal{K}([A])$ increases, the robustness gradient steepens — identity becomes structurally unstable.
+    \item If $\Pi([A])$ decreases, signature components change more rapidly — drift accelerates.
+\end{itemize}
+
+Thus:
+\begin{equation} \label{eq:curvature-inverse-persistence}
+\mathcal{K}([A]) \cdot \Pi([A]) \approx \text{bounded constant}
+\end{equation}
+
+This defines symbolic coherence balance: high curvature implies low persistence, and vice versa.
+
+\section{Summary Table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|l|}
+\hline
+\textbf{Quantity} & \textbf{Symbol} & \textbf{Interpretation} \\
+\hline
+Robustness Gradient & $\nabla \rho$ & Sensitivity of collapse stability to $\chi$ \\
+Symbolic Curvature & $\mathcal{K}([A])$ & Max rate of robustness change \\
+Signature Drift & $\partial\chi([A])$ & Rate of identity deformation \\
+Persistence & $\Pi([A])$ & Inverse of max drift component \\
+Curvature–Persistence Law & $\mathcal{K} \cdot \Pi \approx$ const & Structural tradeoff \\
+\hline
+\end{tabular}
+\caption{Coherence curvature and symbolic persistence}
+\end{table}

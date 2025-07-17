@@ -1,0 +1,96 @@
+\chapter{Symbolic Curvature and the Structure of \texorpdfstring{$F_{\mu\nu}$}{F\_\{mu nu\}}} \label{chapter-symbolic-curvature}
+
+In classical Yang--Mills theory, the field strength tensor \( F_{\mu\nu} \) encodes the curvature of the gauge connection \( A_\mu \). In SCM, we construct two analogues of curvature that capture different aspects of structural dynamics: robustness curvature and potential curvature. The latter is shown to be the structural analogue of the Yang--Mills field strength.
+
+\section{Curvature in SCM: Two Definitions}
+
+\paragraph{Distinction.}
+To avoid formal contradiction, we explicitly distinguish between two forms of curvature:
+
+\begin{itemize}
+  \item \textbf{Robustness Curvature \( K_\rho \)}: Measures how collapse robustness \( \rho \) changes under signature variation.
+  \item \textbf{Potential Curvature \( K_\Phi \)}: Measures second-order variation in coherence potential \( \Phi \) and governs symbolic force.
+\end{itemize}
+
+\subsection{Robustness Curvature \( K_\rho \)}
+
+\begin{definition}[Robustness Curvature]
+Let \( [A] \in \Omega_3 \), and let \( \rho([A]) \) denote its collapse robustness. Then the robustness curvature is defined as:
+\[
+K_\rho([A]) := \max_i \left| \frac{\partial \rho([A])}{\partial X_i} \right|
+\]
+where \( X_i \in \{ X_h, X_c, X_\pi, X_\phi, X_\epsilon \} \).
+\end{definition}
+
+\paragraph{Interpretation.}
+This measures how quickly the identity’s structural resilience decays under drift. It characterizes susceptibility to contradiction-triggered collapse.
+
+\subsection{Potential Curvature \( K_\Phi \)}
+
+We now introduce the second and more fundamental concept of curvature: the curvature of the coherence potential field.
+
+\begin{definition}[Potential Curvature Tensor]
+Let \( \Phi: \chi \to \mathbb{R} \) be the coherence potential over signature space. Then:
+\[
+K_{\Phi, ij} := \frac{\partial^2 \Phi}{\partial X_i \partial X_j}
+\quad \text{for } i, j \in \{ h, c, \pi, \phi, \epsilon \}
+\]
+\end{definition}
+
+\paragraph{Interpretation.}
+This curvature tensor governs the second-order response of symbolic dynamics to changes in coherence. It determines interaction forces, symbolic acceleration, and path reconfiguration.
+
+\section{From Field Strength to Symbolic Force}
+
+\begin{definition}[Yang--Mills Curvature]
+In gauge theory, the field strength tensor is:
+\[
+F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu + [A_\mu, A_\nu]
+\]
+It defines the local curvature of the connection \( A_\mu \).
+\end{definition}
+
+In SCM, the role of the connection is played by \( \nabla \Phi \), and the role of field curvature is captured by \( K_\Phi \).
+
+\begin{proposition}[Symbolic Acceleration]
+Let \( [A] \in \Omega_3 \) evolve under RuleEvolution. Then:
+\[
+K_{\Phi, ij} \gg 0 \quad \Rightarrow \quad \text{drift acceleration in } X_j \text{ under perturbation in } X_i
+\]
+\end{proposition}
+
+\paragraph{Conclusion.}
+This second-order interaction is structurally equivalent to the emergence of force fields in Yang--Mills theory.
+
+\section{Symbolic Energy Density}
+
+\begin{definition}[Symbolic Energy Density]
+Let \( [A] \in \Omega_3 \). Define:
+\[
+\mathcal{E}_\Phi([A]) := \sum_{i,j} K_{\Phi, ij}^2
+\]
+\end{definition}
+
+This scalar plays the role of local symbolic field energy. Regions with high \( \mathcal{E}_\Phi \) undergo intense RuleEvolution or contradiction-induced collapse.
+
+\section{Projection to Emergent Spacetime}
+
+We define an effective field strength in emergent 4D spacetime via the projection \( \pi: \chi \to \mathbb{R}^4 \):
+
+\begin{equation}
+F_{\mu\nu}^{\text{eff}}(x) := \pi^*(K_{\Phi, ij})
+\quad \text{for } x = \pi([A])
+\end{equation}
+
+This yields a coarse-grained curvature field visible at physical scales.
+
+\section{Summary}
+
+We have now established two independent notions of curvature in SCM:
+
+\begin{itemize}
+  \item \( K_\rho \) governs local fragility, collapse rate, and robustness decay,
+  \item \( K_\Phi \) governs symbolic force, interaction fields, and energy gradients.
+\end{itemize}
+
+It is \( K_\Phi \) that plays the role of \( F_{\mu\nu} \). Through this structure, we derive classical gauge curvature as an emergent, second-order feature of symbolic coherence geometry.

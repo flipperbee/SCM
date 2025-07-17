@@ -1,0 +1,151 @@
+\chapter{Thermodynamic Structure} \label{chapter-thermodynamics}
+
+SCM defines thermodynamic behavior not from statistical ensembles, but from symbolic return multiplicity, latency gradients, and coherence drift. Entropy, heat, work, and collapse emerge from the structural configuration of reuse paths and their evolution under RuleEvolution.
+
+\section{Symbolic Entropy} \label{sec:symbolic-entropy}
+
+Let $[A] \in \Omega_3$ be a coherence-stable identity. Define its return set:
+\[
+\mathcal{R}([A]) := \{ \mathcal{L}_i \mid \text{return loops through } [A] \}
+\]
+
+Each return loop $\mathcal{L}_i$ has probability:
+\[
+p_i := \frac{e^{-\Lambda(\mathcal{L}_i)}}{Z},\quad Z := \sum_j e^{-\Lambda(\mathcal{L}_j)}
+\]
+
+\begin{definition}[Symbolic Entropy]
+The entropy of $[A]$ is:
+\[
+H([A]) := -\sum_{i} p_i \log p_i
+\]
+\end{definition}
+
+\begin{itemize}
+  \item High $H$ implies many comparably likely return paths,
+  \item Low $H$ implies dominant, low-latency return preference,
+  \item $H([A])$ measures coherence uncertainty.
+\end{itemize}
+
+\section{Symbolic Free Energy} \label{sec:free-energy}
+
+\begin{definition}[Symbolic Free Energy]
+The symbolic return potential is:
+\[
+\Phi([A]) := \sum_i p_i \cdot \Lambda(\mathcal{L}_i)
+\]
+\end{definition}
+
+\begin{itemize}
+  \item $\Phi$ is the expected symbolic cost of coherence return,
+  \item It is minimized when return is precise and low-latency,
+  \item It acts as a symbolic energy well for identity persistence.
+\end{itemize}
+
+\section{Symbolic Temperature} \label{sec:symbolic-temperature}
+
+\begin{definition}[Symbolic Temperature]
+The coherence temperature of $[A]$ is:
+\[
+T_s([A]) := \frac{d\Phi}{dH}
+\]
+\end{definition}
+
+\begin{itemize}
+  \item $T_s \approx 0$ implies structural order (minimal entropy cost),
+  \item $T_s \gg 0$ implies disordered, fragile identity coherence,
+  \item $T_s$ governs symbolic diffusion under reuse perturbation.
+\end{itemize}
+
+\section{Coherence Force and Work} \label{sec:coherence-force}
+
+\begin{definition}[Coherence Force]
+The symbolic force acting on identity $[A]$ is:
+\[
+F_\chi([A]) := -\nabla\Phi([A])
+\]
+\end{definition}
+
+Let $\gamma$ be a reuse path in $\chi$-space. Then:
+
+\begin{definition}[Symbolic Work]
+\[
+W_\chi := \int_\gamma F_\chi \cdot d\chi
+\]
+\end{definition}
+
+\begin{itemize}
+  \item Coherence force drives identities toward minimal contradiction,
+  \item Work reflects symbolic deformation cost,
+  \item Return loops resist transformation when $W_\chi > 0$.
+\end{itemize}
+
+\section{Heat and Latency Flow} \label{sec:heat-flow}
+
+\begin{definition}[Symbolic Heat Transfer]
+\[
+Q := T_s \cdot \Delta H
+\]
+\end{definition}
+
+\begin{itemize}
+  \item Symbolic heat is entropy transported under coherence gradient,
+  \item A system with high $T_s$ propagates disorder rapidly,
+  \item Latency flow follows the return potential gradient.
+\end{itemize}
+
+\begin{definition}[Latency Flow]
+\[
+J_\Lambda := -\nabla\Lambda
+\]
+\end{definition}
+
+Identities diffuse toward regions of lower return effort.
+
+\section{First Law of Symbolic Thermodynamics} \label{sec:first-law}
+
+\paragraph{Symbolic First Law.}
+\[
+\Delta \Phi = Q - W_\chi
+\]
+
+\begin{itemize}
+  \item Energy is symbolic: effort potential conserved under drift,
+  \item Heat increases $\Phi$ via entropy growth,
+  \item Work decreases $\Phi$ via coherence contraction.
+\end{itemize}
+
+\section{Collapse and Entropic Death} \label{sec:collapse}
+
+As $T_s \to \infty$:
+\begin{itemize}
+  \item Fragility increases: $X_\phi \to 1$,
+  \item Collapse robustness $\rho \to 0$,
+  \item Contradiction overwhelms reuse closure.
+\end{itemize}
+
+These define the symbolic death zone:
+\[
+\mathcal{Z}_{\text{death}} := \{ [A] \in \Omega_3 \mid T_s([A]) \gg 1,\ \rho([A]) \to 0 \}
+\]
+
+Conversely, as $T_s \to 0$:
+\begin{itemize}
+  \item Coherence freezes,
+  \item No new return paths emerge,
+  \item Structure becomes rigid and timeless.
+\end{itemize}
+
+\section{Summary: Thermodynamics as Return Dynamics} \label{sec:thermo-summary}
+
+In SCM:
+\begin{itemize}
+  \item \textbf{Entropy} = return path multiplicity,
+  \item \textbf{Free energy} = expected latency cost,
+  \item \textbf{Temperature} = sensitivity of effort to disorder,
+  \item \textbf{Work} = structural reconfiguration,
+  \item \textbf{Heat} = coherence diffusion,
+  \item \textbf{Collapse} = failure to contain contradiction under reuse.
+\end{itemize}
+
+Thermodynamic structure is coherence behavior under symbolic pressure.
