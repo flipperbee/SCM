@@ -1,0 +1,108 @@
+\chapter{The Law of Symbolic Dynamics}
+
+\section*{Introduction}
+
+Having defined identity as a property of return within the Resolution Graph, we now introduce the core dynamical law of SCM: the system evolves by selecting a rule set that maximizes coherence while minimizing contradiction.
+
+This law is not local, causal, or temporal. It is formulated as a global variational principle. The key innovation is that identity is selected not just by existing return structure, but by its structural quality—measured by a coherence signature defined over return loops. The outcome is not a deterministic sequence but an optimal configuration.
+
+\section{The Global Variational Principle}
+
+\begin{axiom}[Law of Symbolic Dynamics]
+The SCM system selects the rule set
+\begin{equation}
+R^* := \argmax_{R \subseteq \mathcal{T}} \left( F[R] - \lambda \cdot C[R] \right),
+\end{equation}
+where:
+\begin{itemize}
+    \item $F[R]$ is the coherence functional,
+    \item $C[R]$ is the contradiction functional,
+    \item $\lambda \in \mathbb{R}^+$ is the structural risk tolerance parameter.
+\end{itemize}
+\end{axiom}
+
+\paragraph{Assumption.}
+We assume that an optimal rule set $R^*$ exists and maximizes the functional over all finite subsets of $\mathcal{T}$. The existence and uniqueness of such an optimum are not proven here but will be addressed in future work.
+
+\section{Return Structures and Coherence Signatures}
+
+\begin{definition}[Return Structures]
+Given a rule set $R$, let $L_R$ denote the set of all symbolic structures $[A] \in \Sigma^*$ that possess at least one return loop in the Resolution Graph $G(R)$.
+\end{definition}
+
+\begin{definition}[Coherence Signature]
+Let $[A] \in L_R$. The \emph{coherence signature} of $[A]$ under rule set $R$ is a vector
+\[
+\chi([A], R) := (X_1, X_2, \dots, X_n) \in \mathbb{R}^n
+\]
+where each $X_i$ is a structural property computed from the return paths of $[A]$ in $G(R)$, such as return depth, symmetry, fragility, reuse elevation, etc. The precise definition of each component will be given in Volume II.
+\end{definition}
+
+\noindent
+The signature $\chi([A], R)$ is computable for any $R$ and serves as the input for coherence and contradiction evaluation.
+
+\section{The Coherence Functional}
+
+\begin{definition}[Stability Region]
+Let $\mathcal{D}_{\text{stable}} \subset \mathbb{R}^n$ denote the region of coherence signature space corresponding to structurally viable identities.
+\end{definition}
+
+\begin{definition}[Coherence Functional]
+The coherence functional $F[R]$ is defined as:
+\begin{equation}
+F[R] := \sum_{\substack{[A] \in L_R \\ \chi([A], R) \in \mathcal{D}_{\text{stable}}}} f(\chi([A], R)),
+\end{equation}
+where $f: \mathbb{R}^n \to \mathbb{R}^+$ is a weighting function mapping coherence properties to scalar reward.
+\end{definition}
+
+\section{The Contradiction Functional}
+
+\begin{definition}[Contradiction Functional]
+The contradiction functional $C[R]$ is defined as:
+\begin{equation}
+C[R] := \sum_{\substack{[A] \in L_R \\ \chi([A], R) \notin \mathcal{D}_{\text{stable}}}} c(\chi([A], R)),
+\end{equation}
+where $c: \mathbb{R}^n \to \mathbb{R}^+$ is a weighting function that penalizes fragility, drift, asymmetry, and other forms of instability.
+\end{definition}
+
+\noindent
+Unlike F, the contradiction functional accumulates symbolic identities that are unstable under $R$ even if they return.
+
+\section{Domain Classification from Signature}
+
+The identity domains are now redefined directly in terms of $\chi([A], R)$:
+
+\begin{itemize}
+    \item $\Omega_3(R)$ := $\{ [A] \in L_R \mid \chi([A], R) \in \mathcal{D}_{\text{stable}} \}$,
+    \item $\Omega_2(R)$ := $\{ [A] \in L_R \mid \chi([A], R) \notin \mathcal{D}_{\text{stable}} \}$,
+    \item $\Omega_1(R)$ := $\{ [A] \in \Sigma^* \mid L([A]) = \emptyset \text{ in } G(R) \}$.
+\end{itemize}
+
+\noindent
+These definitions are now well-posed and computable for any rule set $R$.
+
+\section{Effort as Emergent}
+
+\begin{definition}[Effort]
+Let $T \in R^*$. The \emph{effort} $\varepsilon(T)$ of a transformation $T$ is defined implicitly by its contribution to the global optimization of $F[R] - \lambda C[R]$ over return loops in $G(R^*)$ that contain $T$. It is not a primitive, but a derived quantity:
+\[
+\varepsilon(T) := \text{marginal cost to coherence budget in $R^*$}.
+\]
+\end{definition}
+
+\noindent
+Effort emerges as a property of transformations that sustain viable identity. It quantifies the symbolic cost of structural persistence.
+
+\section{Interpretation}
+
+\begin{itemize}
+    \item The variational principle selects a globally optimal structure, not a local evolution path.
+    \item Coherence is rewarded through $F[R]$; instability is penalized through $C[R]$.
+    \item The coherence signature $\chi([A], R)$ serves as the central structural observable of the system.
+    \item Effort and latency are outcomes of return structure, not inputs.
+\end{itemize}
+
+\section{Transition to Dynamics}
+
+In the next chapter, we apply these principles to the structure of $\Omega$-space. Identities will be classified not statically, but by their dynamic viability within $R^*$. Collapse, reuse, and elevation will emerge as consequences of optimization, not rules.
+

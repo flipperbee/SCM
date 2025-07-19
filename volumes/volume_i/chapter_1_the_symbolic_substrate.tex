@@ -1,0 +1,50 @@
+\chapter{The Symbolic Substrate}
+
+\section*{Introduction}
+
+Structural Coherence Mathematics (SCM) begins without space, time, causality, or mechanism. It begins instead with structure: a finite alphabet of symbols and the transformations between them. These transformations form the primitive operations from which all subsequent identity, dynamics, and physical interpretation will emerge.
+
+This chapter introduces the symbolic substrate on which the SCM framework is defined. We formalize the notion of symbolic forms, the transformation space, and the basic ontology of SCM. These will serve as the foundation for all future constructions, including the Resolution Graph, identity by return, and the global variational law.
+
+\section{Symbolic Alphabet and Structures}
+
+\begin{definition}[Alphabet]
+Let $\Sigma$ be a finite set of primitive symbols. We call $\Sigma$ the \emph{alphabet} of SCM.
+\end{definition}
+
+\begin{definition}[Symbolic Structure]
+Let $\Sigma^*$ denote the set of all finite sequences (words) constructed from $\Sigma$, including the empty sequence $\varepsilon$. That is,
+\[
+\Sigma^* := \bigcup_{n=0}^{\infty} \Sigma^n.
+\]
+Each element $A \in \Sigma^*$ is called a \emph{symbolic structure}.
+\end{definition}
+
+\noindent
+Symbolic structures represent the irreducible or composed configurations of the SCM system. They are not given physical interpretation a priori; they are syntactic entities that may, under further conditions, resolve into identities.
+
+\section{Transformations}
+
+\begin{definition}[Transformation]
+A \emph{transformation} is a symbolic map
+\[
+T: \Sigma^* \to \Sigma^*
+\]
+that maps one symbolic structure to another. We write this as $T: A \rightarrow B$, where $A, B \in \Sigma^*$.
+\end{definition}
+
+\noindent
+The set of all transformations is denoted by $\mathcal{T}$. SCM does not assume that every transformation is permitted. Instead, a designated subset $R \subseteq \mathcal{T}$ defines the currently permitted rule set at any given configuration of the system.
+
+\section{Remarks on Ontology}
+
+\begin{itemize}
+    \item \textbf{No Space or Time.} The structures $A \in \Sigma^*$ and transformations $T: A \to B$ are not embedded in any spatial or temporal background. There is no geometry, distance, duration, or causal ordering between symbols. All coherence is structural.
+    \item \textbf{No Probability or Mechanism.} SCM does not posit a stochastic or deterministic mechanism for rule application. The evolution of permitted transformations is governed instead by a global variational principle (introduced in Chapter 3).
+    \item \textbf{Structure Only.} The only primitive objects are symbols, symbolic structures, and the allowed transformations between them.
+\end{itemize}
+
+\section{Next Steps}
+
+In Chapter 2, we introduce the first core axiom of SCM: identity by permitted return. To formalize this, we construct the \emph{Resolution Graph} $G(R)$ associated with a rule set $R$. This graph provides the space of symbolic trajectories and enables the definition of return loops and identity resolution.
+
